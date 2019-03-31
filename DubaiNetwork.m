@@ -3,9 +3,9 @@
 % Milan Bidare, Mateus Feitosa, Alex Kirtley, Sujit Shivaprasad, Thomas Shaw
 
 % Tram Green line
-TramGreenLine_s = [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19];
-TramGreenLine_t = [2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20];
-TramGreenLineWeights = [3 2 1 2 2 2 2 2 2 2 2 2 2 2 2 3 3 2 2];
+TramGreenLine_s = [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20];
+TramGreenLine_t = [2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19];
+TramGreenLineWeights = [3 2 1 2 2 2 2 2 2 2 2 2 2 2 2 3 3 2 2 3 2 1 2 2 2 2 2 2 2 2 2 2 2 2 3 3 2 2];
 TramGreenLineName =  ...
 {
 'Etisalat'      %1
@@ -31,9 +31,9 @@ TramGreenLineName =  ...
 };
 
 % Tram Red Line - 
-TramRedLine_s = [21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47];
-TramRedLine_t = [22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48];
-TramRedLineWeights = [4 2 1 2 2 2 3 2 2 2 2 2 1 2 2 5 2 2 2 2 3 2 2 2 3 3 4];
+TramRedLine_s = [21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48];
+TramRedLine_t = [22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47];
+TramRedLineWeights = [4 2 1 2 2 2 3 2 2 2 2 2 1 2 2 5 2 2 2 2 3 2 2 2 3 3 4 4 2 1 2 2 2 3 2 2 2 2 2 1 2 2 5 2 2 2 2 3 2 2 2 3 3 4];
 TramRedLineName =  ...
 {
 'Rashidiya'             %21
@@ -67,9 +67,9 @@ TramRedLineName =  ...
 };
 
 %Tram RedGreen connections
-TramRedGreen_s = [10 16];
-TramRedGreen_t = [28 29];
-TramRedGreen_weights = [5 5];
+TramRedGreen_s = [10 28 16 29];
+TramRedGreen_t = [28 10 29 16];
+TramRedGreen_weights = [5 5 5 5];
 
 
 %data summation
@@ -82,7 +82,7 @@ names = [TramGreenLineName
 NodeTable = table(names,'VariableNames',{'Name'});
 EdgeTable = table([s t],weights,'VariableNames',{'EndNodes' 'Weight'});
 
-G = graph(EdgeTable,NodeTable)
+G = digraph(EdgeTable,NodeTable)
 h = plot(G)
 
 
