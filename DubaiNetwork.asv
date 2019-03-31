@@ -46,29 +46,29 @@ TramRedLineName =  ...
 'Union - Red Line'      %28
 'BurJuman - Red Line'   %29
 'ADCB'                  %30
-'Al Jafiliya'           %31
-'World Trade Centre'    %32
-'Emirates Towers'       %33
-'Financial Centre'      %34
-'Burj Khalifa / Dubai Mall' %35
-'Business Bay'          %36
-'Noor Bank'             %37
-'First Abu Dhabi Bank'  %38
-'Mall of the Emirates'  %39
-'Sharaf DG'             %40
-'Dubai Internet City'   %41
-'Nakheel'               %42
-'DAMAC PROPERTIES'      %43
-'DMCC'                  %44
-'Ibn Battuta'           %45
-'Energy'                %46
-'Danube'                %47
-'UAE Exchange'          %48
+'Al Jafiliya'           %3
+'World Trade Centre'    %33
+'Emirates Towers'       %34
+'Financial Centre'      %35
+'Burj Khalifa / Dubai Mall' %36
+'Business Bay'          %37
+'Noor Bank'             %38
+'First Abu Dhabi Bank'  %39
+'Mall of the Emirates'  %40
+'Sharaf DG'             %41
+'Dubai Internet City'   %42
+'Nakheel'               %43
+'DAMAC PROPERTIES'      %44
+'DMCC'                  %45
+'Ibn Battuta'           %46
+'Energy'                %47
+'Danube'                %48
+'UAE Exchange'          %49
 };
 
 %Tram RedGreen connections
-TramRedGreen_s = [10 16];
-TramRedGreen_t = [28 29];
+TramRedGreen_s = [10 18];
+TramRedGreen_t = [29 30];
 TramRedGreen_weights = [5 5];
 
 
