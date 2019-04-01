@@ -113,7 +113,8 @@ Tram_names = [TramT01_names];
 
 %% ----------- Bus Lines ----------------           
 
-%connection array
+%connection array, append to after each line is added. Only find
+%connections from lower node numbers to avoid duplication.
 bus_conn_s = [];
 bus_conn_t = [];
 bus_conn_weights = [];
@@ -138,6 +139,11 @@ br7_names = ...
 'Hudheiba, Road'                    %69
 'Satwa, Bus Station'                %70
 };
+
+%
+bus_conn_s = [bus_conn_s];
+bus_conn_t = [bus_conn_t];
+bus_conn_weights = [bus_conn_weights];
 
 %R8
 br8_s = [71	72	73	74	75	76	77	78	79	80	81	82	83	84	85	86	87	88	89	90	91	92	93	94	95	96	97	98	99	100	101	102	103	104	105	106	107	108	109	110	111	112 72	73	74	75	76	77	78	79	80	81	82	83	84	85	86	87	88	89	90	91	92	93	94	95	96	97	98	99	100	101	102	103	104	105	106	107	108	109	110	111	112	113];
@@ -228,7 +234,7 @@ br11a_t = [];
 br11a_weights = [];
 br11a_names = ...
 {
-'Gold Souq Bus Station'         %151
+'Gold Souq Bus Station'         %129
 'Naif Intersection'
 'Burj Nahar, Intersection'
 'Al Nakhal 1'
@@ -300,7 +306,7 @@ br11a_names = ...
 'Awir, Dubai Municipality Center'
 'Awir, Girls School'
 'Awir 1'
-'Awir, Emirates NBD'                %223
+'Awir, Emirates NBD'                %301
 };
 
 %R11b
@@ -309,7 +315,7 @@ br11b_t = [];
 br11b_weights = [];
 br11b_names = ...
 {
-'Rashidiya Metro Bus Station'
+'Rashidiya Metro Bus Station'       %302
 'Mushrif, Eppco'
 'Mushrif, Masjid'
 'Mushrif, Park'
@@ -363,7 +369,7 @@ br11b_names = ...
 'Awir, Girls School'
 'Awir 1'
 'Awir, Emirates NBD'
-'Awir, Terminus'
+'Awir, Terminus'                    %356
 };
 
 %R12
@@ -372,7 +378,7 @@ br12_t = [];
 br12_weights = [];
 br12_names = ...
 {
-'Ghubaiba Bus Station'
+'Ghubaiba Bus Station'              %357
 'Department of Ports & Customs'
 'Power Gas Station'
 'Capital Hotel'
@@ -413,7 +419,7 @@ br12_names = ...
 'Quoz, Gargash'
 'Quoz, Bin Ghaleith Masjid'
 'Quoz, Kanoo Machinery Company'
-'Al Quoz, Bus Station'
+'Al Quoz, Bus Station'              %398
 };
 
 %R13
@@ -422,7 +428,7 @@ br13_t = [];
 br13_weights = [];
 br13_names = ...
 {
-'Gold Souq Bus Station'
+'Gold Souq Bus Station'             %399
 'Naif Intersection'
 'Burj Nahar, Intersection'
 'Al Nakhal 1'
@@ -462,7 +468,7 @@ br13_names = ...
 'Qusais, Gargash Labour Camp'
 'Qusais, Cemetery 2'
 'Qusais, Medical Fitness Centre'
-'Qusais, Dubai Municipality Staff Housing 1'
+'Qusais, Dubai Municipality Staff Housing 1'    %439
 };
 
 %Bus Summation
