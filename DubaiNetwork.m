@@ -702,7 +702,7 @@ br24_names = ...
 %R27
 br27_s = [627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648];
 br27_t = [628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649];
-br27_weights = [5,1,3,2,2,1,1,2,2,1,3,4,4,2,2,1,1,4];
+br27_weights = [4,0.1,1,1,1,0.1,3,2,1,2,1,4,4,4,0.1,4,2,1,2,2,10,3];
 br27_names = ...
 {
 'Gold Souq Bus Station'   %627
@@ -728,6 +728,79 @@ br27_names = ...
 'Emirates Tower Landside Metro Bus Stop'
 'Wasl, Etisalat'
 'The Dubai Mall Burj Khalifa, The Palace Hotel' %649
+};
+
+%R28
+br28_s = [650,651,652,653,654,655,656,657,658,659,660,661,662,663,664,665,666,667,668,669,670];
+br28_t = [651,652,653,654,655,656,657,658,659,660,661,662,663,664,665,666,667,668,669,670,671];
+br28_weights = [7,1,1,2,2,2,1,2,1,1,4,3,1,0.1,1,2,2,1,0.1,2,3];
+br28_names = ...
+{
+'The Dubai Mall'%650
+'Dubai Petroleum Corporation'   
+'Rehabilitation Center'
+'Satwa, Road'
+'Khadri Masjid'
+'Satwa, Square'
+'Satwa, Masjid 2'
+'Satwa, Post Office'
+'Hana Center'
+'Hudheiba, Turnoff'
+'Hoot, Eppco'
+'ADCB Metro Bus Stop Landside'
+'Karama, Dubai Municipality Center'
+'Karama, Ent.'
+'Central Post Office'
+'College of Islamic Studies 2'
+'Broadcast Interchange'
+'Oud Metha Metro Bus Stop'
+'Oud Metha Road 1'
+'Oud Metha Road 2'
+'American Hospital'
+'Lamcy ' %671
+};
+
+%Unable to produce route for BR29
+
+%R31
+br31_s = [672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703];
+br31_t = [673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703,704];
+br31_weights = [2,5,1,1,2,1,1,1,2,1,5,5,7,2,1,2,2,1,1,2,4,1,0.1,1,2,1,1,1,2,0.1,3,1];
+br31_names = ...
+{
+'Airport Terminal 2, Departure'%672
+'Airport Terminal 2, Arrival'
+'Twar, Cemetery 1'   
+'Twar, Cemetery 2'
+'Twar 1 - A'
+'Ministry of Information'
+'Al Nahda Metro Bus Stop'
+'Twar, Union Cooperative Society'
+'Dubai Airport Free Zone Metro Bus Stop'
+'Fortune Plaza Hotel'
+'Al Qusais Metro Bus Stop'
+'Twar 3, Emirates Cooperative Society'
+'Etisalat Metro Bus Station'
+'Muhaisnah 1, Intersection'
+'Al Mizhir, Islamic School For Training Education 1'
+'Muhaisnah (1)-C'
+'Muhaisnah 1, Etihad Mall (platform 01)'
+'Muhaisnah 1, Etihad Mall (platform 02)'
+'Muhaisnah, Dubai Modern School'
+'Algeria Street 7'
+'Algeria Road 6'
+'Algeria Street 5'
+'Algeria Street 4'
+'Oud Al Muteena 2, A1'
+'Oud Al Muteena 2, Masjid'
+'Oud Al Muteena 2, B1'
+'Oud Al Muteena 2, Emirates Co-op Society'
+'Oud Al Muteena 2, C1'
+'Oud Al Muteena 2, D'
+'Oud Al Muteena 2, E1'
+'Oud Al Muteena 2, Grand Masjid'
+'Amaan Street 3'
+'Oud Al Mateena Roundabout)'%704
 };
 
 
