@@ -518,7 +518,7 @@ br15_names = ...
 br17_s = [];
 br17_t = [];
 br17_weights = [];
-br1_names = ...
+br17_names = ...
 {
 'Sabkha, Bus Station'      % 475
 'Gold Souq Bus Station External'
@@ -567,10 +567,136 @@ br1_names = ...
 'Muhaisnah 4, Wasl Oasis II'        %519
 };
 
+%R21
+br21_s = [];
+br21_t = [];
+br21_weights = [];
+br21_names = ...
+{
+'Ghubaiba Bus Station'               %520
+'Falcon Intersection'
+'Raffa'
+'Rolla'
+'Al Fahidi Metro Bus Stop A'
+'Four Point Sheraton Hotel'
+'BurJuman Metro Bus Stop A'
+'BurJuman Metro Bus Stop B'
+'Centre Point Shopping Centre'
+'ADCB Seaside Metro Bus Stop'
+'Department of Health'
+'Al Jafiliya Seaside Metro Bus Stop'
+'Trade Center Metro Bus Stop'
+'White Crown Tower'
+'Durrah Tower'
+'Emirates Tower Seaside Metro'
+'Bus Stop'
+'Rostamani Tower'
+'Safa, Interchange'
+'Quoz, Dubai Municipality Center'
+'Quoz, Intersection'
+'Quoz, Housing 1'
+'Quoz, Housing 2'
+'Pepsi Cola Factory'
+'Quoz, Yusuf Motors 1'
+'Quoz, Cemetery'
+'Oasis Center'
+'Marine Center'
+'Bosch Center'
+'Quoz, Unimex'
+'Noor Bank Landside Metro Bus Stop'
+'Khaleej Times'
+'Quoz, Latifa Bint Hamdan Street'
+'Quoz, New Housing Junction'
+'Oasis Village'
+'Quoz, AST Company'
+'Joton Paints'
+'Rostamani Steel Mills'
+'Bartawi Camps'
+'ETA Steel Works'
+'Emirates Printing Press'
+'Emirates Industries'
+'Khaleej, Metal Coating'
+'Majid Industries'
+'Le Meridien Hotel, Accommodation'
+'Ducast Factory'
+'Bahar Plastic Factory'
+'Danways Emarat'
+'Quoz Industrial Area 3, Terminus'
+'Hilton Jumeria Hotel, Accomodation'
+'Golden Neon Corporation'
+'Habtoor Equipment Corporation'
+'Rigid Construction, Camps'
+'Quoz, Emirates Glass'
+'Quoz, T. Choithram Stores'
+'Quoz, Dynamic Industries'
+'Quoz, APEX Concrete Factory'
+'Quoz, Clinical Pathology Services'      %577
+};
 
+%R22
+br22_s = [];
+br22_t = [];
+br22_weights = [];
+br22_names = ...
+{
+'Deira City Center Bus Station'          %578
+'City Centre Metro Bus Stop A 2'
+'Ahli Club'
+'Stadium Metro Bus Stop'
+'Ministry of Information'
+'Sheikh Rashid Colony'
+'Emirates Driving Institute'
+'Ministry Of Human Resources & Emiratisation'
+'Dubai Women?s College'
+'Dubai Women?s College 3'
+'Dubai Women?s College Main Entrance'
+'Al Nahda, Al Ameen Private School'
+'Al Nahda, 19A Street 1'
+'Al Nahda, Madina Super Market'
+'Al Nahda, Emirates College'
+'Al Nahda, Canary Bldg'
+'Al Nahda 1, Masjid Rada'
+'Al Nahda 1, Al Banai'
+'Al Nahda 1, Burj Al Nahda'
+'Al Nahda 1, Zaafranah'
+'Al Nahda 1, Burj Al Noor'
+'Al Nahda 1, Terminus 1'
+'Al Nahda 1, Terminus 2'                 %600
+};
 
-
-
+%R24
+br24_s = [];
+br24_t = [];
+br24_weights = [];
+br24_names = ...
+{
+'Al Nahda, The Sheffeild Private School'   %601
+'Al Nahda, Zuleikha Hospital'
+'Al Nahda, 19A Street 1'
+'Al Nahda, Madina Super Market'
+'Al Nahda, Emirates College'
+'Al Nahda, Canary Bldg'
+'NMC Hospital'
+'Garhoud, Intersection'
+'Airport Terminal 1, Arrival'
+'Emirates Airlines Headquarters'
+'Emirates Metro Bus Stop'
+'Dubai Municipality Garage'
+'Mawakeb School'
+'Dubai Festival City, Marks & Spencer'
+'Dubai Festival City, IKEA'
+'Rebat Street 2'
+'Umm Ramool, Enoc'
+'Hepworth Plastics'
+'Nad Al Hamar Grand Masjid 2'
+'Ras Al Khor, Comm. Complex 2'
+'International City, Post office 1'
+'International City, Rivera Dreams Apartments 1'
+'International City, Police Station'
+'International City, Persia O02'
+'International City, Persia M03'
+'International City, Greece K12 Terminus'   %626
+};
 
 
 %Bus Summation
