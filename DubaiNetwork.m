@@ -471,6 +471,108 @@ br13_names = ...
 'Qusais, Dubai Municipality Staff Housing 1'    %439
 };
 
+%R15
+br15_s = [];
+br15_t = [];
+br15_weights = [];
+br15_names = ...
+{
+'Ghubaiba Bus Station'         % 440
+'Falcon Intersection'
+'Raffa'
+'Rolla'
+'Al Fahidi Metro Bus Stop A'
+'Al Fahidi Metro Bus Stop B'
+'Mankhool, Standard Chartered'
+'Bank'
+'Sheikh Rashid Road I/S'
+'Hudheiba, Turnoff'
+'Hana Center'
+'Satwa, Masjid'
+'Satwa, Clinic'
+'Bada?A'
+'Satwa, Square'
+'Khadri Masjid'
+'Bilal Bin Ribah School'
+'Satwa, Road'
+'Rehabilitation Center'
+'Wasl, Emirates Bank'
+'Police Training School'
+'Jumeira, Post Office'
+'Wasl Road, Box Park 1'
+'Wasl Road, Box Park 2'
+'Hadiqa Street'
+'Honda, Training Center'
+'Emirates Gas Factory'
+'Queen Palace Factory'
+'Galadari Printing & Publishing'
+'Khaleej Times'
+'Quoz, Latifa Bint Hamdan Street'
+'Quoz, New Housing Junction'
+'Quoz, Al Khail Gate Entrance 1'
+'Quoz, Al Khail Gate 1'
+'Quoz, Al Khail Gate 2'    %474
+};
+
+%R17
+br17_s = [];
+br17_t = [];
+br17_weights = [];
+br1_names = ...
+{
+'Sabkha, Bus Station'      % 475
+'Gold Souq Bus Station External'
+'Gold Souq Bus Station'
+'Hyatt Regency Hotel'
+'Khansa School'
+'Baraha, Hospital'
+'Dubai Hospital'
+'Abu Hail, Bin Eid Al Shabi Restaurant 1'
+'Abu Hail, Roundabout'
+'Hamriya, Port'
+'Hamriya'
+'Wuhaida, School'
+'Hamriya, Clinic'
+'Shabab Club'
+'Dubai Folklore Theatre'
+'Wuhaida, Road'
+'Ahli Club'
+'Stadium Metro Bus Stop'
+'Ministry of Information'
+'Al Nahda Metro Bus Stop'
+'Twar, Union Cooperative Society'
+'Dubai Airport Free Zone Metro Bus Stop'
+'Twar 1, Emarat Al Mawred'
+'DAFZA'
+'Twar 1, Emarat Al Mawred'
+'Al Khulafa?a Al Rashideen Boys School'
+'Dubai Grand Hotel'
+'Damascus Road 1'
+'Damascus Road 2'
+'Damascus Road 3'
+'Dubai Abattoir'
+'Qusais, Eppco Vehicle Inspection'
+'Muhaisnah 4, Jamal Building'
+'Muhaisnah 4, Lootha Building'
+'Oxford School'
+'Oxford School Gate 4'
+'Muhaisnah 4, Awqaf Housings'
+'Russian International School'
+'Lulu Village'
+'UIP School'
+'Lebenese Private School 1'
+'Muhaisnah 4, Police Colony'
+'Muhaisnah 4, Police Colony'
+'Dubai Transport, Depot'
+'Muhaisnah 4, Wasl Oasis II'        %519
+};
+
+
+
+
+
+
+
 %Bus Summation
 Bus_s = [br7_s br8_s br10_s bus_conn_s];
 Bus_t = [br7_t br8_t br10_t bus_conn_t];
