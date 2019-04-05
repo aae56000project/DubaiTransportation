@@ -699,35 +699,38 @@ br24_names = ...
 };
 
 
-%R27
-br27_s = [627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648];
-br27_t = [628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649];
-br27_weights = [5,1,3,2,2,1,1,2,2,1,3,4,4,2,2,1,1,4];
-br27_names = ...
+%R24
+br24_s = [];
+br24_t = [];
+br24_weights = [];
+br24_names = ...
 {
-'Gold Souq Bus Station'   %627
-'Al Ras  Metro Bus Stop'
-'Al Ras, Public Library'
-'Deira, Old Souq'
-'Emirates NBD'
-'Al Sabkha Marine Bus Stop'
-'Deira, Beniyas Road'
-'Union Metro Bus Stop D'
-'Etisalat Head Office'
-'Maktoum Road'
-'Clock Tower Roundabout'
-'DNATA'
-'City Centre Metro Bus Stop A 2'
-'Umm Hurair, Road 2'
-'Umm Hurair, Road 1'
-'Department of Health'
-'Al Jafiliya Landside Metro Bus Stop'
-'World Trade Centre Hotel'
-'Emirates Tower 2'
-'Emirates Tower 1'
-'Emirates Tower Landside Metro Bus Stop'
-'Wasl, Etisalat'
-'The Dubai Mall Burj Khalifa, The Palace Hotel' %649
+'Al Nahda, The Sheffeild Private School'   %601
+'Al Nahda, Zuleikha Hospital'
+'Al Nahda, 19A Street 1'
+'Al Nahda, Madina Super Market'
+'Al Nahda, Emirates College'
+'Al Nahda, Canary Bldg'
+'NMC Hospital'
+'Garhoud, Intersection'
+'Airport Terminal 1, Arrival'
+'Emirates Airlines Headquarters'
+'Emirates Metro Bus Stop'
+'Dubai Municipality Garage'
+'Mawakeb School'
+'Dubai Festival City, Marks & Spencer'
+'Dubai Festival City, IKEA'
+'Rebat Street 2'
+'Umm Ramool, Enoc'
+'Hepworth Plastics'
+'Nad Al Hamar Grand Masjid 2'
+'Ras Al Khor, Comm. Complex 2'
+'International City, Post office 1'
+'International City, Rivera Dreams Apartments 1'
+'International City, Police Station'
+'International City, Persia O02'
+'International City, Persia M03'
+'International City, Greece K12 Terminus'   %626
 };
 
 
