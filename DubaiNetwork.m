@@ -760,7 +760,7 @@ br28_names = ...
 'Lamcy ' %671
 };
 
-%Unable to produce route for BR29
+
 
 %R31
 br31_s = [672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703];
@@ -802,6 +802,77 @@ br31_names = ...
 'Amaan Street 3'
 'Oud Al Mateena Roundabout)'%704
 };
+
+
+
+%R43
+br43_s = [705,706,707,708,709,710,711,712,713,714,715,716,717];
+br43_t = [706,707,708,709,710,711,712,713,714,715,716,717,718];
+br43_weights = [5,1,2,3,1,1,3,2,0.1,1,3,3,1];
+br43_names = ...
+{
+'Gold Souq Bus Station'%705
+'Naif Intersection'
+'Burj Nahar, Intersection'   
+'Al Nakhal 1'
+'Salah Al Din Metro Bus Stop'
+'Reef Mall'
+'Muraqqabat, Police Station'
+'Abu Baker Al Siddique Metro Bus Stop 1'
+'Dubai Scout Mission'
+'Al Jadeed Bakery'
+'Abu Hail Metro Bus Stop B'
+'Traffic Police Department'
+'Airport Terminal 2, Departure'
+'Airport Terminal 2, Arrival'%718
+};
+
+%R44
+br44_s = [719,720,721,722,723,724,725,726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752];
+br44_t = [720,721,722,723,724,725,726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753];
+br44_weights = [3,2,3,1,2,0.1,2,1,3,1,1,1,2,1,4,1,0.1,4,3,2,1,5,1,8,1,1,1,1,3,2,1,0.1,1,2];
+br44_names = ...
+{
+'Ghubaiba Bus Station'%719
+'Falcon Intersection'
+'Raffa 2'   
+'Nahda Street'
+'Al Fahidi Metro Bus Stop A'
+'Four Point Sheraton Hotel'
+'BurJuman Metro Bus Stop A'
+'BurJuman Metro Bus Stop B'
+'Centre Point Shopping Centre'
+'Karama 2'
+'Karama 1'
+'Karama, Commercial Center'
+'Schools Health Center'
+'Central Post Office'
+'College of Islamic Studies'
+'Oud Metha Metro Bus Stop'   
+'Oud Metha Road 1'
+'Oud Metha Road 2'
+'Latifa Hospital'
+'Wasl, Wasl Club'
+'Belhasa Driving Center'
+'Jaddaf, Police Officers Club'
+'DEWA Main Office'
+'Grand Hyatt Hotel'
+'Dubai Festival City, Marks & Spencer 2'
+'Dubai Festival City, Festival Centre'
+'Dubai Festival City, IKEA'
+'Rebat Street 2'
+'Umm Ramool, Enoc'
+'Rashidiya, Village'
+'Nadd Al Hamar Road 1'
+'Rashidiya 1'
+'Rashidiya, Emarat Petrol Station'
+'Rashidiya, Police Station'
+'Rashidiya Metro Bus Station'%753
+};
+
+%route for BR29
+%route for BR32c
+%route for BR33
 
 
 %Bus Summation
