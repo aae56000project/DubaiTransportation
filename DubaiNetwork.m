@@ -17,8 +17,11 @@ source = [];            % source edge array
 target = [];            % target edge array
 weights = [];           % weights array
 
-%Initialize Varaibles
+% Initialize Varaibles
 SNum = 0                % integer to increment Lists
+
+% Initialize Asusmptions
+Xfer_time = 5;
 
 %% ----------- Metro Lines ----------------
 
@@ -898,7 +901,7 @@ for i=1:length(StationList)                 %cycle through all routes
                  for t = 1:length(index)
                      targetconn = [targetconn StationListIndex{k}(index(t))];
                      sourceconn = [sourceconn StationListIndex{i}(j)];
-                     weightsconn = [weightsconn 5];  %assum 5 minute connection for all Xfers
+                     weightsconn = [weightsconn Xfer_time];
                  end
              end
          end
