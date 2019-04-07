@@ -809,6 +809,8 @@ end
 % Find unique nodes to create master list
 TotalNodes = vertcat(StationList{:});
 UniqueNodes = unique(TotalNodes);
+disp(sprintf('Total number of Entered stations are: %i',length(TotalNodes)))
+disp(sprintf('Total number of Unique stations are: %i',length(UniqueNodes)))
 
 %create master node list, append station identifier to each station to make
 %all unique (duplicate node names not allowed)
@@ -830,9 +832,9 @@ for i=1:length(StationList)
         StationListPlus{i}{j} = temps;
         
         %crete reference to overall index within list
-        StationListIndex{i}(j) = counter;
+        StationListIndex{i}(j) = counter
         
-        counter = counter + 1; %counter to track index
+        counter = counter + 1 %counter to track index
                 
     end
 end
@@ -886,9 +888,9 @@ for i=1:length(WeightsList)
 end
 
 %%-----------------------Create Route Connections Edges--------------------
-sourceconn = [];
-targetconn = [];
-weightsconn= [];
+sourceconn = []
+targetconn = []
+weightsconn= []
 % calculate connections between all routes
 for i=1:length(StationList)                 %cycle through all routes
      for j = 1:length(StationList{i})        %For each route station
@@ -896,19 +898,16 @@ for i=1:length(StationList)                 %cycle through all routes
              if(i~=k)   %do not cycle through own route
                  index = find(ismember(StationList{k},StationList{i}{j}));
                  for t = 1:length(index)
-                     targetconn = [targetconn StationListIndex{k}(index(t))];
-                     sourceconn = [sourceconn StationListIndex{i}(j)];
-                     weightsconn = [weightsconn 5];  %assum 5 minute connection for all Xfers
+                     targetconn = [targetconn StationListIndex{k}(index(t))]
+                     sourceconn = [sourceconn StationListIndex{i}(j)]
+                     weightsconn = [weightsconn 5]  %assum 5 mi
                  end
              end
          end
      end
 end
    
-%Sum connections in
-source = [source sourceconn];
-target = [target targetconn];
-weights = [weights weightsconn];
+
 
 %%--------------------------- Create Network -----------------------------
 NodeTable = table(Nodes,'VariableNames',{'Name'});
@@ -918,11 +917,6 @@ G = digraph(EdgeTable,NodeTable)
 h = plot(G)
         
 %%--------------------------- Network Metrics -----------------------------
-
-%Info outputs
-disp(sprintf('Total number of Entered stations are: %i',length(TotalNodes)))
-disp(sprintf('Total number of Unique stations are: %i',length(UniqueNodes)))
-disp(sprintf('Total number of x-route connections: %i',length(sourceconn)))
 
 %%shortest path matrix (in minutes, as our weights are travel time)
 D = distances(G);
