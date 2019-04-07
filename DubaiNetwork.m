@@ -920,6 +920,7 @@ h = plot(G)
 %%--------------------------- Network Metrics -----------------------------
 
 %Info outputs
+disp(sprintf('Total number of routes are: %i',SNum))
 disp(sprintf('Total number of Entered stations are: %i',length(TotalNodes)))
 disp(sprintf('Total number of Unique stations are: %i',length(UniqueNodes)))
 disp(sprintf('Total number of x-route connections: %i',length(sourceconn)))
