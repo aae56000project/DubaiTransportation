@@ -2,126 +2,156 @@
 % Dubai Transport SoS Project
 % Milan Bidare, Mateus Feitosa, Alex Kirtley, Sujit Shivaprasad, Thomas Shaw
 %
-% This script creates a Graph Network of the Dubai transportation system
-%
-
-%Initiale cell arrays
-StationList = {};
-StationListPlus = {};
-WeightsList = {};
-stations = {};
-
-%Initialize arrays
-source = [];
-target = [];
-weights = [];
-
 
 %% ----------- Metro Lines ----------------
 
 % Metro Green line
-WeightsList{1} = [3 2 1 2 2 2 2 2 2 2 2 2 2 2 2 3 3 2 2];
-StationList{1} = ...
+MetroGreenLine_s = [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20];
+MetroGreenLine_t = [2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19];
+MetroGreenLine_weights = [3 2 1 2 2 2 2 2 2 2 2 2 2 2 2 3 3 2 2 3 2 1 2 2 2 2 2 2 2 2 2 2 2 2 3 3 2 2];
+MetroGreenLine_names =  ...
 {
-'Etisalat'   
-'Al Qusais'  
-'DAFZ'       
-'Al Nahda'   
-'Stadium'    
-'Al Qiyadah' 
-'Abu Hall'   
-'Abu Baker Al Siddique'   
-'Salah Al Din'  
-'Union - Green Line'
-'Baniyas Square'     
-'Palm Deira'    
-'Al Ras'        
-'Al Ghubaiba'   
-'Al Fahkli'     
-'BurJuman - Green Line' 
-'Oud Metha'     
-'DHC'           
-'Al Jadaf'      
-'Creek'         
+'Etisalat'      %1
+'Al Qusais'     %2
+'DAFZ'          %3
+'Al Nahda'      %4
+'Stadium'       %5
+'Al Qiyadah'    %6
+'Abu Hall'      %7
+'Abu Baker Al Siddique'   %8
+'Salah Al Din'  %9
+'Union - Green Line' %10
+'Baniyas Square' %11    
+'Palm Deira'    %12
+'Al Ras'        %13
+'Al Ghubaiba'   %14
+'Al Fahkli'     %15
+'BurJuman - Green Line' %16
+'Oud Metha'     %17
+'DHC'           %18
+'Al Jadaf'      %19
+'Creek'         %20
 };
 
-% Metro Red Line
-WeightsList{2} = [4 2 1 2 2 2 3 2 2 2 2 2 1 2 2 5 2 2 2 2 3 2 2 2 3 3 4];
-StationList{2} = ...
+% Metro Red Line - 
+MetroRedLine_s = [21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48];
+MetroRedLine_t = [22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47];
+MetroRedLine_weights = [4 2 1 2 2 2 3 2 2 2 2 2 1 2 2 5 2 2 2 2 3 2 2 2 3 3 4 4 2 1 2 2 2 3 2 2 2 2 2 1 2 2 5 2 2 2 2 3 2 2 2 3 3 4];
+MetroRedLine_names =  ...
 {
-'Rashidiya'         
-'Emirates'          
-'Airport Terminal 3'
-'Airport Terminal 1'
-'GGICO'             
-'Deira City Centre' 
-'Al Rigga'          
-'Union - Red Line'  
-'BurJuman - Red Line'   
-'ADCB'                 
-'Al Jafiliya'          
-'World Trade Centre'   
-'Emirates Towers'      
-'Financial Centre'     
-'Burj Khalifa / Dubai Mall'
-'Business Bay'         
-'Noor Bank'            
-'First Abu Dhabi Bank' 
-'Mall of the Emirates' 
-'Sharaf DG'            
-'Dubai Internet City'  
-'Nakheel'              
-'DAMAC PROPERTIES'     
-'DMCC'                 
-'Ibn Battuta'          
-'Energy'               
-'Danube'               
-'UAE Exchange'         
+'Rashidiya'             %21
+'Emirates'              %22
+'Airport Terminal 3'    %23
+'Airport Terminal 1'    %24
+'GGICO'                 %25
+'Deira City Centre'     %26
+'Al Rigga'              %27 
+'Union - Red Line'      %28
+'BurJuman - Red Line'   %29
+'ADCB'                  %30
+'Al Jafiliya'           %31
+'World Trade Centre'    %32
+'Emirates Towers'       %33
+'Financial Centre'      %34
+'Burj Khalifa / Dubai Mall' %35
+'Business Bay'          %36
+'Noor Bank'             %37
+'First Abu Dhabi Bank'  %38
+'Mall of the Emirates'  %39
+'Sharaf DG'             %40
+'Dubai Internet City'   %41
+'Nakheel'               %42
+'DAMAC PROPERTIES'      %43
+'DMCC'                  %44
+'Ibn Battuta'           %45
+'Energy'                %46
+'Danube'                %47
+'UAE Exchange'          %48
 };
 
+%%Metro RedGreen connections
+MetroRedGreen_s = [10 28 16 29];
+MetroRedGreen_t = [28 10 29 16];
+MetroRedGreen_weights = [5 5 5 5];
+
+%%Metro Summation
+Metro_s = [MetroRedLine_s MetroGreenLine_s MetroRedGreen_s];
+Metro_t = [MetroRedLine_t MetroGreenLine_t MetroRedGreen_t];
+Metro_weights = [MetroRedLine_weights MetroGreenLine_weights MetroRedGreen_weights];
+Metro_names = [MetroRedLine_names 
+               MetroGreenLine_names];
+           
 %% ----------- Tram Lines ---------------- 
 
 %Tram T01 'Dubai Tram'
-WeightsList{3} = [2 3 3 3 1 2 3 2];
-StationList{3} = ...
+TramT01_s = [49 50 51 52 53 54 55 56 50 51 52 53 54 55 56 57];
+TramT01_t = [50 51 52 53 54 55 56 57 49 50 51 52 53 54 55 56];
+TramT01_weights = [2 3 3 3 1 2 3 2 2 3 3 3 1 2 3 2];
+TramT01_names = ...
 {
-'Jumeirah Lakes Towers' 
-'Dubai Marina Mall'     
-'Dubai Marina'          
-'Marina Towers'     
-'Mina Seyahi'       
-'Media City'        
-'Palm Jumeirah'     
-'Knowledge Village' 
-'Al Sufouh'         
+'Jumeirah Lakes Towers' %49
+'Dubai Marina Mall'     %50
+'Dubai Marina'          %51
+'Marina Towers'         %52
+'Mina Seyahi'           %53
+'Media City'            %54
+'Palm Jumeirah'         %55
+'Knowledge Village'     %56
+'Al Sufouh'             %57
 };
 
-%% ----------- Bus Lines ----------------      
+%Tram connections
+TramConnect_s = [];
+TramConnect_t = [];
+TramConnect_weights = [];
+
+%Tram Summation
+Tram_s = [TramT01_s TramConnect_s];
+Tram_t = [TramT01_t TramConnect_t];
+Tram_weights = [TramT01_weights TramConnect_weights];
+Tram_names = [TramT01_names];
+
+%% ----------- Bus Lines ----------------           
+
+%connection array, append to after each line is added. Only find
+%connections from lower node numbers to avoid duplication.
+bus_conn_s = [];
+bus_conn_t = [];
+bus_conn_weights = [];
 
 %R7
-WeightsList{4} = [1 2 4 6 1 1 1 1 1 1 3 5];
-StationList{4} = ...
+br7_s = [58 59 60 61 62 63 64 65 66 67 68 69 59 60 61 62 63 64 65 66 67 68 69 70];
+br7_t = [59 60 61 62 63 64 65 66 67 68 69 70 58 59 60 61 62 63 64 65 66 67 68 69];
+br7_weights = [1 2 4 6 1 1 1 1 1 1 3 5 1 2 4 6 1 1 1 1 1 1 3 5];
+br7_names = ...
 {
-'Quoz, J Mart Supermarket'       
-'Quoz, Clinic'                   
-'Quoz, Dubai Municipality Center'
-'Business Bay Metro Bus Stop'    
-'Dubai Petroleum Corporation'    
-'Wasl, Emirates Bank'            
-'Wasl, Road 1'                   
-'Wasl Emarat Petrol Station'     
-'Jumeira American School'        
-'Wasl, Park'                     
-'Iranian Hospital'               
-'Hudheiba, Road'                 
-'Satwa, Bus Station'             
+'Quoz, J Mart Supermarket'          %58
+'Quoz, Clinic'                      %59
+'Quoz, Dubai Municipality Center'   %60
+'Business Bay Metro Bus Stop'       %61
+'Dubai Petroleum Corporation'       %62
+'Wasl, Emirates Bank'               %63
+'Wasl, Road 1'                      %64
+'Wasl Emarat Petrol Station'        %65
+'Jumeira American School'           %66
+'Wasl, Park'                        %67
+'Iranian Hospital'                  %68
+'Hudheiba, Road'                    %69
+'Satwa, Bus Station'                %70
 };
 
+%
+bus_conn_s = [bus_conn_s];
+bus_conn_t = [bus_conn_t];
+bus_conn_weights = [bus_conn_weights];
+
 %R8
-WeightsList{5} = [7 3 2 1 1 3 1 1 1 .1 1 1 1 1 1 .1 4 2 .1 1 1 1 1 1 1 1 1 2 1 1 2 .1 1 2 .1 5 1 1 2 2 1 6];
-StationList{5} = ...
+br8_s = [71	72	73	74	75	76	77	78	79	80	81	82	83	84	85	86	87	88	89	90	91	92	93	94	95	96	97	98	99	100	101	102	103	104	105	106	107	108	109	110	111	112 72	73	74	75	76	77	78	79	80	81	82	83	84	85	86	87	88	89	90	91	92	93	94	95	96	97	98	99	100	101	102	103	104	105	106	107	108	109	110	111	112	113];
+br8_t = [72	73	74	75	76	77	78	79	80	81	82	83	84	85	86	87	88	89	90	91	92	93	94	95	96	97	98	99	100	101	102	103	104	105	106	107	108	109	110	111	112	113 71	72	73	74	75	76	77	78	79	80	81	82	83	84	85	86	87	88	89	90	91	92	93	94	95	96	97	98	99	100	101	102	103	104	105	106	107	108	109	110	111	112];
+br8_weights = [7 3 2 1 1 3 1 1 1 .1 1 1 1 1 1 .1 4 2 .1 1 1 1 1 1 1 1 1 2 1 1 2 .1 1 2 .1 5 1 1 2 2 1 6 7 3 2 1 1 3 1 1 1 .1 1 1 1 1 1 .1 4 2 .1 1 1 1 1 1 1 1 1 2 1 1 2 .1 1 2 .1 5 1 1 2 2 1 6];
+br8_names = ...
 {
-'Gold Souq Bus Station'       
+'Gold Souq Bus Station'                  %%71
 'Ghubaiba Bus Station'
 'Department of Ports & Customs'
 'Power Gas Station'
@@ -163,14 +193,21 @@ StationList{5} = ...
 'Jumeira, Royal Meridian'
 'Jumeirah Beach Residence Station 1'
 'Jumeirah Beach Residence Station 2'
-'Ibn Battuta Metro Bus Station'   
+'Ibn Battuta Metro Bus Station'             %113
 };
 
-%10
-WeightsList{6} = [4 2 2 2 2 1 3 2 1 5 2 3 15 .1];
-StationList{6} = ...
+bus_conn_s = [bus_conn_s 12 71 14 72];
+bus_conn_t = [bus_conn_t 71 12 72 14];
+bus_conn_weights = [bus_conn_weights 5 5 5 5];
+
+
+%R10
+br10_s = [114 115 116 117 118 119 120 121 122 123 124 125 126 127 115 116 117 118 119 120 121 122 123 124 125 126 127 128];
+br10_t = [115 116 117 118 119 120 121 122 123 124 125 126 127 128 114 115 116 117 118 119 120 121 122 123 124 125 126 127];
+br10_weights = [4 2 2 2 2 1 3 2 1 5 2 3 15 .1 4 2 2 2 2 1 3 2 1 5 2 3 15 .1];
+br10_names = ...
 {
-'Gold Souq Bus Station'    
+'Gold Souq Bus Station 2'         %114
 'Naif Intersection'
 'Burj Nahar, Intersection'
 'Al Nakhal 1'
@@ -184,14 +221,20 @@ StationList{6} = ...
 'Umm Hurair, Road 1'
 'Al Jafiliya Bus Station'
 'Honda, Training Center'
-'Al Quoz, Bus Station'    
+'Al Quoz, Bus Station'          %128
 };
 
+bus_conn_s = [bus_conn_s 12 114 114 71];
+bus_conn_t = [bus_conn_t 114 12 71 114];
+bus_conn_weights = [bus_conn_weights 5 5 5 5];
+
 %R11a
-WeightsList{7} = [2 1 2 3 1 1 1 1 1 2 4 5 1 3 1 2 1 1 8 1 2 1 2 2 1 2 1 1 1 2 1 1 1 1 2 1 .1 1 1 1 1 1 .1 1 1 4 1 1 .1 1 1 1 1 1 1 1 1 1 2 .1 2 2 1 1 1 1 1 .1 1 1 2 1];
-StationList{7} = ...
+br11a_s = [];
+br11a_t = [];
+br11a_weights = [];
+br11a_names = ...
 {
-'Gold Souq Bus Station'  
+'Gold Souq Bus Station'         %129
 'Naif Intersection'
 'Burj Nahar, Intersection'
 'Al Nakhal 1'
@@ -263,14 +306,16 @@ StationList{7} = ...
 'Awir, Dubai Municipality Center'
 'Awir, Girls School'
 'Awir 1'
-'Awir, Emirates NBD'    
+'Awir, Emirates NBD'                %301
 };
 
 %R11b
-WeightsList{8} = ones(1,54);
-StationList{8} = ...
+br11b_s = [];
+br11b_t = [];
+br11b_weights = [];
+br11b_names = ...
 {
-'Rashidiya Metro Bus Station'
+'Rashidiya Metro Bus Station'       %302
 'Mushrif, Eppco'
 'Mushrif, Masjid'
 'Mushrif, Park'
@@ -324,14 +369,16 @@ StationList{8} = ...
 'Awir, Girls School'
 'Awir 1'
 'Awir, Emirates NBD'
-'Awir, Terminus'
+'Awir, Terminus'                    %356
 };
 
 %R12
-WeightsList{9} = ones(1,41);
-StationList{9} = ...
+br12_s = [];
+br12_t = [];
+br12_weights = [];
+br12_names = ...
 {
-'Ghubaiba Bus Station'   
+'Ghubaiba Bus Station'              %357
 'Department of Ports & Customs'
 'Power Gas Station'
 'Capital Hotel'
@@ -372,14 +419,65 @@ StationList{9} = ...
 'Quoz, Gargash'
 'Quoz, Bin Ghaleith Masjid'
 'Quoz, Kanoo Machinery Company'
-'Al Quoz, Bus Station'      
+'Al Quoz, Bus Station'              %398
+};
+
+%R13
+br13_s = [];
+br13_t = [];
+br13_weights = [];
+br13_names = ...
+{
+'Gold Souq Bus Station'             %399
+'Naif Intersection'
+'Burj Nahar, Intersection'
+'Al Nakhal 1'
+'Salah Al Din Metro Bus Stop'
+'Reef Mall'
+'Muraqqabat, Police Station'
+'Abu Baker Al Siddique Metro Bus Stop 1'
+'Dubai Scout Mission'
+'Al Jadeed Bakery'
+'Ahli Club'
+'Stadium Metro Bus Stop'
+'Ministry of Information'
+'Al Nahda Metro Bus Stop'
+'Twar, Union Cooperative Society'
+'Dubai Airport Free Zone Metro Bus Stop'
+'Fortune Plaza Hotel'
+'Al Qusais Metro Bus Stop'
+'Qusais, Police Station'
+'Qusais, Qutami Al Suweidi Masjid'
+'Technical School'
+'Qusais, Eppco Vehicle Inspection'
+'Russian International School'
+'Emirates Housing'
+'Muhaisnah 4, New Housing'
+'Lebenese Private School 1'
+'Public Transport Agency'
+'Dubai Transport, Main Office'
+'Qusais, Al Naboodah Labour Camp'
+'Qusais, Al Shirawi Labour Camp'
+'Qusais, Masjid Hamad Abdul Karim'
+'Qusais, Bus Station External'
+'Qusais, Al Ghurair Labour Camp'
+'Qusais, Bu Haleeba Contracting Camp'
+'Qusais, Madina Supermarket 2'
+'Qusais, Galadari Labour Camp'
+'Qusais, Pioneer Labour Camp'
+'Qusais, Gargash Labour Camp'
+'Qusais, Cemetery 2'
+'Qusais, Medical Fitness Centre'
+'Qusais, Dubai Municipality Staff Housing 1'    %439
 };
 
 %R15
-WeightsList{10} = ones(1,34);
-StationList{10} = ...
+br15_s = [];
+br15_t = [];
+br15_weights = [];
+br15_names = ...
 {
-'Ghubaiba Bus Station'  
+'Ghubaiba Bus Station'         % 440
 'Falcon Intersection'
 'Raffa'
 'Rolla'
@@ -413,12 +511,14 @@ StationList{10} = ...
 'Quoz, New Housing Junction'
 'Quoz, Al Khail Gate Entrance 1'
 'Quoz, Al Khail Gate 1'
-'Quoz, Al Khail Gate 2' 
-};    
+'Quoz, Al Khail Gate 2'    %474
+};
 
 %R17
-WeightsList{11} = ones(1,44);
-StationList{11} = ...
+br17_s = [];
+br17_t = [];
+br17_weights = [];
+br17_names = ...
 {
 'Sabkha, Bus Station'      % 475
 'Gold Souq Bus Station External'
@@ -464,14 +564,16 @@ StationList{11} = ...
 'Muhaisnah 4, Police Colony'
 'Muhaisnah 4, Police Colony'
 'Dubai Transport, Depot'
-'Muhaisnah 4, Wasl Oasis II' 
+'Muhaisnah 4, Wasl Oasis II'        %519
 };
 
 %R21
-WeightsList{12} = ones(1,57);
-StationList{12} = ...
+br21_s = [];
+br21_t = [];
+br21_weights = [];
+br21_names = ...
 {
-'Ghubaiba Bus Station'
+'Ghubaiba Bus Station'               %520
 'Falcon Intersection'
 'Raffa'
 'Rolla'
@@ -528,14 +630,16 @@ StationList{12} = ...
 'Quoz, T. Choithram Stores'
 'Quoz, Dynamic Industries'
 'Quoz, APEX Concrete Factory'
-'Quoz, Clinical Pathology Services'  
+'Quoz, Clinical Pathology Services'      %577
 };
 
 %R22
-WeightsList{13} = ones(1,22);
-StationList{13} = ...
+br22_s = [];
+br22_t = [];
+br22_weights = [];
+br22_names = ...
 {
-'Deira City Center Bus Station' 
+'Deira City Center Bus Station'          %578
 'City Centre Metro Bus Stop A 2'
 'Ahli Club'
 'Stadium Metro Bus Stop'
@@ -557,14 +661,16 @@ StationList{13} = ...
 'Al Nahda 1, Zaafranah'
 'Al Nahda 1, Burj Al Noor'
 'Al Nahda 1, Terminus 1'
-'Al Nahda 1, Terminus 2'   
+'Al Nahda 1, Terminus 2'                 %600
 };
 
 %R24
-WeightsList{14} = ones(1,25);
-StationList{14} = ...
+br24_s = [];
+br24_t = [];
+br24_weights = [];
+br24_names = ...
 {
-'Al Nahda, The Sheffeild Private School' 
+'Al Nahda, The Sheffeild Private School'   %601
 'Al Nahda, Zuleikha Hospital'
 'Al Nahda, 19A Street 1'
 'Al Nahda, Madina Super Market'
@@ -589,14 +695,17 @@ StationList{14} = ...
 'International City, Police Station'
 'International City, Persia O02'
 'International City, Persia M03'
-'International City, Greece K12 Terminus'   
+'International City, Greece K12 Terminus'   %626
 };
 
+
 %R27
-WeightsList{15} = [4,0.1,1,1,1,0.1,3,2,1,2,1,4,4,4,0.1,4,2,1,2,2,10,3];
-StationList{15} = ...
+br27_s = [627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648];
+br27_t = [628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649];
+br27_weights = [4,0.1,1,1,1,0.1,3,2,1,2,1,4,4,4,0.1,4,2,1,2,2,10,3];
+br27_names = ...
 {
-'Gold Souq Bus Station'  
+'Gold Souq Bus Station'   %627
 'Al Ras  Metro Bus Stop'
 'Al Ras, Public Library'
 'Deira, Old Souq'
@@ -618,14 +727,16 @@ StationList{15} = ...
 'Emirates Tower 1'
 'Emirates Tower Landside Metro Bus Stop'
 'Wasl, Etisalat'
-'The Dubai Mall Burj Khalifa, The Palace Hotel' 
+'The Dubai Mall Burj Khalifa, The Palace Hotel' %649
 };
 
 %R28
-WeightsList{16} = [7,1,1,2,2,2,1,2,1,1,4,3,1,0.1,1,2,2,1,0.1,2,3];
-StationList{16} = ...
+br28_s = [650,651,652,653,654,655,656,657,658,659,660,661,662,663,664,665,666,667,668,669,670];
+br28_t = [651,652,653,654,655,656,657,658,659,660,661,662,663,664,665,666,667,668,669,670,671];
+br28_weights = [7,1,1,2,2,2,1,2,1,1,4,3,1,0.1,1,2,2,1,0.1,2,3];
+br28_names = ...
 {
-'The Dubai Mall'
+'The Dubai Mall'%650
 'Dubai Petroleum Corporation'   
 'Rehabilitation Center'
 'Satwa, Road'
@@ -646,14 +757,18 @@ StationList{16} = ...
 'Oud Metha Road 1'
 'Oud Metha Road 2'
 'American Hospital'
-'Lamcy ' 
+'Lamcy ' %671
 };
 
+
+
 %R31
-WeightsList{17} = [2,5,1,1,2,1,1,1,2,1,5,5,7,2,1,2,2,1,1,2,4,1,0.1,1,2,1,1,1,2,0.1,3,1];
-StationList{17} = ...
+br31_s = [672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703];
+br31_t = [673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703,704];
+br31_weights = [2,5,1,1,2,1,1,1,2,1,5,5,7,2,1,2,2,1,1,2,4,1,0.1,1,2,1,1,1,2,0.1,3,1];
+br31_names = ...
 {
-'Airport Terminal 2, Departure'
+'Airport Terminal 2, Departure'%672
 'Airport Terminal 2, Arrival'
 'Twar, Cemetery 1'   
 'Twar, Cemetery 2'
@@ -685,14 +800,18 @@ StationList{17} = ...
 'Oud Al Muteena 2, E1'
 'Oud Al Muteena 2, Grand Masjid'
 'Amaan Street 3'
-'Oud Al Mateena Roundabout)'
+'Oud Al Mateena Roundabout)'%704
 };
 
-%R41
-WeightsList{18} = ones(1,13);
-StationList{18} = ...
+
+
+%R43
+br43_s = [705,706,707,708,709,710,711,712,713,714,715,716,717];
+br43_t = [706,707,708,709,710,711,712,713,714,715,716,717,718];
+br43_weights = [5,1,2,3,1,1,3,2,0.1,1,3,3,1];
+br43_names = ...
 {
-'Gold Souq Bus Station'
+'Gold Souq Bus Station'%705
 'Naif Intersection'
 'Burj Nahar, Intersection'   
 'Al Nakhal 1'
@@ -705,14 +824,16 @@ StationList{18} = ...
 'Abu Hail Metro Bus Stop B'
 'Traffic Police Department'
 'Airport Terminal 2, Departure'
-'Airport Terminal 2, Arrival'
+'Airport Terminal 2, Arrival'%718
 };
 
 %R44
-WeightsList{19} = ones(1,34);
-StationList{19} = ...
+br44_s = [719,720,721,722,723,724,725,726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752];
+br44_t = [720,721,722,723,724,725,726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753];
+br44_weights = [3,2,3,1,2,0.1,2,1,3,1,1,1,2,1,4,1,0.1,4,3,2,1,5,1,8,1,1,1,1,3,2,1,0.1,1,2];
+br44_names = ...
 {
-'Ghubaiba Bus Station'
+'Ghubaiba Bus Station'%719
 'Falcon Intersection'
 'Raffa 2'   
 'Nahda Street'
@@ -746,113 +867,58 @@ StationList{19} = ...
 'Rashidiya 1'
 'Rashidiya, Emarat Petrol Station'
 'Rashidiya, Police Station'
-'Rashidiya Metro Bus Station'
+'Rashidiya Metro Bus Station'%753
 };
 
+%route for BR29
+%route for BR32c
+%route for BR33
 
-%% -----------------------Error checking-----------------------------------
-%check same number of node and weight arrays:
-if(length(StationList) ~= length(WeightsList))
-    msg = sprintf('!!! Error: Different number of Node and Weight arrays!!!!')
-    error(msg)
-end
-%Check Node and weight lengths match:
-for i=1:length(StationList)
-    if(length(StationList{i}) ~= (length(WeightsList{i})+1))
-        msg = sprintf('!!! Error: Node and Weights array length mismatch for index: %i.',i)
-        error(msg)
-    end
-end
 
-%% ----------------------Compile Node lsit -------------------------------
-% Find unique nodes to create master list
-TotalNodes = vertcat(StationList{:});
-UniqueNodes = unique(TotalNodes);
-disp(sprintf('Total number of Entered stations are: %i',length(TotalNodes)))
-disp(sprintf('Total number of Unique stations are: %i',length(UniqueNodes)))
+%Bus Summation
+Bus_s = [br7_s br8_s br10_s bus_conn_s];
+Bus_t = [br7_t br8_t br10_t bus_conn_t];
+Bus_weights = [br7_weights br8_weights br10_weights bus_conn_weights];
+Bus_names = [br7_names 
+             br8_names
+             br10_names];
+         
+         
+         
 
-%create master node list, append station identifier to each station to make
-%all unique
-StationListPlus = StationList;
-for i=1:length(StationList)
-    TempList = {};
-    for j = 1:length(StationList{i})
-        if(ismember(StationList{i}{j},TempList))
-            temps = sprintf('%s r%i_2',StationList{i}{j},i);
-        else
-            temps = sprintf('%s r%i',StationList{i}{j},i);
-        end
-        TempList = [TempList
-                    StationList{i}{j}];
-        StationList{i}{j} = temps;                
-    end
-end
-Nodes = sort(vertcat(StationList{:}));
+%% ----------- Hyperloop Lines ----------------           
+           
+%R4
 
-%%--------------------------Create Edges--------------------------------
-% Currently assume same to/from route
+%HyperLoop Summation
+HL_s = [];
+HL_t = [];
+HL_weights = [];
+HL_names = [];
 
-% cycle through all routes to create connection list
-for i=1:length(StationList)
-    %forwards route source
-    for j = 1:length(StationList{i})-1
-        index = find(ismember(Nodes,StationList{i}{j}));
-        source = [source index];
-    end
-    
-    %backwards route source
-    for j = length(StationList{i}):-1:2
-        index = find(ismember(Nodes,StationList{i}{j}));
-        source = [source index];        
-    end    
+%% ----------- Build overall Network ----------------   
+%%Networks summation
+s = [Metro_s Bus_s Tram_s HL_s]';
+t = [Metro_t Bus_t Tram_t HL_t]';
+weights = [Metro_weights Bus_weights Tram_weights HL_weights]';
+names = [Metro_names
+         Bus_names
+         Tram_names
+         HL_names];
 
-    %forwards target source
-    for j = 2:length(StationList{i})
-        index = find(ismember(Nodes,StationList{i}{j}));
-        target = [target index];
-    end
-    
-    %backwards target source
-    for j = length(StationList{i})-1:-1:1
-        index = find(ismember(Nodes,StationList{i}{j}));
-        target = [target index];
-    end   
-end
-
-% Create Weights matric
-for i=1:length(WeightsList)
-    %forward weights
-    for j = 1:length(WeightsList{i})
-        weights = [weights WeightsList{i}(j)];
-    end
-    %backward weights
-    for j = length(WeightsList{i}):-1:1
-        weights = [weights WeightsList{i}(j)];
-    end
-end
-
-%%-----------------------Create Route Connections Edges--------------------
-%necessary? only if we want 'connection' time
-% for i=1:length(StationList)
-%     % Connect to note
-%     for j = 1:length(StationList{i})-1
-%         index = find(ismember(UniqueNodes,StationList{i}{j}));
-%         source = [source index];
-%     end
-%     
-%     %add weights
-% end
-
-%%--------------------------- Create Network -----------------------------
-NodeTable = table(Nodes,'VariableNames',{'Name'});
-EdgeTable = table([source' target'],weights','VariableNames',{'EndNodes' 'Weight'});
+NodeTable = table(names,'VariableNames',{'Name'});
+EdgeTable = table([s t],weights,'VariableNames',{'EndNodes' 'Weight'});
 
 G = digraph(EdgeTable,NodeTable)
 h = plot(G)
-        
-%%--------------------------- Network Metrics -----------------------------
+
+
+%% --------------------------------------------  
+%-----------  Network Metrics ----------------   
+%---------------------------------------------  
 
 %%shortest path matrix (in minutes, as our weights are travel time)
 D = distances(G);
 avg_shortest_path = mean2(D)
+
 
