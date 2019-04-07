@@ -7,6 +7,7 @@
 
 %Initiale cell arrays
 StationList = {};
+RouteList = {}
 StationListPlus = {};
 WeightsList = {};
 stations = {};
@@ -16,12 +17,16 @@ source = [];
 target = [];
 weights = [];
 
+%Initialize Varaibles
+SNum = 0
 
 %% ----------- Metro Lines ----------------
 
 % Metro Green line
-WeightsList{1} = [3 2 1 2 2 2 2 2 2 2 2 2 2 2 2 3 3 2 2];
-StationList{1} = ...
+SNum = SNum + 1;
+RouteList{SNum} = 'MetroGreen';
+WeightsList{SNum} = [3 2 1 2 2 2 2 2 2 2 2 2 2 2 2 3 3 2 2];
+StationList{SNum} = ...
 {
 'Etisalat'   
 'Al Qusais'  
@@ -46,8 +51,10 @@ StationList{1} = ...
 };
 
 % Metro Red Line
-WeightsList{2} = [4 2 1 2 2 2 3 2 2 2 2 2 1 2 2 5 2 2 2 2 3 2 2 2 3 3 4];
-StationList{2} = ...
+SNum = SNum + 1;
+RouteList{SNum} = 'MetroRed';
+WeightsList{SNum} = [4 2 1 2 2 2 3 2 2 2 2 2 1 2 2 5 2 2 2 2 3 2 2 2 3 3 4];
+StationList{SNum} = ...
 {
 'Rashidiya'         
 'Emirates'          
@@ -82,8 +89,10 @@ StationList{2} = ...
 %% ----------- Tram Lines ---------------- 
 
 %Tram T01 'Dubai Tram'
-WeightsList{3} = [2 3 3 3 1 2 3 2];
-StationList{3} = ...
+SNum = SNum + 1;
+RouteList{SNum} = 'DubaiTram';
+WeightsList{SNum} = [2 3 3 3 1 2 3 2];
+StationList{SNum} = ...
 {
 'Jumeirah Lakes Towers' 
 'Dubai Marina Mall'     
@@ -99,8 +108,10 @@ StationList{3} = ...
 %% ----------- Bus Lines ----------------      
 
 %R7
-WeightsList{4} = [1 2 4 6 1 1 1 1 1 1 3 5];
-StationList{4} = ...
+SNum = SNum + 1;
+RouteList{SNum} = 'BR7';
+WeightsList{SNum} = [1 2 4 6 1 1 1 1 1 1 3 5];
+StationList{SNum} = ...
 {
 'Quoz, J Mart Supermarket'       
 'Quoz, Clinic'                   
@@ -118,8 +129,10 @@ StationList{4} = ...
 };
 
 %R8
-WeightsList{5} = [7 3 2 1 1 3 1 1 1 .1 1 1 1 1 1 .1 4 2 .1 1 1 1 1 1 1 1 1 2 1 1 2 .1 1 2 .1 5 1 1 2 2 1 6];
-StationList{5} = ...
+SNum = SNum + 1;
+RouteList{SNum} = 'BR8';
+WeightsList{SNum} = [7 3 2 1 1 3 1 1 1 .1 1 1 1 1 1 .1 4 2 .1 1 1 1 1 1 1 1 1 2 1 1 2 .1 1 2 .1 5 1 1 2 2 1 6];
+StationList{SNum} = ...
 {
 'Gold Souq Bus Station'       
 'Ghubaiba Bus Station'
@@ -166,9 +179,11 @@ StationList{5} = ...
 'Ibn Battuta Metro Bus Station'   
 };
 
-%10
-WeightsList{6} = [4 2 2 2 2 1 3 2 1 5 2 3 15 .1];
-StationList{6} = ...
+%Bus Route 10
+SNum = SNum + 1;
+RouteList{SNum} = 'BR10';
+WeightsList{SNum} = [4 2 2 2 2 1 3 2 1 5 2 3 15 .1];
+StationList{SNum} = ...
 {
 'Gold Souq Bus Station'    
 'Naif Intersection'
@@ -187,9 +202,11 @@ StationList{6} = ...
 'Al Quoz, Bus Station'    
 };
 
-%R11a
-WeightsList{7} = [2 1 2 3 1 1 1 1 1 2 4 5 1 3 1 2 1 1 8 1 2 1 2 2 1 2 1 1 1 2 1 1 1 1 2 1 .1 1 1 1 1 1 .1 1 1 4 1 1 .1 1 1 1 1 1 1 1 1 1 2 .1 2 2 1 1 1 1 1 .1 1 1 2 1];
-StationList{7} = ...
+%Bus Route 11a
+SNum = SNum + 1;
+RouteList{SNum} = 'BR11a';
+WeightsList{SNum} = [2 1 2 3 1 1 1 1 1 2 4 5 1 3 1 2 1 1 8 1 2 1 2 2 1 2 1 1 1 2 1 1 1 1 2 1 .1 1 1 1 1 1 .1 1 1 4 1 1 .1 1 1 1 1 1 1 1 1 1 2 .1 2 2 1 1 1 1 1 .1 1 1 2 1];
+StationList{SNum} = ...
 {
 'Gold Souq Bus Station'  
 'Naif Intersection'
@@ -266,9 +283,11 @@ StationList{7} = ...
 'Awir, Emirates NBD'    
 };
 
-%R11b
-WeightsList{8} = ones(1,54);
-StationList{8} = ...
+%Bus Route 11b
+SNum = SNum + 1;
+RouteList{SNum} = 'BR11b';
+WeightsList{SNum} = ones(1,54);
+StationList{SNum} = ...
 {
 'Rashidiya Metro Bus Station'
 'Mushrif, Eppco'
@@ -327,9 +346,11 @@ StationList{8} = ...
 'Awir, Terminus'
 };
 
-%R12
-WeightsList{9} = ones(1,41);
-StationList{9} = ...
+%Bus Route 12
+SNum = SNum + 1;
+RouteList{SNum} = 'BR12';
+WeightsList{SNum} = ones(1,41);
+StationList{SNum} = ...
 {
 'Ghubaiba Bus Station'   
 'Department of Ports & Customs'
@@ -376,8 +397,10 @@ StationList{9} = ...
 };
 
 %R15
-WeightsList{10} = ones(1,34);
-StationList{10} = ...
+SNum = SNum + 1;
+RouteList{SNum} = 'BR15';
+WeightsList{SNum} = ones(1,34);
+StationList{SNum} = ...
 {
 'Ghubaiba Bus Station'  
 'Falcon Intersection'
@@ -416,9 +439,11 @@ StationList{10} = ...
 'Quoz, Al Khail Gate 2' 
 };    
 
-%R17
-WeightsList{11} = ones(1,44);
-StationList{11} = ...
+%Bus Route 17
+SNum = SNum + 1;
+RouteList{SNum} = 'BR17';
+WeightsList{SNum} = ones(1,44);
+StationList{SNum} = ...
 {
 'Sabkha, Bus Station'      % 475
 'Gold Souq Bus Station External'
@@ -467,9 +492,11 @@ StationList{11} = ...
 'Muhaisnah 4, Wasl Oasis II' 
 };
 
-%R21
-WeightsList{12} = ones(1,57);
-StationList{12} = ...
+%Bus Route 21
+SNum = SNum + 1;
+RouteList{SNum} = 'BR21';
+WeightsList{SNum} = ones(1,57);
+StationList{SNum} = ...
 {
 'Ghubaiba Bus Station'
 'Falcon Intersection'
@@ -531,9 +558,11 @@ StationList{12} = ...
 'Quoz, Clinical Pathology Services'  
 };
 
-%R22
-WeightsList{13} = ones(1,22);
-StationList{13} = ...
+%Bus Route 22
+SNum = SNum + 1;
+RouteList{SNum} = 'BR22';
+WeightsList{SNum} = ones(1,22);
+StationList{SNum} = ...
 {
 'Deira City Center Bus Station' 
 'City Centre Metro Bus Stop A 2'
@@ -560,9 +589,11 @@ StationList{13} = ...
 'Al Nahda 1, Terminus 2'   
 };
 
-%R24
-WeightsList{14} = ones(1,25);
-StationList{14} = ...
+%Bus Route 24
+SNum = SNum + 1;
+RouteList{SNum} = 'BR24';
+WeightsList{SNum} = ones(1,25);
+StationList{SNum} = ...
 {
 'Al Nahda, The Sheffeild Private School' 
 'Al Nahda, Zuleikha Hospital'
@@ -592,9 +623,11 @@ StationList{14} = ...
 'International City, Greece K12 Terminus'   
 };
 
-%R27
-WeightsList{15} = [4,0.1,1,1,1,0.1,3,2,1,2,1,4,4,4,0.1,4,2,1,2,2,10,3];
-StationList{15} = ...
+%Bus Route 27
+SNum = SNum + 1;
+RouteList{SNum} = 'BR27';
+WeightsList{SNum} = [4,0.1,1,1,1,0.1,3,2,1,2,1,4,4,4,0.1,4,2,1,2,2,10,3];
+StationList{SNum} = ...
 {
 'Gold Souq Bus Station'  
 'Al Ras  Metro Bus Stop'
@@ -622,8 +655,10 @@ StationList{15} = ...
 };
 
 %R28
-WeightsList{16} = [7,1,1,2,2,2,1,2,1,1,4,3,1,0.1,1,2,2,1,0.1,2,3];
-StationList{16} = ...
+SNum = SNum + 1;
+RouteList{SNum} = 'BR28';
+WeightsList{SNum} = [7,1,1,2,2,2,1,2,1,1,4,3,1,0.1,1,2,2,1,0.1,2,3];
+StationList{SNum} = ...
 {
 'The Dubai Mall'
 'Dubai Petroleum Corporation'   
@@ -649,9 +684,11 @@ StationList{16} = ...
 'Lamcy ' 
 };
 
-%R31
-WeightsList{17} = [2,5,1,1,2,1,1,1,2,1,5,5,7,2,1,2,2,1,1,2,4,1,0.1,1,2,1,1,1,2,0.1,3,1];
-StationList{17} = ...
+%Bus Route 31
+SNum = SNum + 1;
+RouteList{SNum} = 'BR31';
+WeightsList{SNum} = [2,5,1,1,2,1,1,1,2,1,5,5,7,2,1,2,2,1,1,2,4,1,0.1,1,2,1,1,1,2,0.1,3,1];
+StationList{SNum} = ...
 {
 'Airport Terminal 2, Departure'
 'Airport Terminal 2, Arrival'
@@ -688,9 +725,11 @@ StationList{17} = ...
 'Oud Al Mateena Roundabout)'
 };
 
-%R41
-WeightsList{18} = ones(1,13);
-StationList{18} = ...
+%Bus Route 41
+SNum = SNum + 1;
+RouteList{SNum} = 'BR41';
+WeightsList{SNum} = ones(1,13);
+StationList{SNum} = ...
 {
 'Gold Souq Bus Station'
 'Naif Intersection'
@@ -708,9 +747,11 @@ StationList{18} = ...
 'Airport Terminal 2, Arrival'
 };
 
-%R44
-WeightsList{19} = ones(1,34);
-StationList{19} = ...
+%Bus Route 44
+SNum = SNum + 1;
+RouteList{SNum} = 'BR44';
+WeightsList{SNum} = ones(1,34);
+StationList{SNum} = ...
 {
 'Ghubaiba Bus Station'
 'Falcon Intersection'
@@ -832,7 +873,7 @@ for i=1:length(WeightsList)
 end
 
 %%-----------------------Create Route Connections Edges--------------------
-%necessary? only if we want 'connection' time
+% calculate connections across routes
 % for i=1:length(StationList)
 %     % Connect to note
 %     for j = 1:length(StationList{i})-1
