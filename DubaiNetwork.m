@@ -9,7 +9,7 @@
 StationList = {};       % List of all stations input directly
 StationListPlus = {};   % List of all stationts with route appended
 StationListIndex = {};  % List of station numbers
-RouteList = {}          % List of Name of routes
+RouteList = {};         % List of Name of routes
 WeightsList = {};       % List of Weights of routes
 
 %Initialize arrays
@@ -18,7 +18,7 @@ target = [];            % target edge array
 weights = [];           % weights array
 
 % Initialize Varaibles
-SNum = 0                % integer to increment Lists
+SNum = 0;                % integer to increment Lists
 
 % Initialize Asusmptions
 Xfer_time = 5;
@@ -108,9 +108,9 @@ StationList{SNum} = ...
 'Al Sufouh'         
 };
 
-%% ----------- Bus Lines ----------------      
+%% ------------------------- Local Bus Routes----------------------------
 
-%R7
+%Bus Route 7
 SNum = SNum + 1;
 RouteList{SNum} = 'BR7';
 WeightsList{SNum} = [1 2 4 6 1 1 1 1 1 1 3 5];
@@ -131,7 +131,7 @@ StationList{SNum} = ...
 'Satwa, Bus Station'             
 };
 
-%R8
+%Bus Route 8
 SNum = SNum + 1;
 RouteList{SNum} = 'BR8';
 WeightsList{SNum} = [7 3 2 1 1 3 1 1 1 .1 1 1 1 1 1 .1 4 2 .1 1 1 1 1 1 1 1 1 2 1 1 2 .1 1 2 .1 5 1 1 2 2 1 6];
@@ -794,6 +794,463 @@ StationList{SNum} = ...
 };
 
 
+%Bus Route 53
+
+%Bus Route 55
+
+%Bus Route 61
+
+%Bus Route 61D
+
+%Bus Route 63E
+
+%Bus Route 64
+
+%Bus Route 64A
+
+%Bus Route 66
+
+%Bus Route 67
+
+%Bus Route 81
+
+%Bus Route 83
+
+%Bus Route 84
+
+%Bus Route 85
+
+%Bus Route 88
+
+%Bus Route 91
+
+%Bus Route 93
+
+%Bus Route 96
+
+%Bus Route 97
+
+%Bus Route 98E
+
+%Bus Route 99
+
+%Bus Route 300
+
+%Bus Route 365
+
+%Bus Route 366
+
+%Bus Route 367
+
+%Bus Route D3
+
+%Bus Route J1
+
+
+
+%----------------------- CBD Bus Routes -----------------------------------
+%Bus Route C01
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC01';
+WeightsList{SNum} = [3 1 2 1 .1 2 1 1 1 2 1 1 1 2 5 3 1 1 4 1 2 2 2 1 3 4 4];
+StationList{SNum} = ...
+{
+'Satwa, Bus Station'
+'Satwa, Masjid 2'
+'Satwa, Post Office'
+'Hana Center'
+'Hudheiba, Turnoff'
+'Hoot, Eppco'
+'Sheikh Rashid Road I/S'
+'Dubai Real Estate, Headquarters'
+'Mankhool, Standard Chartered Bank'
+'Rais Center'
+'Al Fahidi Metro Bus Stop B'
+'Al Fahidi Metro Bus Stop A'
+'Nahda Street'
+'Raffa 2'
+'Falcon Intersection'
+'Khaleej Road'
+'Naif Intersection'
+'Burj Nahar, Intersection'
+'Al Nakhal 1'
+'Union Metro Bus Stop A'
+'Etisalat Head Office'
+'Maktoum Road'
+'Clock Tower Roundabout'
+'DNATA'
+'Flame Intersection'
+'Garhoud, Intersection'
+'Airport Terminal 1, Arrival'
+'Airport Terminal 3'
+};
+
+%Bus Route C03
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC03';
+WeightsList{SNum} = [2 1 3 1 1 1 3 2 1 2 1 2 1 5 3 2 3 3 2 2 1 1 2 1 1 1 1 1 1 2 1 5];
+StationList{SNum} = ...
+{
+'Al Karama Bus Station'
+'Karama 1'
+'Karama 2'
+'Schools Health Center'
+'Karama, Ent.'
+'Central Post Office'
+'College of Islamic Studies 2'
+'BurJuman Metro Bus Stop C'
+'BurJuman Metro Bus Stop A'
+'Four Point Sheraton Hotel'
+'Al Fahidi Metro Bus Stop A'
+'Nahda Street'
+'Raffa 2'
+'Falcon Intersection'
+'Khaleej Road'
+'Naif Intersection'
+'Burj Nahar, Intersection'
+'Baraha, Eid Musallah'
+'Baraha, Street'
+'Abu Hail, Post Office'
+'Abu Hail, Masjid Al Salam'
+'Abu Hail'
+'Abu Hail, Masjid Ashram'
+'Majid English School'
+'Hor Al Anz Street'
+'Hor Al Anz, Civil Defence'
+'Hor Al Anz Post Office'
+'Hor Al Anz 1'
+'Hor Al Anz 2'
+'Hor Al Anz 3'
+'Safiya Housing'
+'Omer Bin Al Khattab School'
+'Abu Hail Metro Bus Station'
+};
+
+%Bus Route C04
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC04';
+WeightsList{SNum} = [4 2 2 3 1 2 .1 3 .1 1 .1 3 2 1 2 3 1 1 .1 1 4 1 1 2];
+StationList{SNum} = ...
+{
+'Gold Souq Bus Station'
+'Naif Intersection'
+'Burj Nahar, Intersection'
+'Al Nakhal 1'
+'Union Metro Bus Stop A'
+'Etisalat Head Office'
+'Maktoum Road'
+'Clock Tower Roundabout'
+'Oud Metha Metro Bus Stop'
+'Oud Metha Road 1'
+'Oud Metha Road 2'
+'Wafi City'
+'Jaddaf, Police Officers Club'
+'Belhasa Driving Center'
+'Wasl, Wasl Club'
+'Latifa Hospital'
+'Jaddaf, Police Officers Club'
+'Cricket Stadium'
+'Jaddaf, Dubai Municipality Officers Recreation Club'
+'Garhoud, Dubai Municipality Nursery'
+'Al Jaddaf Metro Bus Stop A'
+'Creek Metro Bus Stop'
+'Al Jaddaf Marine Bus Stop'
+'Jaddaf'
+'Government Workshop'
+};
+
+%Bus Route C05
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC05';
+WeightsList{SNum} = [5 1 1 1 1 1 1 2 1 1 1 1 .1 1 1 2 1 3 2 1 2 4 1 1 4 9];
+StationList{SNum} = ...
+{
+'Al Ghubaiba Bus Station'
+'Falcon Intersection'
+'Raffa'
+'Rolla'
+'Al Fahidi Metro Bus Stop A'
+'Four Point Sheraton Hotel'
+'BurJuman Metro Bus Stop A'
+'BurJuman Metro Bus Stop B'
+'Saeediya School'
+'Karama 2'
+'Karama 1'
+'Karama, Commercial Center'
+'Schools Health Center'
+'Karama, Ent.'
+'Central Post Office'
+'College of Islamic Studies 2'
+'BurJuman Metro Bus Stop C'
+'Consulate Area'
+'Broadcast Interchange'
+'British Council'
+'Rashid Hospital'
+'Dubai Courts 1'
+'Maktoum Road'
+'Etisalat Head Office'
+'Union Metro Bus Stop A'
+'Al Nakhal'
+'Gold Souq Bus Station'
+};
+
+%Bus Route C07
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC07';
+WeightsList{SNum} = [2 .1 2 .1 1 1 .1 1 3 2 1 2 1 3 1 2 1 1 .1 2 2 3 .1 1 .1 1 .1 2 1 2 4 1 1 2 .1 1 1 1 1 3 1 1 1 3 1 1 3 3 .1 1];
+StationList{SNum} = ...
+{
+'Abu Hail Metro Bus Station'
+'Omer Bin Al Khattab School'
+'Sadda School 1'
+'Sadaa School 2'
+'Safiya Housing'
+'Hor Al Anz 3'
+'Hor Al Anz 2'
+'Hor Al Anz 4'
+'Hor Al Anz 5'
+'Abu Hail Road'
+'Hamriya, Park'
+'Abu Hail, Eppco'
+'Abu Hail, Clinic'
+'Hor Al Anz, Turnoff'
+'Abu Baker Al Siddique Road'
+'Deira Sheraton Hotel'
+'Mateena Road'
+'Mateena, Emirates Cooperative Society'
+'Mateena, Ent.'
+'Muteena'
+'Deira, Fish Roundabout 2'
+'Union Metro Bus Stop A'
+'Deira, Beniyas Road'
+'Al Sabkha Marine Bus Stop'
+'Emirates NBD'
+'Deira, Old Souq'
+'Al Ras, Public Library'
+'Al Ras Metro Bus Stop'
+'Khaleej Road'
+'Hyatt Regency Hotel'
+'Palm Deira Metro Bus Stop'
+'Falcon Intersection'
+'Raffa'
+'Rolla'
+'Musallah Road, Dubai'
+'Fahidi, Roundabout'
+'Bastakia'
+'British Embassy'
+'Al Seef Marine Bus Stop'
+'Al Seef Street'
+'Broadcast Interchange'
+'Oud Metha Metro Bus Stop'
+'Oud Metha Road 1'
+'Oud Metha Road 2'
+'New Modern Pharmacy'
+'Dubai Rehabilitation Centre For Disabled'
+'Mayo Clinic'
+'Creek Park Main Gate'
+'Grand Hyatt Hotel'
+'DEWA Main Office'
+'Wafi Residences'
+};
+
+%Bus Route C09
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC09';
+WeightsList{SNum} = [1 1 1 5 .1 1 2 1 2 2 .1 2 2 1 3 .1 1 1 1 1 2 1 3 8 2 1 1 3 3 2];
+StationList{SNum} = ...
+{
+'Hor Al Anz East, Qiyadah Metro Bus Stop'
+'Hor Al Anz East, Dar Al Aman Building'
+'Hor Al Anz, East Terminus'
+'Wuhaida, Road'
+'Khabeesi, Old Terminus'
+'Dubai Oxygen'
+'Kangaroo Plastics'
+'Gargash Automobiles'
+'Renault Service Center'
+'Port Saeed'
+'Al Bakhit Center'
+'Port Saeed, Masjid'
+'Al Rigga Metro Bus Stop A'
+'Ghurair City'
+'Union Metro Bus Stop A'
+'Deira, Beniyas Road'
+'Al Sabkha Marine Bus Stop'
+'Emirates NBD'
+'Deira, Old Souq'
+'Al Ras, Public Library'
+'Al Ras Metro Bus Stop'
+'Khaleej Road'
+'Hyatt Regency Hotel'
+'Palm Deira Metro Bus Stop'
+'Department of Ports & Customs'
+'Caltex, Reservoir'
+'Dubai Dry Docks'
+'Executive Court'
+'Mahboubi Clinic'
+'Hudheiba, Road'
+'Satwa, Bus Station'
+};
+
+%Bus Route C10
+
+%Bus Route C14
+
+%Bus Route C15
+
+%Bus Route C18
+
+%Bus Route C19
+
+%Bus Route C26
+
+%Bus Route C28
+
+%----------------------- Feeder Bus Routes --------------------------------
+
+%Bus Route F3
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF03';
+WeightsList{SNum} = [6 1 1 1 1 1 1 1 1 1 1 1 1 .1 1 1 1 3 1 1 2 1 5 1 11];
+StationList{SNum} = ...
+{
+'Rashidiya Metro Bus Station'
+'Muhaisnah 1, Etihad Mall (platform 01)'
+'Muhaisnah 1, Etihad Mall (platform 02)'
+'Mirdiff, Private School'
+'Uptown Mirdif'
+'Mirdiff, ETISALAT Tower'
+'Mirdiff, Street 15, Elyazia Beauty Center'
+'Mirdiff Masjid, Street 15'
+'Mirdiff Area, Street 15'
+'Mirdiff Area, Street 18B'
+'Mirdiff Area, Street 20C'
+'Mirdiff Area, Street 29B'
+'Mirdiff Area, A 1 Street 12'
+'Mirdiff Area, B 1 Street 12'
+'Mirdiff Area, Street 65A'
+'Mirdiff Area, Street 69B'
+'Mirdiff, Grand Masjid'
+'Mirdiff, Area 3'
+'Mirdiff, Golden Gate Mall, Street 71'
+'Mirdiff, Street 60C'
+'Mirdiff, Mirdiff Mall, Street 62 B'
+'Mirdiff, Mediclinic, Street 47'
+'Mirdiff, Private School'
+'Muhaisnah 1, Etihad Mall (platform 01)'
+'Muhaisnah 1, Etihad Mall (platform 02)'
+'Rashidiya Metro Bus Station'
+};
+
+%Bus Route F5
+
+%Bus Route F8
+
+%Bus Route F10
+
+%Bus Route F11
+
+%Bus Route F12
+
+%Bus Route F13
+
+%Bus Route F14
+
+%Bus Route F15
+
+%Bus Route F18
+
+%Bus Route F20
+
+%Bus Route F21
+
+%Bus Route F22
+
+%Bus Route F23
+
+%Bus Route F24
+
+%Bus Route F25
+
+%Bus Route F26
+
+%Bus Route F29
+
+%Bus Route F30
+
+%Bus Route F31
+
+%Bus Route F33
+
+%Bus Route F43
+
+%Bus Route F44
+
+%Bus Route F46
+
+%Bus Route F47
+
+%Bus Route F48
+
+%Bus Route F53
+
+%Bus Route F54
+
+%Bus Route F55
+
+%Bus Route F55A
+
+%----------------------- Feeder Bus Routes --------------------------------
+
+%Bus Route 13B
+
+%Bus Route X13
+
+%Bus Route X23
+
+%Bus Route X25
+
+%Bus Route X28
+
+%Bus Route 91A
+
+%Bus Route X92
+
+%Bus Route X94
+
+%----------------------- Intercity Bus Routes --------------------------------
+
+%Bus Route E16
+
+%Bus Route E100
+
+%Bus Route E101
+
+%Bus Route E303
+
+%Bus Route E303A
+
+%Bus Route E304
+
+%Bus Route E306
+
+%Bus Route E307
+
+%Bus Route E307A
+
+%Bus Route E400
+
+%Bus Route E700
+
+%--------------Global Village & Miracle Garden Bus Routes -----------------
+
+%Bus Route 103
+
+%Bus Route 104
+
+%Bus Route 105
+
+
 %% -----------------------Error checking-----------------------------------
 %check same number of node and weight arrays:
 if(length(StationList) ~= length(WeightsList))
@@ -803,7 +1260,7 @@ end
 %Check Node and weight lengths match:
 for i=1:length(StationList)
     if(length(StationList{i}) ~= (length(WeightsList{i})+1))
-        msg = sprintf('!!! Error: Node and Weights array length mismatch for index: %i.',i)
+        msg = sprintf('!!! Error: Node and Weights array length mismatch for index: %i Route: %s.',i,RouteList{i})
         error(msg)
     end
 end
@@ -816,7 +1273,7 @@ UniqueNodes = unique(TotalNodes);
 %create master node list, append station identifier to each station to make
 %all unique (duplicate node names not allowed)
 StationListPlus = StationList;
-counter = 1
+counter = 1;
 for i=1:length(StationList)
     TempList = {};
     for j = 1:length(StationList{i})
