@@ -1093,8 +1093,91 @@ StationList{SNum} = ...
 };
 
 %Bus Route C10
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC10';
+WeightsList{SNum} = [1 .1 1 1 2 2 2 1 2 1 7 5 3 3 2 6 2 1 1 2 1 2 1 1 2 1 1 2 1 2];
+StationList{SNum} = ...
+{
+'Hamriya Port,Control Tower Terminus'
+'Hamriya Port,Container Services'
+'Hamriya Port,Sheikh Almar Masjid Roundabout'
+'Hamriya Port,Sheikh Almar Masjid'
+'Hamriya, Port'
+'Abu Hail, Roundabout'
+'UAE Athletics Federation'
+'Abu Hail Road'
+'Hamriya Shopping Center'
+'Ittehad School'
+'Abu Hail Center'
+'City Centre Metro Bus Stop A'
+'Al Seef Marine Bus Stop'
+'BurJuman Metro Bus Stop B'
+'Centre Point Shopping Centre'
+'ADCB Seaside Metro Bus Stop'
+'Hudheiba, Turnoff'
+'Hana Center'
+'Al Dhiyafa, Road'
+'Jumeira Rotana Hotel'
+'Dhiyafa'
+'Jumeira, Grand Masjid'
+'Jumeira Centre'
+'Century Plaza'
+'Beach Center'
+'Dubai Zoo'
+'Mercato Shopping Mall'
+'Hassa Bint Al Murr Masjid'
+'Al Arouba Street'
+'Al Arouba Street'
+'Hassa Bint Al Murr Masjid'
+};
 
 %Bus Route C14
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC14';
+WeightsList{SNum} = [3 1 2 2 1 2 3 1 1 2 1 3 2 2 2 4 2 2 1 2 1 2 4 1 2 1 .1 2 1 1 1 1 1 3 1 .1 1 1 1];
+StationList{SNum} = ...
+{
+'Al Nahda 1, Sama Residence'
+'Al Nahda 1, Mai Tower'
+'Al Qusais 1, LuLu Hypermarket'
+'Al Nahda, Shabab Alahli Club'
+'Wuhaida, Road'
+'Dubai Folklore Theatre 2'
+'Abu Hail, Masjid 2'
+'Manama 2'
+'Abu Hail, Clinic'
+'Hor Al Anz, Turnoff'
+'Abu Baker Al Siddique Road'
+'The Center'
+'Hamarain Center'
+'Al Bakhit Center'
+'DNATA'
+'City Centre Metro Bus Stop A'
+'British Council'
+'College of Islamic Studies'
+'Central Post Office'
+'Karama, Dubai Municipality Center'
+'Mankhool, Center Point'
+'Kuwait Road'
+'Sheikh Rashid Road I/S'
+'Hudheiba, Turnoff'
+'Hana Center'
+'Satwa, Masjid'
+'Satwa, Clinic'
+'Bada?A'
+'Satwa, Square'
+'Khadri Masjid'
+'Bilal Bin Ribah School'
+'Satwa, Road'
+'Rehabilitation Center'
+'Dubai Petroleum Corporation'
+'Mazaya Center'
+'Safa, Safest Way'
+'Safa, Terminus'
+'Safa, Lufthansa'
+'Safa, Lufthansa'
+'Safa, Terminus'
+};
 
 %Bus Route C15
 
