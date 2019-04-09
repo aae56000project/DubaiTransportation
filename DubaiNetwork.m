@@ -1180,14 +1180,175 @@ StationList{SNum} = ...
 };
 
 %Bus Route C15
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC15';
+WeightsList{SNum} = [1 .1 1 1 2 1 2 1 2 1 2 1 3 2];
+StationList{SNum} = ...
+{
+'Hamriya Port,Control Tower Terminus'
+'Hamriya Port,Container Services'
+'Hamriya Port,Sheikh Almar Masjid Roundabout'
+'Hamriya Port,Sheikh Almar Masjid'
+'Hamriya, Port'
+'Abu Hail, Roundabout'
+'Abu Hail, Bin Eid Al Shabi Restaurant 2'
+'Abu Hail, Post Office'
+'Al Baraha Masjid'
+'Abu Baker Al Siddique Road'
+'The Center'
+'Hamarain Center'
+'Al Bakhit Center'
+'DNATA'
+'Deira City Center Bus Station'
+};
 
 %Bus Route C18
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC18';
+WeightsList{SNum} = [1 1 1 2 1 2 2 1 .1 3 1 2 3 1 1 1 1 2 2 1 2 8 .1 2 .1 2 1 1 3 3 1 1 3 2];
+StationList{SNum} = ...
+{
+'Sheikh Rashid Colony'
+'Emirates Driving Institute'
+'Sheikh Rashid Colony 2'
+'Dubai Grand Hotel'
+'Al Khulafa?a Al Rashideen Boys School'
+'Dubai Airport Free Zone Metro Bus Stop'
+'Al Nahda Metro Bus Stop'
+'Ministry of Information'
+'Stadium Metro Bus Stop'
+'Al Nahda, Shabab Alahli Club'
+'Wuhaida, Road'
+'Dubai Folklore Theatre 2'
+'Abu Hail, Masjid 2'
+'Manama 2'
+'Abu Hail, Clinic'
+'Hor Al Anz, Turnoff'
+'Hor Al Anz, Roundabout'
+'Rasheed Road'
+'Islamic Institute'
+'Burj Nahar, Intersection'
+'Naif Intersection'
+'Palm Deira Metro Bus Stop'
+'Falcon Intersection'
+'Raffa'
+'Rolla'
+'Al Fahidi Metro Bus Stop A'
+'Four Point Sheraton Hotel'
+'BurJuman Metro Bus Stop A'
+'BurJuman Metro Bus Stop C'
+'Broadcast Interchange'
+'Oud Metha Metro Bus Stop'
+'Oud Metha Road 1'
+'Oud Metha Road 2'
+'American Hospital'
+'Lamcy Plaza'
+};
 
 %Bus Route C19
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC19';
+WeightsList{SNum} = [2 3 1 1 1 1 2 .1 3 1 1 1 1 3 1 .1 1 1 1 1 2];
+StationList{SNum} = ...
+{
+'Deira City Center Bus Station'
+'City Centre Metro Bus Stop A 2'
+'DNATA'
+'Ministry of Environment'
+'Al Bakhit Center'
+'Hamarain Center'
+'Abu Baker Al Siddique Metro Bus Stop 1'
+'Dubai Scout Mission'
+'Al Jadeed Bakery'
+'Al Nahda, Shabab Alahli Club'
+'Stadium Metro Bus Stop'
+'Ministry of Information'
+'Al Nahda Metro Bus Stop'
+'Twar, Union Cooperative Society'
+'Al Khulafa?a Al Rashideen Boys School'
+'Dubai Grand Hotel'
+'Damascus Road 1'
+'Damascus Road 2'
+'Damascus Road 3'
+'Damascus Road 4'
+'Al Qusais Industrial Area'
+'Al Qusais Industrial Area,Terminus'
+};
 
 %Bus Route C26
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC26';
+WeightsList{SNum} = [3 2 2 1 2 5 4 2 1 1 1 6 5 4 2 3 2 2 3 .1 1 1 1 1 1 2];
+StationList{SNum} = ...
+{
+'Wasl Park Terminus'
+'Khadri Masjid'
+'Satwa, Square'
+'Satwa, Masjid 2'
+'Satwa, Post Office'
+'Satwa, Roundabout'
+'Al Jafiliya Landside Metro Bus Stop'
+'ADCB Metro Bus Stop Landside'
+'Karama, Dubai Municipality Center'
+'Karama, Ent.'
+'Central Post Office'
+'College of Islamic Studies 2'
+'DNATA'
+'Traffic Police Department'
+'Airport Terminal 2, Departure'
+'Airport Terminal 2, Arrival'
+'Maria Qibtiya School'
+'DAFZA'
+'Twar 1, Emarat Al Mawred'
+'Al Khulafa?a Al Rashideen Boys School'
+'Dubai Grand Hotel'
+'Damascus Road 1'
+'Damascus Road 2'
+'Damascus Road 3'
+'Damascus Road 4'
+'Al Qusais Industrial Area'
+'Al Qusais Industrial Area,Terminus'
+};
 
 %Bus Route C28
+SNum = SNum + 1;
+RouteList{SNum} = 'BRC28';
+WeightsList{SNum} = [9 1 1 1 1 2 3 1 2 2 2 .1 1 1 1 .1 1 2 1 2 2 2 2 .1 1 .1 .1 1 1 1];
+StationList{SNum} = ...
+{
+'Gold Souq Bus Station'
+'Al Ras Metro Bus Stop'
+'Deira, Old Souq'
+'Emirates NBD'
+'Deira, Post Office'
+'Deira, Beniyas Square'
+'Union Metro Bus Stop C'
+'Salah Al Din Metro Bus Stop'
+'Reef Mall'
+'The Center'
+'Abu Baker Al Siddique Road'
+'Majid English School'
+'Abu Hail, Masjid Ashram'
+'Abu Hail'
+'Abu Hail, Masjid Al Salam'
+'Hamriya, Street'
+'Hamriya, Masjid'
+'UAE Athletics Federation'
+'Wuheida, Street 22'
+'Al Wuheida, Ali Bin Abi Talib Masjid'
+'Mahlab School'
+'Mamzar, Health Center'
+'Mamzar'
+'Mamzar, Beach 1'
+'Mamzar, Beach 2'
+'Mamzar, Beach 3'
+'Mamzar, Beach 4'
+'Mamzar, Beach 5'
+'Mamzar, Beach 6'
+'Mamzar, Beach 7'
+'Mamzar, Beach Park Terminus'
+};
+
 
 %----------------------- Feeder Bus Routes --------------------------------
 
