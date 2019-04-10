@@ -795,20 +795,310 @@ StationList{SNum} = ...
 
 
 %Bus Route 53
+SNum = SNum + 1;
+RouteList{SNum} = 'BR53';
+WeightsList{SNum} = [6,3,2,1,1,1,3,2,13,1,1,1,1,1,1,2,0.1,3,5,2,1,1,1,2,1,0.1,2,1,2,1,2,1,1];
+StationList{SNum} = ...
+{
+'Gold Souq Bus Station'
+'Naif Park'
+'Deira, Beniyas Square'   
+'Memorial Plaza'
+'Etisalat Head Office'
+'Maktoum Road'
+'Clock Tower Roundabout'
+'DNATA'
+'City Centre Metro Bus Stop A 2'
+'Dubai Festival City, Marks & Spencer'
+'Dubai Festival City, IKEA'
+'Al Badia, Hillside Village A'
+'Al Badia residence 1&8,A2'
+'Al Badia, Residences'
+'Al Badia, Deira International School'
+'Al Badia, Entrance'   
+'Hepworth Plastics'
+'Nad Al Hamar Grand Masjid 2'
+'Ras Al Khor, Comm. Complex 2'
+'Al Warsan 1, Eppco 1'
+'Dubai Textile City Main Gate'
+'Dubai Textile City'
+'International City, Lake Entrance'
+'International City, Morocco'
+'International City, China 3'
+'International City, China 2'
+'International City, Dragon Mart'
+'International City, Post office 1'
+'International City, Central Business district 1 (platform 1)'
+'International City, Central Business district 1 (platform 2)'
+'International City, Rivera Dreams Apartments 1'
+'International City, Police Station'
+'International City, Persia O02'
+'International City, Persia M03'
+};
+
 
 %Bus Route 55
+SNum = SNum + 1;
+RouteList{SNum} = 'BR55';
+WeightsList{SNum} = [2,1,1,5,10,1,0.1,1,1,0.1,1,0.1,1,1,2,0.1,1,1,1,1,1,1,1,0.1,7,1,2,1,0.1,1];
+StationList{SNum} = ...
+{
+'Satwa, Bus Station'
+'Satwa, Masjid 2'
+'Satwa, Post Office'   
+'Satwa, Roundabout'
+'World Trade Centre Hotel'
+'Dubai Country Club'
+'Aden Street 1'
+'Ras Al Khor 1'
+'Ras Al Khor 2'
+'Ras Al Khor 3'
+'Ras Al Khor 4'
+'Ras Al Khor, Customs'
+'Ras Al Khor 5'
+'Ras Al Khor 6'
+'Ras Al Khor 7'
+'Ras Al Khor 8'   
+'Ras Al Khor 9'
+'Ras Al Khor 10'
+'Ras Al Khor 11'
+'Ras Al Khor, Used Cars Exb. 1'
+'Ras Al Khor, Used Cars Exb. 2'
+'Ras Al Khor, Ducamz - 1'
+'Ras Al Khor, Ducamz  - 2'
+'Ras Al Khor, Veg. Mkt. Union Coop. Society'
+'Ras Al Khor, Veg. Mkt.'
+'International City, Post office 1'
+'International City, Rivera Dreams Apartments 1'
+'International City, Police Station'
+'International City, Persia O02'
+'International City, Persia M03 (platform 01)'
+'International City, Persia M03 (platform 02)'
+};
 
 %Bus Route 61
+SNum = SNum + 1;
+RouteList{SNum} = 'BR61';
+WeightsList{SNum} = [2,3,12,1,5,3,2,2,1,2,1,1,2,2];
+StationList{SNum} = ...
+{
+'Ras Al Khor 1 '
+'Ras Al Khor, Terminus'
+'Dubai Polo Club'   
+'World Trade Centre Hotel'
+'Al Jafiliya Landside Metro Bus Stop'
+'ADCB Metro Bus Stop Landside'
+'Centre Point Shopping Centre'
+'BurJuman Metro Bus Stop B'
+'BurJuman Metro Bus Stop A'
+'Four Point Sheraton Hotel'
+'Al Fahidi Metro Bus Stop A'
+'Nahda Street'
+'Raffa 2'
+'Falcon Intersection'
+'Al Ghubaiba Bus Station'
+};
 
 %Bus Route 61D
+SNum = SNum + 1;
+RouteList{SNum} = 'BR61D';
+WeightsList{SNum} = [3,9,1,7,2,1,6,2,0.1,2,1,2,2,3];
+StationList{SNum} = ...
+{
+'Nad Al Shiba, Clinic'
+'Nad Al Shiba, Road'
+'Wasl, Wasl Club'   
+'Latifa Hospital'
+'Oud Metha Road 2'
+'Oud Metha Road 1'
+'Oud Metha Metro Bus Stop'
+'BurJuman Metro Bus Stop C'
+'BurJuman Metro Bus Stop A'
+'Four Point Sheraton Hotel'
+'Al Fahidi Metro Bus Stop A'
+'Nahda Street'
+'Raffa 2'
+'Falcon Intersection'
+'Al Ghubaiba Bus Station'
+};
 
 %Bus Route 63E
+SNum = SNum + 1;
+RouteList{SNum} = 'BR63E';
+WeightsList{SNum} = [1,1,2,1,1,1,0.1,1,3,2,1,4,2,1,15,1,1,1,1,0.1,1,0.1,1,1,0.1,1,1,0.1,2,2,13,0.1,2,2,1,2];
+StationList{SNum} = ...
+{
+'Al Qusais, Bus Station '
+'Al Qusais, Masjid Hamad Abdul Karim'
+'Al Qusais, Al Shirawi Labour Camp'   
+'Abella Camp'
+'Algeria Street 1'
+'Algeria Street 2'
+'Algeria Street 3'
+'Algeria Street 4'
+'Algeria Street 5'
+'Algeria Road 6'
+'Algeria Street 7'
+'Muhaisnah, Dubai Modern School'
+'Mirdiff, Private School'
+'Uptown Mirdif'
+'Mirdiff, ETISALAT Tower'
+'Ras Al Khor, Veg. Mkt. Main Cars Park'
+'Ras Al Khor, Ducamz  - 2'
+'Ras Al Khor, Ducamz - 1'   
+'Ras Al Khor, Used Cars Exb. 3'
+'Ras Al Khor, Used Cars Exb. 1'
+'Ras Al Khor 9'
+'Ras Al Khor, Tawoon Trans.'
+'Ras Al Khor, Mega Star Trdg.'
+'Ras Al Khor, Aya Trdg.'
+'Ras Al Khor, Rahmani Trdg.'
+'Ras Al Khor, Areej Trdg.'
+'Ras Al Khor 4'
+'Ras Al Khor 3'
+'Ras Al Khor 2'
+'Ras Al Khor, Terminus'
+'Dubai Polo Club'
+'Jumeirah University 1, Latifa Bint Hamdan Street'
+'Jumeirah University 1 2, Latifa Bint Hamdan Street'
+'Oasis Village'
+'Al Quoz, AST Company'
+'Speedwell Decor'
+'Al Quoz, Bus Station'
+};
 
 %Bus Route 64
+SNum = SNum + 1;
+RouteList{SNum} = 'BR64';
+WeightsList{SNum} = [4,1,3,1,1,1,2,1,1,1,4,1,2,1,2,1,2,1,2,4,3,1,2,3,1,1,0.1,1,1,2,1,1,1,1,1,1,1,1,2];
+StationList{SNum} = ...
+{
+'Gold Souq Bus Station '
+'Naif Intersection'
+'Burj Nahar, Intersection'   
+'Islamic Institute'
+'Rasheed Road'
+'Hor Al Anz, Roundabout'
+'Hor Al Anz, Turnoff'
+'Abu Hail, Clinic'
+'Manama'
+'Hamriya Shopping Center'
+'Ittehad School'
+'Al Nahda, Shabab Alahli Club'
+'Stadium Metro Bus Stop'
+'Ministry of Information'
+'Al Nahda Metro Bus Stop'
+'Twar, Union Cooperative Society'
+'Dubai Airport Free Zone Metro Bus Stop'
+'Fortune Plaza Hotel'   
+'Al Qusais Metro Bus Stop'
+'Beirut Road 2'
+'Rashidiya, Village'
+'Hepworth Plastics'
+'Nad Al Hamar Grand Masjid 2'
+'Ras Al Khor, Comm. Complex 2'
+'Ras Al Khor, Veg. Mkt.'
+'Ras Al Khor, Veg. Mkt. Union Coop. Society'
+'Ras Al Khor, Ducamz  - 2'
+'Ras Al Khor, Ducamz - 1'
+'Ras Al Khor, Used Cars Exb. 3'
+'Ras Al Khor, Used Cars Exb. 1'
+'Ras Al Khor 9'
+'Ras Al Khor, Tawoon Trans.'
+'Ras Al Khor, Mega Star Trdg.'
+'Ras Al Khor, Aya Trdg.'
+'Ras Al Khor, Rahmani Trdg.'
+'Ras Al Khor, Areej Trdg.'
+'Ras Al Khor 4'
+'Ras Al Khor 3'
+'Ras Al Khor 2'
+'Ras Al Khor, Terminus'
+};
 
 %Bus Route 64A
+SNum = SNum + 1;
+RouteList{SNum} = 'BR64A';
+WeightsList{SNum} = [4,2,1,2,1,1,4,2,5,5,5,3,1,1,2,1,2,2,5,3,1,2,2,0.1,1,2,1,3,2,0.1,1,2,1,1];
+StationList{SNum} = ...
+{
+'Gold Souq Bus Station '
+'Naif Park'
+'Deira, Beniyas Square'   
+'Memorial Plaza'
+'Etisalat Head Office'
+'Maktoum Road'
+'Clock Tower Roundabout'
+'DNATA'
+'Flame Intersection'
+'Garhoud, Intersection'
+'Cargo Village Gate'
+'Airport Terminal 1, Arrival 2'
+'Emirates Airlines Headquarters'
+'Emirates Metro Bus Stop'
+'Dubai Municipality Garage'
+'Mawakeb School'
+'Al Garhoud, Roads & Transport Authority HQ'   
+'Al Garhoud, Al Khaleej National School'
+'Al Garhoud, Sheikh Zayed Housing Program'
+'Dubai Festival City, Marks & Spencer'
+'Dubai Festival City, IKEA'
+'Al Badia, Hillside Village A'
+'Al Badia residence 1&8,A2'
+'Al Badia, Residences'
+'Al Badia, Deira International School'
+'Al Badia, Entrance'
+'Hepworth Plastics'
+'Nad Al Hamar Grand Masjid 2'
+'Ras Al Khor, Comm. Complex 2'
+'Ras Al Khor, Veg. Mkt.'
+'Ras Al Khor, Veg. Mkt. Union Coop. Society'
+'Ras Al Khor, Ducamz  - 2'
+'Ras Al Khor, Ducamz 3'
+'Ras Al Khor, WTC Residency'
+'Ras Al Khor, Samari Residency'
+};
 
 %Bus Route 66
+SNum = SNum + 1;
+RouteList{SNum} = 'BR66';
+WeightsList{SNum} = [3,1,10,3,4,3,6,1,3,2,3,3,2,1,1,2,1,5,1,2,5,1,8,1,2,6,2,1,2,1,2,1,3];
+StationList{SNum} = ...
+{
+'Faqa, Terminus (platform 01) '
+'Faqa, Terminus (platform 02)'
+'Faqa'   
+'Murquab, Interchange'
+'Umm Eseley'
+'Margham, Interchange'
+'Air Force Training School'
+'Marmoom Dairy Farm'
+'Jazira Poultry Farm'
+'Dubai Virtual Reference Station 2'
+'Rawdah Poultry Farm'
+'Umm Nahad, Interchange'
+'Al Ain Rd, Ahazij Underpass'
+'Dubai Outlet Mall'
+'Menhad'
+'International Center For Biosaline Agriculture'
+'Academic City, Interchange'   
+'Eppco, Muntazah Petrol Station'
+'Nad Al Shiba, Interchange 1'
+'Nad Al Shiba 2, Main Masjid'
+'Dubai Polo Club'
+'Wasl, Wasl Club'
+'Latifa Hospital'
+'Oud Metha Road 2'
+'Oud Metha Road 1'
+'Oud Metha Metro Bus Stop'
+'BurJuman Metro Bus Stop C'
+'BurJuman Metro Bus Stop A'
+'Four Point Sheraton Hotel'
+'Al Fahidi Metro Bus Stop A'
+'Nahda Street'
+'Raffa 2'
+'Falcon Intersection'
+'Al Ghubaiba Bus Station'
+};
 
 %Bus Route 67
 
