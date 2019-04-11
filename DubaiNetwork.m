@@ -289,7 +289,7 @@ StationList{SNum} = ...
 %Bus Route 11b
 SNum = SNum + 1;
 RouteList{SNum} = 'BR11b';
-WeightsList{SNum} = ones(1,54);
+WeightsList{SNum} = [6 1 1 1 1 2 1 5 5 5 .1 2 .1 .1 1 .1 1 1 .1 1 .1 1 1 1 .1 1 .1 4 1 .1 1 1 .1 2 1 1 .1 2 1 1 1 1 1 2 1 2 1 1 1 1 1 1 1 1];
 StationList{SNum} = ...
 {
 'Rashidiya Metro Bus Station'
@@ -352,10 +352,10 @@ StationList{SNum} = ...
 %Bus Route 12
 SNum = SNum + 1;
 RouteList{SNum} = 'BR12';
-WeightsList{SNum} = ones(1,41);
+WeightsList{SNum} = [4 1 1 1 1 2 1 1 1 .1 1 1 .1 2 5 1 1 1 1 1 1 1 1 1 .1 1 .1 1 1 1 4 2 1 1 1 1 1 1 2];
 StationList{SNum} = ...
 {
-'Ghubaiba Bus Station'   
+'Al Ghubaiba Bus Station'   
 'Department of Ports & Customs'
 'Power Gas Station'
 'Capital Hotel'
@@ -370,8 +370,7 @@ StationList{SNum} = ...
 'Police Training School'
 'Jumeira, Post Office'
 'Wasl Road, Box Park 1'
-'Safa, Dubai Electricity and Water'
-'Authority Sub Station'
+'Safa, Dubai Electricity and Water Authority Sub Station'
 'Safa, Shoping Center'
 'Safa, Spinneys'
 'Wasl, Road 4'
@@ -387,8 +386,7 @@ StationList{SNum} = ...
 'Umm Sheif'
 'Wasl Road, Enoc'
 'Umm Suqeim, Etisalat'
-'First Abu Dhabi Bank Landside'
-'Metro Bus Stop'
+'First Abu Dhabi Bank Landside Metro Bus Stop'
 'Gold & Diamond Park'
 'Quoz, Falaknaz'
 'Quoz, Ikea Stores'
@@ -402,17 +400,16 @@ StationList{SNum} = ...
 %R15
 SNum = SNum + 1;
 RouteList{SNum} = 'BR15';
-WeightsList{SNum} = ones(1,34);
+WeightsList{SNum} = [2 1 2 1 1 1 2 4 1 2 1 1 1 1 2 1 1 1 1 .1 2 2 3 6 1 1 .1 1 1 .1 3 1 1];
 StationList{SNum} = ...
 {
-'Ghubaiba Bus Station'  
+'Al Ghubaiba Bus Station'  
 'Falcon Intersection'
 'Raffa'
 'Rolla'
 'Al Fahidi Metro Bus Stop A'
 'Al Fahidi Metro Bus Stop B'
-'Mankhool, Standard Chartered'
-'Bank'
+'Mankhool, Standard Chartered Bank'
 'Sheikh Rashid Road I/S'
 'Hudheiba, Turnoff'
 'Hana Center'
@@ -445,12 +442,11 @@ StationList{SNum} = ...
 %Bus Route 17
 SNum = SNum + 1;
 RouteList{SNum} = 'BR17';
-WeightsList{SNum} = ones(1,44);
+WeightsList{SNum} = [4 2 2 2 2 2 1 1 1 1 1 1 1 1 2 1 1 1 2 .1 1 3 1 2 1 1 1 .1 1 3 1 .1 1 1 1 2 1 .1 1 2 .1 2 1];
 StationList{SNum} = ...
 {
-'Sabkha, Bus Station'      % 475
-'Gold Souq Bus Station External'
-'Gold Souq Bus Station'
+'Sabkha, Bus Station'
+'Khaleej Road'
 'Hyatt Regency Hotel'
 'Khansa School'
 'Baraha, Hospital'
@@ -461,10 +457,10 @@ StationList{SNum} = ...
 'Hamriya'
 'Wuhaida, School'
 'Hamriya, Clinic'
-'Shabab Club'
+'Al Mamzar, Shabab Alahli Club'
 'Dubai Folklore Theatre'
 'Wuhaida, Road'
-'Ahli Club'
+'Al Nahda, Shabab Alahli Club'
 'Stadium Metro Bus Stop'
 'Ministry of Information'
 'Al Nahda Metro Bus Stop'
@@ -479,7 +475,7 @@ StationList{SNum} = ...
 'Damascus Road 2'
 'Damascus Road 3'
 'Dubai Abattoir'
-'Qusais, Eppco Vehicle Inspection'
+'Al Qusais, Eppco Vehicle Inspection'
 'Muhaisnah 4, Jamal Building'
 'Muhaisnah 4, Lootha Building'
 'Oxford School'
@@ -492,16 +488,16 @@ StationList{SNum} = ...
 'Muhaisnah 4, Police Colony'
 'Muhaisnah 4, Police Colony'
 'Dubai Transport, Depot'
-'Muhaisnah 4, Wasl Oasis II' 
+'Muhaisnah 4, Wasl Oasis II'
 };
 
 %Bus Route 21
 SNum = SNum + 1;
 RouteList{SNum} = 'BR21';
-WeightsList{SNum} = ones(1,57);
+WeightsList{SNum} = [4 1 1 1 2 1 2 1 1 2 1 2 1 1 2 1 5 2 .1 1 .1 1 .1 2 1 1 1 3 3 1 1 2 1 1 .1 1 1 1 1 1 1 .1 1 1 1 1 3 2 2 1 2 1 1 1 1 2];
 StationList{SNum} = ...
 {
-'Ghubaiba Bus Station'
+'Al Ghubaiba Bus Station'
 'Falcon Intersection'
 'Raffa'
 'Rolla'
@@ -516,8 +512,7 @@ StationList{SNum} = ...
 'Trade Center Metro Bus Stop'
 'White Crown Tower'
 'Durrah Tower'
-'Emirates Tower Seaside Metro'
-'Bus Stop'
+'Emirates Tower Seaside Metro Bus Stop'
 'Rostamani Tower'
 'Safa, Interchange'
 'Quoz, Dubai Municipality Center'
@@ -564,7 +559,7 @@ StationList{SNum} = ...
 %Bus Route 22
 SNum = SNum + 1;
 RouteList{SNum} = 'BR22';
-WeightsList{SNum} = ones(1,22);
+WeightsList{SNum} = [1 6 1 1 2 1 .1 3 1 1 1 2 1 1 .1 2 .1 .1 1 1 1 2];
 StationList{SNum} = ...
 {
 'Deira City Center Bus Station' 
@@ -595,7 +590,7 @@ StationList{SNum} = ...
 %Bus Route 24
 SNum = SNum + 1;
 RouteList{SNum} = 'BR24';
-WeightsList{SNum} = ones(1,25);
+WeightsList{SNum} = [0.1 2 2 1 1 1 .1 1 1 .1 9 2 4 1 1 1 4 2 1 1 3 1 2 5 1 1 1 .1 1];
 StationList{SNum} = ...
 {
 'Al Nahda, The Sheffeild Private School' 
@@ -604,6 +599,10 @@ StationList{SNum} = ...
 'Al Nahda, Madina Super Market'
 'Al Nahda, Emirates College'
 'Al Nahda, Canary Bldg'
+'Al Nahda 1, Terminus 2'
+'Al Nahda 1, Burj Al Noor'
+'Al Nahda 1, Terminus 1'
+'Nahda 1, Enoc'
 'NMC Hospital'
 'Garhoud, Intersection'
 'Airport Terminal 1, Arrival'
@@ -756,7 +755,7 @@ RouteList{SNum} = 'BR44';
 WeightsList{SNum} = ones(1,34);
 StationList{SNum} = ...
 {
-'Ghubaiba Bus Station'
+'Al Ghubaiba Bus Station'
 'Falcon Intersection'
 'Raffa 2'   
 'Nahda Street'
