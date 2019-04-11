@@ -243,9 +243,9 @@ StationList{SNum} = ...
 'Khawaneej 1'
 'Khawaneej, Palace Masjid'
 'Faisal Stud'
-'Khawaneej, Women�s Association'
+'Khawaneej, Women’s Association'
 'Khawaneej, Al Athbaa Primary School Terminus'
-'Khawaneej, Women�s Association'
+'Khawaneej, Women’s Association'
 'Faisal Stud'
 'Khawaneej, Palace Masjid'
 'Khawaneej 1'
@@ -305,9 +305,9 @@ StationList{SNum} = ...
 'Khawaneej 1'
 'Khawaneej, Palace Masjid'
 'Faisal Stud'
-'Khawaneej, Women�s Association'
+'Khawaneej, Women’s Association'
 'Khawaneej, Al Athbaa Primary School Terminus'
-'Khawaneej, Women�s Association'
+'Khawaneej, Women’s Association'
 'Faisal Stud'
 'Khawaneej, Palace Masjid'
 'Khawaneej 1'
@@ -1682,54 +1682,711 @@ StationList{SNum} = ...
 };
 
 %Bus Route F5
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF05';
+WeightsList{SNum} = [7 2 3 4 3 3 1 1 1 1 1];
+StationList{SNum} = ...
+{
+'Rashidiya Metro Bus Station'
+'Muhaisnah 1, Intersection'
+'Muhaisnah 2, Etisalat Academy'
+'Al Mizhir, Islamic School For Training Education 1'
+'Mizhar 1, A'
+'Al Mizhir 1, Arabian Center'
+'Mizhar 1, C'
+'Mizhar 1, D'
+'Al Mizhar Mall'
+'Mizhar 1, F'
+'Mizhar 1, G'
+'Mizhar 1, Masjid Terminus'
+};
 
 %Bus Route F8
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF08';
+WeightsList{SNum} = [1 1 2 0.1 1 1 2 1 2 1 1 2 1 1 1 2 2 2 5 1 1 3];
+StationList{SNum} = ...
+{
+'Al Nahda, The Sheffeild Private School'
+'Al Nahda, Zuleikha Hospital'
+'Al Nahda, 19A Street 1'
+'Al Nahda, Madina Super Market'
+'Al Nahda, Emirates College'
+'Al Nahda, Canary Bldg'
+'Sahara Center'
+'Dubai Carmel School'
+'Al Qusais, Public Transport Depot'
+'MAN Motors'
+'Al Qusais Industrial Area'
+'Damascus Road 4'
+'Damascus Road 3'
+'Damascus Road 2'
+'Damascus Road 1'
+'Dubai Grand Hotel'
+'Twar 1, Emarat Al Mawred'
+'DAFZA'
+'Emirates Engineering'
+'Emirates Metro Bus Stop'
+'Dubai Municipality Garage'
+'Mawakeb School'
+'Dubai Festival City, Marks & Spencer'
+'Dubai Festival City, IKEA'
+'Dubai Festival City, Festival Centre'
+};
 
 %Bus Route F10
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF10';
+WeightsList{SNum} = [5 1 1 4 2 1 2 1 1 1 1 1 0.1 1 1 1 2 1 1 0.1 2 0.1 1 1 0.1 2 1 1];
+StationList{SNum} = ...
+{
+'Rashidiya Metro Bus Station'
+'Mirdiff, Private School'
+'Mirdiff, Area 1'
+'Imam Abu Hanifa Masjid'
+'Mirdiff City Centre'
+'Downtown Mirdiff Gate 1'
+'Downtown Mirdiff Gate 2'
+'Al Warqa’a Entrance'
+'Al Warqa’a Masjid'
+'Al Warqa’a A'
+'Al Warqa’a B'
+'Al Warqa’a C'
+'Al Warqa’a D'
+'Al Warqa’a, ETISALAT Tower'
+'Al Warqa’a, Grand Masjid'
+'Al Warqa’a, Mass Supermarket'
+'Al Warqa’a E'
+'Al Warqa’a, La Lune Building'
+'Al Warqa’a, ASCANA 3 Building'
+'Al Warqa’a, Charity Tower'
+'Al Warqa’a Our Own High School'
+'Al Warqa’a, Sharjah American Int’l School'
+'Al Warqa’a, International Academic School'
+'Al Warqa’a, Mansoor Sharaf Tower'
+'Al Warqa’a, Ibrahim Tower'
+'Al Warqa’a, Desert Group Building 5'
+'Al Warqa’a G'
+'Al Warqa’a I'
+'Al Warqa’a J'
+};
 
 %Bus Route F11
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF11';
+WeightsList{SNum} = [1 2 1 1 3 1 2 1 4 1 2 3 1 1 1 1 2];
+StationList{SNum} = ...
+{
+'Financial Center Seaside Metro Bus Stop'
+'Wasl, Terminus'
+'Ghaya Residence'
+'Wasl, Masjid'
+'Wasl, School'
+'Wasl, Park'
+'Iranian Hospital'
+'Hudheiba, Road'
+'Bada’A'
+'Satwa, Masjid 2'
+'Satwa, Post Office'
+'Satwa, Roundabout'
+'Trade Center Metro Bus Stop'
+'White Crown Tower'
+'Durrah Tower'
+'Emirates Tower Seaside Metro Bus Stop'
+'Rostamani Tower'
+'Financial Center Seaside Metro'
+'Bus Stop'
+};
 
 %Bus Route F12
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF12';
+WeightsList{SNum} = [3 2 1 2 3 3];
+StationList{SNum} = ...
+{
+'Al Jafiliya Seaside Metro Bus'
+'Stop'
+'Satwa, Roundabout'
+'Satwa, Masjid'
+'Satwa, Clinic'
+'Hudheiba, Road'
+'Wasl, Park'
+'Wasl Park Terminus'
+};
 
 %Bus Route F13
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF13';
+WeightsList{SNum} = [1 7 3 2 3];
+StationList{SNum} = ...
+{
+'Dubai Mall Landside Metro Bus Stop'
+'Dubai Mall Landside Metro Bus Stop'
+'The Dubai Mall'
+'Burj Khalifa, The Palace Hotel'
+'8 Boulevard Walk Tower'
+'Dubai Mall Landside Metro Bus Stop'
+};
 
 %Bus Route F14
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF14';
+WeightsList{SNum} = [4 2 0.1 1 0 1 1 3 1 0.1 1 2 1 2 1 1 3];
+StationList{SNum} = ...
+{
+'Business Bay Metro Bus Stop Landside'
+'Lillian Tower'
+'XL Tower'
+'U BORA Tower'
+'Volante Dubai Tower'
+'Mayfair Residency'
+'Fairview Residency'
+'Clayton Residency'
+'Empire Heights Towers'
+'Coral Tower'
+'Canal Views Hotel Apartments'
+'Bay Square 1'
+'Burj View central Tower'
+'South Ridge Tower'
+'Lake Central Tower'
+'Clover Bay Tower'
+'The Binary Tower'
+'Business Bay Metro Bus Stop Landside'
+};
 
 %Bus Route F15
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF15';
+WeightsList{SNum} = [2 3 0.1 1 1 2 0.1 2 1 1 2 1 1 1 0.1 2 0.1 2 1 1 1 2 0.1 1 1 1 3 2];
+StationList{SNum} = ...
+{
+'Noor Bank Bus Terminus'
+'Noor Bank Landside Metro Bus Stop'
+'Khaleej Times'
+'Al Quoz, Latifa Bint Hamdan Street'
+'Al Quoz, New Housing Junction'
+'Al Quoz, Al Khail Gate Entrance 1'
+'Al Quoz, Al Khail Gate 1'
+'Al Quoz, Al Khail Gate 2'
+'Al Quoz, Al Khail Gate 3'
+'Al Quoz, Emirates Housing Al'
+'Khail Gate 2'
+'Al Quoz, Gargash Construction Accommodation 2'
+'Majid Industries'
+'Khaleej, Metal Coating'
+'Emirates Industries'
+'Emirates Printing Press'
+'ETA Steel Works'
+'Bartawi Camps'
+'Rostamani Steel Mills'
+'Joton Paints'
+'Al Quoz, AST Company'
+'Oasis Village'
+'Al Quoz, New Housing Junction'
+'Al Quoz, Latifa Bint Hamdan Street'
+'Galadari Printing & Publishing'
+'Queen Palace Factory'
+'Emirates Gas Factory'
+'Honda, Training Center'
+'Noor Bank Landside Metro Bus Stop'
+'Noor Bank Bus Terminus'
+};
 
 %Bus Route F18
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF18';
+WeightsList{SNum} = [1 0.1 2 2 1 3 1 0.1 1];
+StationList{SNum} = ...
+{
+'Oud Metha Metro Station Terminus'
+'Oud Metha Road 1'
+'Oud Metha Road 2'
+'American Hospital'
+'Lamcy Plaza'
+'Sunrise City Supermarket'
+'Nasr Sports Club'
+'Rashid Hospital RBT.'
+'Oud Metha Metro Bus Stop'
+'Oud Metha Metro Station Terminus'
+};
 
 %Bus Route F20
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF20';
+WeightsList{SNum} = [1 1 0.1 1 5 1 1 1 1 1 1 2 5 1 0.1 1 1 3];
+StationList{SNum} = ...
+{
+'Business Bay Seaside Metro Bus Stop'
+'Emarat, Headquarters 2, Street 35'
+'Al Wasl, Street 35, Al Ittihad Health Center'
+'Al Wasl, Street 35A'
+'Al Wasl, Street 35, Dar Al Bar Society, Donation Centre'
+'Safa, Dubai Electricity and Water Authority Sub Station'
+'Al Safa 1, Street 19, Jumeirah College'
+'Al Safa, Street 8B, Private School'
+'Al Safa, Street 13, Al Razi Boys School'
+'Al Safa, Street 13A'
+'Al Safa, Street 19A'
+'Al Safa 1, Street 19, Jumeirah College'
+'Safa, Dubai Electricity and Water Authority Sub Station'
+'Wasl Road, Box Park 2'
+'Al Wasl, Street 35, Dar Al Bar Society, Donation Centre'
+'Al Wasl, Street 35A'
+'Al Wasl, Street 35, Al Ittihad Health Center'
+'Emarat, Headquarters'
+'Business Bay Seaside Metro Bus Stop'
+};
 
 %Bus Route F21
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF21';
+WeightsList{SNum} = [1 2 1 1 4 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1];
+StationList{SNum} = ...
+{
+'Al Nahda Metro Bus Stop'
+'Ministry of Information'
+'Stadium Metro Bus Stop'
+'Al Nahda 1, DEWA'
+'Al Maaref Private School'
+'NMC Hospital'
+'Al Nahda, Canary Bldg'
+'Al Nahda, Emirates College'
+'Al Nahda, Madina Super Market'
+'Al Nahda, Motawa Bldg'
+'Al Noor Building'
+'Al Hawai Twin Towers'
+'Ahli House'
+'Al Shawi Tower'
+'Desert Group Building 4'
+'Al Nahda, Park 1'
+'Al Nahda, Park 2'
+'Ministry Of Human Resources & Emiratisation'
+'Emirates Driving Institute'
+'Sheikh Rashid Colony'
+'Al Nahda Metro Bus Stop'
+};
 
 %Bus Route F22
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF22';
+WeightsList{SNum} = [1 1 2 2 1 1 2 3];
+StationList{SNum} = ...
+{
+'Stadium Metro Bus Stop'
+'Al Nahda 1, DEWA'
+'Al Maaref Private School'
+'NMC Hospital'
+'Sahara Center'
+'Dubai Carmel School'
+'Al Qusais, Public Transport Depot'
+'Al Qusais Industrial Area 3, Masjid Mustaqeem'
+'Al Qusais Industrial Area 2, Terminus'
+};
 
 %Bus Route F23
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF23';
+WeightsList{SNum} = [2 1 4 1 0.1 1 2 1 1];
+StationList{SNum} = ...
+{
+'Stadium Metro Station 2A'
+'Al Nahda 1, DEWA'
+'Al Maaref Private School'
+'Al Nahda 1, Masjid Rada'
+'Al Nahda 1, Al Banai'
+'Al Nahda 1, Burj Al Nahda'
+'Al Nahda 1, Zaafranah'
+'Al Nahda 1, Burj Al Noor'
+'Al Nahda 1, Terminus 1'
+'Al Nahda 1, Terminus 2'
+};
 
 %Bus Route F24
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF24';
+WeightsList{SNum} = [1 1 2 2 1 1 2 1 0.1 2];
+StationList{SNum} = ...
+{
+'Stadium Metro Bus Stop'
+'Al Nahda 1, DEWA'
+'Al Maaref Private School'
+'NMC Hospital'
+'Sahara Center'
+'Dubai Carmel School'
+'Al Qusais, Public Transport Depot'
+'Al Qusais Industrial Area 3, Masjid Mustaqeem'
+'Al Qusais Depot Entrance'
+'Al Qusais Industrial Area 3, Atiq Abdullah Flour Mill'
+'Al Qusais Industrial Area 3, Terminus'
+};
 
 %Bus Route F25
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF25';
+WeightsList{SNum} = [1 1 1 4 2 1 1 2 2 1 1 1 2 1 2 1 1 1 2 1 1 2 2 1 1 2 2 1 1 2 0.1];
+StationList{SNum} = ...
+{
+'First Abu Dhabi Bank Landside Metro Bus Stop'
+'Gold & Diamond Park'
+'Al Quoz, Pure Water Filling Company'
+'Al Quoz, Dubai Center Driving School'
+'Classic Crystal'
+'ETA SwitchGear Manufacturing 2'
+'ETA Profiles'
+'Al Quoz Mall'
+'Atlas Marine Service'
+'National Cement Corporation, Staff Accommodation'
+'7 Up Staff Accommodation'
+'Hilton Jumeria Hotel, Accomodation'
+'Golden Neon Corporation'
+'Habtoor Equipment Corporation'
+'Rigid Construction, Camps'
+'Al Quoz, Emirates Glass'
+'Al Quoz, T. Choithram Stores'
+'Al Quoz, Dynamic Industries'
+'Al Quoz, APEX Concrete Factory'
+'Al Quoz, Clinical Pathology Services'
+'Al Quoz, Galaxy Paper Industries'
+'Al Quoz, Emirates Glass 2'
+'Al Quoz, Al Shamsi Steel Manufacturing Co'
+'Atlas Marine Service'
+'National Cement Corporation, Staff Accommodation'
+'7 Up Staff Accommodation'
+'Al Quoz, Al Shirawi Equipment Co'
+'Al Quoz, Cemex RMC Topmix'
+'Al Quoz, Azzani Ready Mix'
+'Al Quoz, Pure Water Filling Company'
+'Gold & Diamond Park'
+'First Abu Dhabi Bank Landside Metro Bus Stop'
+};
 
 %Bus Route F26
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF26';
+WeightsList{SNum} = [2 3 2 2 0.1 1 0.1 1 1 1 1 1 2 1 1 1 1 2 1 2 1 1 1 2 1 2 1 2 0.1 1 2 1];
+StationList{SNum} = ...
+{
+'Noor Bank Bus Terminus'
+'Noor Bank Landside Metro Bus Stop'
+'Emirates Gas Factory'
+'Honda, Training Center'
+'Honda, Training Center'
+'Al Quoz, Bus Station'
+'Queen Palace Factory'
+'Masaood Bergum Construction'
+'Berger Paints'
+'Tela’a Tech Industrial'
+'Speedwell Decor'
+'Ahmadya Cont., Labour Camp'
+'Qumaish Cont, Labour Camp'
+'Al Quoz Industrial Area 3, Terminus'
+'Hilton Jumeria Hotel, Accomodation'
+'Golden Neon Corporation'
+'Al Quoz, Al Habtoor Engineering'
+'Al Quoz, Al Qeaim Public Kitchen'
+'Al Quoz, T. Choithram Stores'
+'Al Quoz, Emirates Glass 2'
+'Al Quoz, Al Shamsi Steel Manufacturing Co'
+'Al Quoz Mall'
+'ETA Profiles'
+'ETA SwitchGear Manufacturing'
+'Al Quoz, Dubai Center Driving School'
+'Al Quoz, Azzani Ready Mix'
+'Al Quoz, Cemex RMC Topmix'
+'Al Quoz, Gargash'
+'Al Quoz, Nabooda Cars'
+'Al Quoz, Ikea Stores'
+'Al Quoz, Falaknaz'
+'Gold & Diamond Park'
+'First Abu Dhabi Bank Landside Metro Bus Stop'
+};
 
 %Bus Route F29
 
 %Bus Route F30
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF30';
+WeightsList{SNum} = [3 2 2 2 2 9 3 2 2 0.1 1 0.1 1];
+StationList{SNum} = ...
+{
+'Mall of the Emirates Metro Bus Station'
+'Al Barsha A'
+'Al Barsha, Lulu Supermarket'
+'Dubai American Academy'
+'Classic Crystal'
+'Al Quoz, Clinical Pathology Services'
+'Studio City, Operation Office'
+'Classic Crystal'
+'Dubai American Academy'
+'Al Barsha A'
+'Mall of the Emirates 1'
+'Mall of the Emirates 2'
+'Mall of the Emirates, Saleh Bin'
+'Lahej Building'
+'Mall of the Emirates Metro Bus Station'
+};
 
 %Bus Route F31
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF31';
+WeightsList{SNum} = [1 1 1 0.1 2 1 3 2 4 3 1 1 1 1 1 1];
+StationList{SNum} = ...
+{
+'Dubai Internet City Landside Metro Bus Stop'
+'Al Barsha Heights, Saleh Bin Lahej Building'
+'Al Barsha Heights, Ramee Guestline Hotel Apartments'
+'Al Barsha Heights, Minc Apartments'
+'Al Barsha Heights, Mashael Building'
+'The Greens, Terminus'
+'The Greens, Al Sidir'
+'Regent International School'
+'The Lakes Turnoff'
+'Emirates Hills Turnoff'
+'The Springs, Entrance gate 5'
+'The Meadows, Entrance gate 8'
+'The Springs, Entrance gate 4'
+'The Meadows, Entrance gate 7'
+'The Springs, Entrance gate 3'
+'The Meadows, Town Centre'
+'The Meadows, Dubai British School'
+};
 
 %Bus Route F33
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF33';
+WeightsList{SNum} = [3 1 1 1 1 1 1 1 1 1 1 1 1 1 0.1 2 1 4 1 1 1 1 1 2 0.1 2 1 1 1 2];
+StationList{SNum} = ...
+{
+'Mall of the Emirates Metro Bus Station'
+'Mall of the Emirates 1'
+'Mall of the Emirates 2'
+'Mall of the Emirates, Saleh Bin Lahej Building'
+'Sheikh Zayed Service Rd, Coral Boutique Hotel'
+'Al Barsha, Habtoor House'
+'Al Barsha 1 B'
+'Al Barsha, Roots Saloon'
+'Al Barsha (3), Street 329 A 1'
+'Al Barsha (3), Street 20 A'
+'Al Barsha (3), Street 20 B'
+'Al Barsha (3), Emirates ID Centre'
+'Al Barsha (3), Emirates ID Centre'
+'Al Barsha (3), Street 31B A 1'
+'Al Barsha (3), Street 31B B 1'
+'Al Barsha (3), Bin Lahej Masjid 1, (Street 32B)'
+'Al Barsha (3), Street 329 B'
+'Al Barsha Mall, Street 24'
+'Al Barsha (3), Street 25C A'
+'Al Barsha (3), Street 25C B1'
+'Al Barsha (3), Street 62'
+'Al Barsha (3), Street 42B'
+'Al Barsha 2, Street 43, Park 3'
+'Al Barsha 2, Street 43 A1'
+'Al Barsha Mall, Street 24'
+'Al Barsha (3), Street 329 B'
+'Al Barsha (3), Street 25C A2'
+'Al Barsha, Roots Saloon'
+'Al Barsha, Veterinary Clinic'
+'Mall of the Emirates, Saleh Bin Lahej Building'
+'Mall of the Emirates Metro Bus Station'
+};
 
 %Bus Route F43
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF43';
+WeightsList{SNum} = [1 1 2 1 2 1 1 1 1 2 1 1 0.1 2 2 1 1 0.1 2 1 1 1 3];
+StationList{SNum} = ...
+{
+'Ibn Battuta Metro Bus Station'
+'Ibn Battuta, Food Court 3'
+'Jebel Ali Gardens 1'
+'Jebel Ali Gardens 2'
+'Jebel Ali Gardens 3'
+'Discovery Garden 1'
+'Discovery Garden 2'
+'Discovery Garden 3'
+'Discovery Garden 4'
+'Discovery Garden 5'
+'Discovery Garden 6'
+'Discovery Garden 7'
+'Discovery Garden 8'
+'Discovery Garden 9'
+'Discovery Garden, Building No 255'
+'Discovery Garden, Street 10'
+'Discovery Garden 11'
+'Discovery Garden 12'
+'Discovery Garden Pavilion Shopping center'
+'Discovery Garden 13'
+'Discovery Garden 14'
+'Discovery Garden 15'
+'Discovery Garden 16'
+'Ibn Battuta Metro Bus Station'
+};
 
 %Bus Route F44
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF44';
+WeightsList{SNum} = [ 4 1 1 2 0.1 3 5 1 1 1 1 1 1 2 1 1 1 1 1 1 1 7 2 0.1 5 1 2 1 1 6];
+StationList{SNum} = ...
+{
+'Energy Metro Bus Stop Landside'
+'Jebel Ali Hotel, Accommodation'
+'Muntazah, Lifeline Hospital'
+'Dubai Evangelical Church Center'
+'Gurunanak Darbar Sikh Temple'
+'Jebel Ali Hotel, Accommodation'
+'Jebel Ali Gardens, Turnoff'
+'Ibn Battuta Metro Bus Station'
+'Ibn Battuta, Food Court 3'
+'Jebel Ali Gardens 1'
+'Jebel Ali Gardens 2'
+'Jebel Ali Gardens 3'
+'Jebel Ali Gardens 4'
+'Jebel Ali Gardens 5'
+'Jebel Ali Gardens 6'
+'Jebel Ali Gardens 7'
+'Jebel Ali Gardens 8'
+'Jebel Ali Gardens 9'
+'Jebel Ali Gardens 10'
+'Jebel Ali Gardens 11'
+'Jebel Ali Gardens 12'
+'Jebel Ali Gardens 13'
+'Ibn Battuta Metro Bus Station'
+'Ibn Battuta, Food Court 3'
+'Jebel Ali Gardens, Turnoff'
+'Jebel Ali Hotel, Accommodation'
+'Muntazah, Lifeline Hospital'
+'Dubai Evangelical Church Center'
+'Gurunanak Darbar Sikh Temple'
+'Jebel Ali Hotel, Accommodation'
+'Energy Metro Bus Stop Landside'
+};
 
 %Bus Route F46
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF46';
+WeightsList{SNum} = [2 1 3 7 0.1 0.1 1 2 1 1 0.1 1 1 1 1 1 1 1 1 0.1 1 2 1 1 0.1];
+StationList{SNum} = ...
+{
+'Ibn Battuta Metro Bus Station'
+'Ibn Battuta, Food Court 3'
+'Jebel Ali Gardens, Turnoff'
+'Jebel Ali Free Zone Authority Interchange'
+'The Green Community, AA Building'
+'The Green Community, Choithram Supermarket'
+'The Green Community, East Gate Entrance'
+'The Green Community, West Gate Entrance'
+'The Green Community, Falcon House'
+'Dubai Investment Park Offices'
+'The Green Community, Terrace Apartments'
+'The Green Community, AA Building'
+'Dubai Lagoon, Nibras International School'
+'Dubai Lagoon, Ewan Residence'
+'Dubai Lagoon 1'
+'Green Planet Industries'
+'Pace Food Stuff Trading'
+'Arabian Orchard Complex A'
+'Arabian Orchard Complex B'
+'Arabian Orchard Complex C'
+'Arabian Orchard Complex D'
+'Dunes Village'
+'Fastner World International'
+'Dubai Pearl Gypsum Industries'
+'DIP, AMB Building'
+'DIP, Madina Supermarket Terminus'
+};
 
 %Bus Route F47
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF47';
+WeightsList{SNum} = [3 1 1 1 0.1 2 0.1 1 3 0.1 1 1 1 1 1 1 1 1 2 1 1 2 10 3 1 1 1 1 1 1 1 1 1 2 0.1 1 0.1 1 1 1 0.1 2 1 1 1 1 1 1 1 0.1];
+StationList{SNum} = ...
+{
+'Danube Metro Landside Bus Stop'
+'Jebel Ali Industrial Area 1'
+'Jebel Ali Industrial Area 2'
+'Jebel Ali Industrial Area 4'
+'Jebel Ali Industrial Area 5'
+'Jebel Ali Industrial Area 6'
+'Jebel Ali Industrial Area 7'
+'Jebel Ali Industrial Area 8'
+'Jebel Ali Industrial Area 11'
+'Bustan Macaroni & Noodles Co'
+'Royal Engineering Fabrication Company'
+'All Metal Industries Foundry L.L.C'
+'Jebel Ali Industrial Area, Quality Mix'
+'Jebel Ali Industrial Area, Unimix'
+'Jebel Ali Industrial Area, ISOFOAM'
+'Jebel Ali Industrial Area, DEWA Store'
+'Jebel Ali Industrial Area, Etisalat Tower'
+'Jebel Ali Industrial Area, National Polystyrene'
+'Specialist Services'
+'Jebel Ali Industrial Area, Binani Cement Factory'
+'Jebel Ali Industrial Area, Four Season Staff Housing'
+'Jebel Ali Industrial Area, Dubai Driving Center'
+'Jebel Ali Industrial Area, Scientechnic LLC'
+'EXPO 2020 Site Office'
+'Shoba Contracting Labour Camp'
+'Depa Contracting Labour Camp'
+'Seven Seas Steel Industries'
+'Dubai Contracting Labour Camp'
+'Insulite Block Factory'
+'Dubai Investment Park'
+'Sun Rise Metal Coting'
+'Rig Metal Ind’s'
+'Union Residence'
+'The Green Community, Falcon House'
+'The Green Community, West Gate Entrance'
+'The Green Community, East Gate Entrance'
+'The Green Community, Main Gate Entrance'
+'The Green Community, Choithram Supermarket'
+'The Green Community, AA Building'
+'Dubai Lagoon, Nibras International School'
+'Dubai Lagoon, Ewan Residence'
+'Dubai Lagoon 1'
+'Green Planet Industries'
+'Pace Food Stuff Trading'
+'Emirates Code Contracting Labour Camp'
+'Petron Emirates Accommodation'
+'Dunes Village'
+'Fastner World International'
+'Dubai Pearl Gypsum Industries'
+'DIP, AMB Building'
+'DIP, Madina Supermarket Terminus'
+};
 
 %Bus Route F48
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF48';
+WeightsList{SNum} = [10 0.1 2 0.1 1 1 1 0.1 1 1 1 0.1 2 1 1 2 1 1 1 1 1 1 1 2 1];
+StationList{SNum} = ...
+{
+'Danube Metro Landside Bus Stop'
+'The Green Community, East Gate Entrance'
+'The Green Community, West Gate Entrance'
+'The Green Community, Falcon House'
+'Union Residence'
+'Rig Metal Ind’s'
+'Sun Rise Metal Coting'
+'Dubai Investment Park'
+'Insulite Block Factory'
+'Dubai Contracting Labour Camp'
+'Seven Seas Steel Industries'
+'Depa Contracting Labour Camp'
+'Shoba Contracting Labour Camp'
+'DIP, Prakash Tradings'
+'Can Pack Middle East'
+'Green Field Community School'
+'Green Planet Industries'
+'Pace Food Stuff Trading'
+'Emirates Code Contracting Labour Camp'
+'Petron Emirates Accommodation'
+'Dunes Village'
+'Hidayath Stainless Steel'
+'DIP, ULMA'
+'Dubai Pearl Gypsum Industries'
+'DIP, AMB Building'
+'DIP, Madina Supermarket Terminus'
+};
 
 %Bus Route F53
 
