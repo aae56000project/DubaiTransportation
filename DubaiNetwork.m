@@ -1704,7 +1704,7 @@ StationList{SNum} = ...
 %Bus Route F8
 SNum = SNum + 1;
 RouteList{SNum} = 'BRF08';
-WeightsList{SNum} = [1 1 2 0.1 1 1 2 1 2 1 1 2 1 1 1 2 2 2 5 1 1 3];
+WeightsList{SNum} = [1 1 2 0.1 1 1 2 1 2 1 1 2 1 1 1 2 2 2 5 1 1 3 2 1];
 StationList{SNum} = ...
 {
 'Al Nahda, The Sheffeild Private School'
@@ -1774,7 +1774,7 @@ StationList{SNum} = ...
 %Bus Route F11
 SNum = SNum + 1;
 RouteList{SNum} = 'BRF11';
-WeightsList{SNum} = [1 2 1 1 3 1 2 1 4 1 2 3 1 1 1 1 2];
+WeightsList{SNum} = [1 2 1 1 3 1 2 1 4 1 2 4 1 1 1 1 2];
 StationList{SNum} = ...
 {
 'Financial Center Seaside Metro Bus Stop'
@@ -1794,8 +1794,7 @@ StationList{SNum} = ...
 'Durrah Tower'
 'Emirates Tower Seaside Metro Bus Stop'
 'Rostamani Tower'
-'Financial Center Seaside Metro'
-'Bus Stop'
+'Financial Center Seaside Metro Bus Stop'
 };
 
 %Bus Route F12
@@ -1804,8 +1803,7 @@ RouteList{SNum} = 'BRF12';
 WeightsList{SNum} = [3 2 1 2 3 3];
 StationList{SNum} = ...
 {
-'Al Jafiliya Seaside Metro Bus'
-'Stop'
+'Al Jafiliya Seaside Metro Bus Stop'
 'Satwa, Roundabout'
 'Satwa, Masjid'
 'Satwa, Clinic'
@@ -1817,10 +1815,9 @@ StationList{SNum} = ...
 %Bus Route F13
 SNum = SNum + 1;
 RouteList{SNum} = 'BRF13';
-WeightsList{SNum} = [1 7 3 2 3];
+WeightsList{SNum} = [7 3 2 3];
 StationList{SNum} = ...
 {
-'Dubai Mall Landside Metro Bus Stop'
 'Dubai Mall Landside Metro Bus Stop'
 'The Dubai Mall'
 'Burj Khalifa, The Palace Hotel'
@@ -1869,8 +1866,7 @@ StationList{SNum} = ...
 'Al Quoz, Al Khail Gate 1'
 'Al Quoz, Al Khail Gate 2'
 'Al Quoz, Al Khail Gate 3'
-'Al Quoz, Emirates Housing Al'
-'Khail Gate 2'
+'Al Quoz, Emirates Housing Al Khail Gate 2'
 'Al Quoz, Gargash Construction Accommodation 2'
 'Majid Industries'
 'Khaleej, Metal Coating'
@@ -2121,8 +2117,7 @@ StationList{SNum} = ...
 'Al Barsha A'
 'Mall of the Emirates 1'
 'Mall of the Emirates 2'
-'Mall of the Emirates, Saleh Bin'
-'Lahej Building'
+'Mall of the Emirates, Saleh Bin Lahej Building'
 'Mall of the Emirates Metro Bus Station'
 };
 
@@ -2225,7 +2220,7 @@ StationList{SNum} = ...
 %Bus Route F44
 SNum = SNum + 1;
 RouteList{SNum} = 'BRF44';
-WeightsList{SNum} = [ 4 1 1 2 0.1 3 5 1 1 1 1 1 1 2 1 1 1 1 1 1 1 7 2 0.1 5 1 2 1 1 6];
+WeightsList{SNum} = [ 4 1 1 2 0.1 3 5 1 1 1 1 1 1 2 1 1 1 1 1 1 1 7];
 StationList{SNum} = ...
 {
 'Energy Metro Bus Stop Landside'
@@ -2251,14 +2246,6 @@ StationList{SNum} = ...
 'Jebel Ali Gardens 12'
 'Jebel Ali Gardens 13'
 'Ibn Battuta Metro Bus Station'
-'Ibn Battuta, Food Court 3'
-'Jebel Ali Gardens, Turnoff'
-'Jebel Ali Hotel, Accommodation'
-'Muntazah, Lifeline Hospital'
-'Dubai Evangelical Church Center'
-'Gurunanak Darbar Sikh Temple'
-'Jebel Ali Hotel, Accommodation'
-'Energy Metro Bus Stop Landside'
 };
 
 %Bus Route F46
