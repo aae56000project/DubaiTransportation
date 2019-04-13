@@ -2,7 +2,7 @@
 % Dubai Transport SoS Project
 % Milan Bidare, Mateus Feitosa, Alex Kirtley, Sujit Shivaprasad, Thomas Shaw
 %
-% This script creates a Graph Network of the Dubai transportation system
+% This script cr eates a Graph Network of the Dubai transportation system
 %
 
 %Initiale cell arrays
@@ -20,8 +20,11 @@ weights = [];           % weights array
 % Initialize Varaibles
 SNum = 0;                % integer to increment Lists
 
-% Initialize Asusmptions
+%Initialize Asusmptions
 Xfer_time = 5;
+
+%Select Hyperloop Configuration
+HL_Config = 1;
 
 %% ----------- Metro Lines ----------------
 
@@ -73,7 +76,7 @@ StationList{SNum} = ...
 'World Trade Centre'   
 'Emirates Towers'      
 'Financial Centre'     
-'Burj Khalifa / Dubai Mall'
+'Burj Khalifa'
 'Business Bay'         
 'Noor Bank'            
 'First Abu Dhabi Bank' 
@@ -107,6 +110,7 @@ StationList{SNum} = ...
 'Knowledge Village' 
 'Al Sufouh'         
 };
+
 
 %% ------------------------- Local Bus Routes----------------------------
 
@@ -243,9 +247,9 @@ StationList{SNum} = ...
 'Khawaneej 1'
 'Khawaneej, Palace Masjid'
 'Faisal Stud'
-'Khawaneej, Women’s Association'
+'Khawaneej, Womens Association'
 'Khawaneej, Al Athbaa Primary School Terminus'
-'Khawaneej, Women’s Association'
+'Khawaneej, Womens Association'
 'Faisal Stud'
 'Khawaneej, Palace Masjid'
 'Khawaneej 1'
@@ -305,9 +309,9 @@ StationList{SNum} = ...
 'Khawaneej 1'
 'Khawaneej, Palace Masjid'
 'Faisal Stud'
-'Khawaneej, Women’s Association'
+'Khawaneej, Womens Association'
 'Khawaneej, Al Athbaa Primary School Terminus'
-'Khawaneej, Women’s Association'
+'Khawaneej, Womens Association'
 'Faisal Stud'
 'Khawaneej, Palace Masjid'
 'Khawaneej 1'
@@ -653,7 +657,7 @@ StationList{SNum} = ...
 'Emirates Tower 1'
 'Emirates Tower Landside Metro Bus Stop'
 'Wasl, Etisalat'
-'The Dubai Mall Burj Khalifa, The Palace Hotel' 
+'Burj Khalifa' 
 };
 
 %R28
@@ -1747,28 +1751,28 @@ StationList{SNum} = ...
 'Mirdiff City Centre'
 'Downtown Mirdiff Gate 1'
 'Downtown Mirdiff Gate 2'
-'Al Warqa’a Entrance'
-'Al Warqa’a Masjid'
-'Al Warqa’a A'
-'Al Warqa’a B'
-'Al Warqa’a C'
-'Al Warqa’a D'
-'Al Warqa’a, ETISALAT Tower'
-'Al Warqa’a, Grand Masjid'
-'Al Warqa’a, Mass Supermarket'
-'Al Warqa’a E'
-'Al Warqa’a, La Lune Building'
-'Al Warqa’a, ASCANA 3 Building'
-'Al Warqa’a, Charity Tower'
-'Al Warqa’a Our Own High School'
-'Al Warqa’a, Sharjah American Int’l School'
-'Al Warqa’a, International Academic School'
-'Al Warqa’a, Mansoor Sharaf Tower'
-'Al Warqa’a, Ibrahim Tower'
-'Al Warqa’a, Desert Group Building 5'
-'Al Warqa’a G'
-'Al Warqa’a I'
-'Al Warqa’a J'
+'Al Warqaa Entrance'
+'Al Warqaa Masjid'
+'Al Warqaa A'
+'Al Warqaa B'
+'Al Warqaa C'
+'Al Warqaa D'
+'Al Warqaa, ETISALAT Tower'
+'Al Warqaa, Grand Masjid'
+'Al Warqaa, Mass Supermarket'
+'Al Warqaa E'
+'Al Warqaa, La Lune Building'
+'Al Warqaa, ASCANA 3 Building'
+'Al Warqaa, Charity Tower'
+'Al Warqaa Our Own High School'
+'Al Warqaa, Sharjah American Intl School'
+'Al Warqaa, International Academic School'
+'Al Warqaa, Mansoor Sharaf Tower'
+'Al Warqaa, Ibrahim Tower'
+'Al Warqaa, Desert Group Building 5'
+'Al Warqaa G'
+'Al Warqaa I'
+'Al Warqaa J'
 };
 
 %Bus Route F11
@@ -1785,7 +1789,7 @@ StationList{SNum} = ...
 'Wasl, Park'
 'Iranian Hospital'
 'Hudheiba, Road'
-'Bada’A'
+'BadaA'
 'Satwa, Masjid 2'
 'Satwa, Post Office'
 'Satwa, Roundabout'
@@ -1820,7 +1824,7 @@ StationList{SNum} = ...
 {
 'Dubai Mall Landside Metro Bus Stop'
 'The Dubai Mall'
-'Burj Khalifa, The Palace Hotel'
+'Burj Khalifa'
 '8 Boulevard Walk Tower'
 'Dubai Mall Landside Metro Bus Stop'
 };
@@ -2071,7 +2075,7 @@ StationList{SNum} = ...
 'Queen Palace Factory'
 'Masaood Bergum Construction'
 'Berger Paints'
-'Tela’a Tech Industrial'
+'Telas Tech Industrial'
 'Speedwell Decor'
 'Ahmadya Cont., Labour Camp'
 'Qumaish Cont, Labour Camp'
@@ -2319,7 +2323,7 @@ StationList{SNum} = ...
 'Insulite Block Factory'
 'Dubai Investment Park'
 'Sun Rise Metal Coting'
-'Rig Metal Ind’s'
+'Rig Metal Inds'
 'Union Residence'
 'The Green Community, Falcon House'
 'The Green Community, West Gate Entrance'
@@ -2352,7 +2356,7 @@ StationList{SNum} = ...
 'The Green Community, West Gate Entrance'
 'The Green Community, Falcon House'
 'Union Residence'
-'Rig Metal Ind’s'
+'Rig Metal Inds'
 'Sun Rise Metal Coting'
 'Dubai Investment Park'
 'Insulite Block Factory'
@@ -2519,20 +2523,297 @@ StationList{SNum} = ...
 %----------------------- Feeder Bus Routes --------------------------------
 
 %Bus Route 13B
+SNum = SNum + 1;
+RouteList{SNum} = 'BR13B';
+WeightsList{SNum} = [2 2 2 4 1 2 3 3 2 1 4 4 1 1 2 2 1 2 1 .1 1 2 1 1 1 2 1 1 3];
+StationList{SNum} = ...
+{
+'Gold Souq Bus Station'
+'Hyatt Regency Hotel'
+'Murar Jadeed'
+'Islamic Institute'
+'Hor Al Anz, Turnoff'
+'Abu Hail, Clinic'
+'Hamriya Shopping Center'
+'Abu Hail Center'
+'Traffic Police Department'
+'Airport Terminal 2, Departure'
+'Airport Terminal 2, Arrival'
+'DAFZA'
+'Al Khulafa�a Al Rashideen Boys School'
+'Dubai Grand Hotel'
+'Damascus Road 1'
+'Damascus Road 3'
+'Al Qusais Industrial Area'
+'Galadari Driving School'
+'Al Qusais, Eppco Vehicle Inspection'
+'Muhaisnah 4, Jamal Building'
+'Muhaisnah 4, Lootha Building'
+'Oxford School'
+'Muhaisnah 4, New Housing'
+'Lebenese Private School 1'
+'Public Transport Agency'
+'Dubai Transport, Main Office'
+'Al Qusais, Al Naboodah Labour Camp'
+'Al Qusais, Al Shirawi Labour Camp'
+'Al Qusais, Masjid Hamad Abdul Karim'
+'Al Qusais, Bus Station'
+};
 
 %Bus Route X13
+SNum = SNum + 1;
+RouteList{SNum} = 'BRX13';
+WeightsList{SNum} = [2 1 1 4 3 1 1 2 1 1 1 5 5 5 4 7 1 2 2 2 2 .1 2];
+StationList{SNum} = ...
+{
+'Lulu Village'
+'Muhaisnah 4, New Housing'
+'Emirates Housing'
+'Russian International School'
+'Galadari Driving School'
+'Al Nahda, The Sheffeild Private School'
+'Al Nahda, Zuleikha Hospital'
+'Al Nahda, 19A Street 1'
+'Al Nahda, Madina Super Market'
+'Al Nahda, Emirates College'
+'Al Nahda, Canary Bldg'
+'NMC Hospital'
+'Mahlab School'
+'Abu Hail, Clinic'
+'Naif Intersection'
+'Palm Deira Metro Bus Stop'
+'Al Ghubaiba Bus Station'
+'Department of Ports & Customs'
+'Capital Hotel'
+'Hudheiba'
+'Al Dhiyafa, Road'
+'Satwa, Masjid'
+'Satwa, Clinic'
+'Satwa, Bus Station'
+};
 
 %Bus Route X23
+SNum = SNum + 1;
+RouteList{SNum} = 'BRX23';
+WeightsList{SNum} = [7 2 .1 3 1 6 .1 1 .1 10 2 5 2 5 3 .1 1 2 1 1 .1 2 1 1 1 1 3 1 2];
+StationList{SNum} = ...
+{
+'Gold Souq Bus Station'
+'Falcon Intersection'
+'Rolla'
+'Al Fahidi Metro Bus Stop A'
+'BurJuman Metro Bus Stop A'
+'BurJuman Metro Bus Stop C'
+'Oud Metha Metro Bus Stop'
+'Oud Metha Road 1'
+'Oud Metha Road 2'
+'Wafi City'
+'Aden Street 1'
+'Ras Al Khor, Terminus'
+'Used Car Exhibition'
+'Vegetable Market'
+'Al Warsan 1, Eppco 1'
+'Dubai Textile City Main Gate'
+'Dubai Textile City'
+'International City, Lake Entrance'
+'International City, Morocco'
+'International City, China 3'
+'International City, China 2'
+'International City, Dragon Mart'
+'International City, Post office 1'
+'International City, Central Business district 1'
+'International City, Central Business district 1'
+'International City, Rivera Dreams Apartments 1'
+'International City, Police Station'
+'International City, Persia O02'
+'International City, Persia M03'
+'International City, Greece K12 Terminus'
+};
 
 %Bus Route X25
+SNum = SNum + 1;
+RouteList{SNum} = 'BRX25';
+WeightsList{SNum} = [2 1 3 2 1 2 1 4 2 1 .1 .1 15 3 .1 1 .1 .1 1 1 1 .1 1 4 1 1 5 1 1];
+StationList{SNum} = ...
+{
+'Al Karama Bus Station'
+'Karama 1'
+'Karama 2'
+'Schools Health Center'
+'Karama, Dubai Municipality Center'
+'Centre Point Shopping Centre'
+'BurJuman Metro Bus Stop B'
+'BurJuman Metro Bus Stop C'
+'Broadcast Interchange'
+'Oud Metha Metro Bus Stop'
+'Oud Metha Road 1'
+'Oud Metha Road 2'
+'Wafi City'
+'Silicon Oasis Headquarter'
+'Blue Tower'
+'Gordoba Palace'
+'Silicon Oasis 5'
+'Silicon Oasis 3'
+'Silicon Oasis 2'
+'DSO Operation Centre'
+'Le Solarium Tower'
+'Axis 1 Residence'
+'Axis 3 Residence'
+'Bin Ghatti Apartments'
+'Dubai Academic City 3'
+'Dubai Academic City 2'
+'Dubai Outsource City, Amity University Dubai'
+'Dubai Outsource City, Arab Company'
+'Dubai Outsource City, Al Shiba Complex'
+'Dubai Outsource City, Royal Bank of Scotland'
+};
 
 %Bus Route X28
+SNum = SNum + 1;
+RouteList{SNum} = 'BRX28';
+WeightsList{SNum} = [2 1 1 4 1 2 2 1 1 2 2 2 4 .1 2 2 2 2 2 4 4 3 2 4 1 2 3 3 5 4 3 2 3 2 4 3];
+StationList{SNum} = ...
+{
+'Lulu Village'
+'Muhaisnah 4, New Housing'
+'Emirates Housing'
+'Russian International School'
+'Galadari Driving School'
+'Al Qusais Industrial Area'
+'Damascus Road 3'
+'Damascus Road 1'
+'Al Khulafa�a Al Rashideen Boys School'
+'Dubai Airport Free Zone Metro Bus Stop'
+'Al Nahda Metro Bus Stop'
+'Ministry of Information'
+'Al Nahda, Shabab Alahli Club'
+'Al Jadeed Bakery'
+'Dubai Scout Mission'
+'Abu Baker Al Siddique Metro Bus Stop 2'
+'Hamarain Center'
+'Al Bakhit Center'
+'DNATA'
+'City Centre Metro Bus Stop A'
+'Umm Hurair, Road 1'
+'Al Jafiliya Seaside Metro Bus Stop'
+'Satwa, Roundabout'
+'Al Dhiyafa, Road'
+'Dhiyafa'
+'Jumeira, Grand Masjid'
+'Century Plaza'
+'Mercato Shopping Mall'
+'Rashid Bin Bakhait Masjid'
+'Majlis Al Ghoreifa'
+'Dubai Offshore Sailing Club'
+'Umm Suqeim, Dubai Municipality Center'
+'Umm Suqeim, Library'
+'Wild Wadi'
+'Burj Al Arab Hotel'
+'Abdulla Omran Taryam Street'
+'Dubai Internet City Seaside Metro Bus Stop'
+};
 
 %Bus Route 91A
+SNum = SNum + 1;
+RouteList{SNum} = 'BR91A';
+WeightsList{SNum} = [2 2 2 4 5 5 28 4 .1 1 1 3 1 .1 2 .1 1 1 1 .1 1 1 1 1 2];
+StationList{SNum} = ...
+{
+'Gold Souq Bus Station'
+'Naif Intersection'
+'Al Nakhal 1'
+'Union Metro Bus Stop A'
+'Maktoum Road'
+'Umm Hurair, Road 1'
+'Al Jafiliya Bus Station'
+'Jebel Ali Free Zone, Main Gate'
+'Dubai Ports Authority, Free Zone Office'
+'Jebel Ali Free Zone, Roundabout 5'
+'Jebel Ali Free Zone, Sony'
+'Jebel Ali Free Zone, Roundabout 6'
+'Jebel Ali Free Zone, Lease Office 5'
+'Jebel Ali Free Zone, Nafco'
+'Container Glass Factory'
+'Zaher Group'
+'Cleveland Bridge Engineering 1'
+'Cleveland Bridge Engineering 2'
+'Jebel Ali Free Zone, Roundabout 8'
+'Jebel Ali Free Zone, Kanoo Group'
+'Jebel Ali Free Zone, Roundabout 12'
+'Jebel Ali Free Zone, Roundabout 12'
+'Jebel Ali Free Zone, Kanoo Group'
+'Dubai Ports Authority, Staff Quarters'
+'Gulf Denims Limited'
+'Jebel Ali, Bus Station'
+};
 
 %Bus Route X92
+SNum = SNum + 1;
+RouteList{SNum} = 'BRX92';
+WeightsList{SNum} = [9 1 27 5 .1 2 1 .1 2 1 .1 1 .1 3 1 2 .1 12 .1 1 1 .1 3];
+StationList{SNum} = ...
+{
+'Al Ghubaiba Bus Station'
+'Department of Health'
+'Al Jafiliya Seaside Metro Bus Stop'
+'Jebel Ali Free Zone, Main Gate'
+'Jebel Ali Industrial Area 1'
+'Jebel Ali Industrial Area 2'
+'Jebel Ali Industrial Area 4'
+'Jebel Ali Industrial Area 5'
+'Jebel Ali Industrial Area 6'
+'Jebel Ali Industrial Area 7'
+'Jebel Ali Industrial Area 8'
+'Jebel Ali Industrial Area 11'
+'Jebel Ali Industrial Area 6'
+'Jebel Ali Industrial Area 5'
+'Dutco'
+'Amssar Wood Manufacturing'
+'Falcon Chemicals'
+'Solico'
+'Shoba Contracting Labour Camp'
+'Depa Contracting Labour Camp'
+'Seven Seas Steel Industries'
+'Dubai Contracting Labour Camp'
+'Insulite Block Factory'
+'Dubai Investment Park'
+};
 
 %Bus Route X94
+SNum = SNum + 1;
+RouteList{SNum} = 'BRX94';
+WeightsList{SNum} = [5 2 2 1 5 3 27 1 2 1 1 1 .1 1 .1 1 2 1 2 .1 11 .1 1 .1 1 1];
+StationList{SNum} = ...
+{
+'Gold Souq Bus Station'
+'Naif Intersection'
+'Al Nakhal 1'
+'Union Metro Bus Stop A'
+'Maktoum Road'
+'Umm Hurair, Road 1'
+'Al Jafiliya Bus Station'
+'Jebel Ali Industrial Area 1'
+'Jebel Ali Industrial Area 2'
+'Jebel Ali Industrial Area 4'
+'Jebel Ali Industrial Area 5'
+'Jebel Ali Industrial Area 6'
+'Jebel Ali Industrial Area 7'
+'Jebel Ali Industrial Area 8'
+'Jebel Ali Industrial Area 11'
+'Jebel Ali Industrial Area 6'
+'Jebel Ali Industrial Area 5'
+'Dutco'
+'Amssar Wood Manufacturing'
+'Falcon Chemicals'
+'Solico'
+'Shoba Contracting Labour Camp'
+'Depa Contracting Labour Camp'
+'Seven Seas Steel Industries'
+'Dubai Contracting Labour Camp'
+'Insulite Block Factory'
+'Dubai Investment Park'
+};
+
 
 %----------------------- Intercity Bus Routes --------------------------------
 
@@ -2560,12 +2841,154 @@ StationList{SNum} = ...
 
 %--------------Global Village & Miracle Garden Bus Routes -----------------
 
+%Bus Route 102
+SNum = SNum + 1;
+RouteList{SNum} = 'BR102';
+WeightsList{SNum} = [30];
+StationList{SNum} = ...
+{
+'Rashidiya Metro Bus Station'
+'Global Village'
+};
+
 %Bus Route 103
+SNum = SNum + 1;
+RouteList{SNum} = 'BR103';
+WeightsList{SNum} = [15 45];
+StationList{SNum} = ...
+{
+'Union Metro Bus Stop C'
+'Rebat Street 2'
+'Global Village'
+};
 
 %Bus Route 104
+SNum = SNum + 1;
+RouteList{SNum} = 'BR104';
+WeightsList{SNum} = [20 40];
+StationList{SNum} = ...
+{
+'Al Ghubaiba Bus Station'
+'Al Jafiliya Seaside Metro Bus Stop'
+'Global Village'
+};
 
 %Bus Route 105
+SNum = SNum + 1;
+RouteList{SNum} = 'BR105';
+WeightsList{SNum} = [25];
+StationList{SNum} = ...
+{
+'Mall of the Emirates Metro Bus Station'
+'Miracle Garden'
+};
 
+%Bus Route 106
+SNum = SNum + 1;
+RouteList{SNum} = 'BR106';
+WeightsList{SNum} = [2 1 .1 2 2 26];
+StationList{SNum} = ...
+{
+'Mall of the Emirates Metro Bus Station'
+'Al Barsha A'
+'Al Barsha, Lulu Supermarket'
+'Dubai American Academy'
+'Classic Crystal'
+'Al Quoz, Clinical Pathology Services'
+'Global Village'
+};
+
+%--------------------------Forced Connects---------------------------------
+%Due to naming convention differents on routes, some stations must 
+%be 'force connected'
+SNum = SNum + 1;
+RouteList{SNum} = 'FORCE1';
+WeightsList{SNum} = [5];
+StationList{SNum} = ...
+{
+'Jumeirah Lakes Towers'
+'Jumeirah Beach Residence Station 2'
+};
+
+%--------------------------HyperLoop Routes--------------------------------
+
+%Configuration 1
+if(HL_Config ==1)
+    SNum = SNum + 1;
+    RouteList{SNum} = 'HL C1';
+    WeightsList{SNum} = [10];
+    StationList{SNum} = ...
+    {
+    'Airport Terminal 1'
+    'Burj Khalifa'
+    };
+end
+
+%Configuration 2
+if(HL_Config ==2)
+    SNum = SNum + 1;
+    RouteList{SNum} = 'HL C2';
+    WeightsList{SNum} = [];
+    StationList{SNum} = ...
+    {
+    'Airport Terminal 1'
+    'Burj Khalifa'   
+    'Al Maktoum International Airport, Arrivals'
+    'Palm Jumeirah' 
+    'Dubai Internet City'
+    'International City'
+    'Al Ghubaiba'
+    'Palm Jebel'    %THIS DOES NOT CONNECT TO ANYTHING
+    };
+end
+
+%Configuration 3
+if(HL_Config ==2)
+    SNum = SNum + 1;
+    RouteList{SNum} = 'HL C3';
+    WeightsList{SNum} = [];
+    StationList{SNum} = ...
+    {                           % THESE NEED TO BE HUB/SPOKE
+    'Airport Terminal 1'
+    'Burj Khalifa'   
+    'Al Maktoum International Airport, Arrivals'
+    'Palm Jumeirah' 
+    'Dubai Internet City'
+    'International City'
+    'Al Ghubaiba'
+    'Palm Jebel'      
+    };
+end
+
+%Configuration 4
+if(HL_Config ==2)
+    SNum = SNum + 1;
+    RouteList{SNum} = 'HL C4';
+    WeightsList{SNum} = [];
+    StationList{SNum} = ...
+    {
+    };
+end
+
+%Configuration 5
+if(HL_Config ==2)
+    SNum = SNum + 1;
+    RouteList{SNum} = 'HL C5';
+    WeightsList{SNum} = [];
+    StationList{SNum} = ...
+    {
+    };
+end
+
+%Configuration 6
+if(HL_Config ==2)
+    SNum = SNum + 1;
+    RouteList{SNum} = 'HL C6';
+    WeightsList{SNum} = [];
+    StationList{SNum} = ...
+    {
+    };
+end
 
 %% -----------------------Error checking-----------------------------------
 %check same number of node and weight arrays:
