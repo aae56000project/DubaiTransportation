@@ -2957,7 +2957,7 @@ StationList{SNum} = ...
 'Airport Terminal 2, Departure'
 'Airport Terminal 2, Arrival'
 'DAFZA'
-'Al Khulafa’a Al Rashideen Boys School'
+'Al KhulafaÂ’a Al Rashideen Boys School'
 'Dubai Grand Hotel'
 'Damascus Road 1'
 'Damascus Road 3'
@@ -3099,7 +3099,7 @@ StationList{SNum} = ...
 'Al Qusais Industrial Area'
 'Damascus Road 3'
 'Damascus Road 1'
-'Al Khulafa’a Al Rashideen Boys School'
+'Al KhulafaÂ’a Al Rashideen Boys School'
 'Dubai Airport Free Zone Metro Bus Stop'
 'Al Nahda Metro Bus Stop'
 'Ministry of Information'
@@ -3235,26 +3235,308 @@ StationList{SNum} = ...
 %----------------------- Intercity Bus Routes --------------------------------
 
 %Bus Route E16
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE16';
+WeightsList{SNum} = [8 1 1 1 1 6 2 1 0.1 1 2 2 3 1 3 4 1 3 1 2 2 1 1 12 3 7 0.1 7 4 3 6 2 3 1 0.1 2];
+StationList{SNum} = ...
+{
+'Sabkha, Bus Station'
+'Al Ras Metro Bus Stop'
+'Deira, Old Souq'
+'Emirates NBD'
+'Al Sabkha Marine Bus Stop'
+'Dubai Intercontinental Hotel'
+'British Council'
+'Oud Metha Metro Bus Stop'
+'Oud Metha Road 1'
+'Oud Metha Road 2'
+'Wafi City'
+'Wasl, Wasl Club'
+'Oud Metha Road, Emarat, Petrol Station'
+'Dubai Country Club'
+'Ras Al Khor, DEWA'
+'Ras Al Khor, Comm. Complex 2'
+'Al Warsan 1, Eppco 1'
+'Awir, Sewage Treatment Plant 1'
+'Awir Depot 1'
+'Al Warsan 3, Civil Defence Training Centre'
+'Awir, Wadi Al Shabak Camp'
+'Dubai Cultural Sports Club 1'
+'Awir, Terminus'
+'Awir, New Shabia 1'
+'Habab, Roundabout'
+'Habab, Reem Emarat Petrol Station'
+'Nazwa, Al Jabal Emirates Petrol Station'
+'Nazwa, Al Wista Supermarket'
+'Ramool Adventure Park'
+'Hatta Road Al Rifadah'
+'Al Madam, Roundabout'
+'Al Madam, Health Care Center'
+'Hatta, DM Staff Accommodation'
+'Hatta, Hatta Fort Hotel'
+'Hatta, Emirates NBD'
+'Hatta, Sheikh Khalifa Masjid'
+'Hatta, Bus Station'
+};
 
 %Bus Route E100
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE100';
+WeightsList{SNum} = [4 11 3];
+StationList{SNum} = ...
+{
+'Al Ghubaiba Bus Station'
+'Abu Dhabi, Samha'
+'Abu Dhabi, Shahama Village'
+'Abu Dhabi, Central Bus Station'
+};
 
 %Bus Route E101
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE101';
+WeightsList{SNum} = [16 12 33];
+StationList{SNum} = ...
+{
+'Ibn Battuta Metro Bus Station'
+'Abu Dhabi, Samha'
+'Abu Dhabi, Shahama Village'
+'Abu Dhabi, Central Bus Station'
+};
+
+%Bus Route E101
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE101';
+WeightsList{SNum} = [16 12 33];
+StationList{SNum} = ...
+{
+'Ibn Battuta Metro Bus Station'
+'Abu Dhabi, Samha'
+'Abu Dhabi, Shahama Village'
+'Abu Dhabi, Central Bus Station'
+};
+
+%Bus Route E201
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE201';
+WeightsList{SNum} = [4 3 6 5 25 54 2 0.1 1];
+StationList{SNum} = ...
+{
+'Al Ghubaiba Bus Station'
+'Al Jafiliya Seaside Metro Bus Stop'
+'Wasl, Wasl Club'
+'Nad Al Shiba, Emirates NBD'
+'Marmoom Dairy Farm'
+'Faqa, Terminus'
+'UAE University Mohammed Ibn Khalifa St'
+'Al Madina Petrol Station'
+'Al Shiekha Slama Masjid'
+'Al Ain Central Bus Station'
+};
+
+%Bus Route E301
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE301';
+WeightsList{SNum} = [4 0.1 1];
+StationList{SNum} = ...
+{
+'Al Nahda, Shabab Alahli Club'
+'Sharjah, Al Taawun, Dream Tower'
+'Sharjah, Al Taawun, Al Amal Tower'
+'Sharjah, Al Taawun Terminus'
+};
 
 %Bus Route E303
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE303';
+WeightsList{SNum} = [21 3 3 1 1 3 2 3 2];
+StationList{SNum} = ...
+{
+'Union Square Bus Station'
+'Sharjah, Ithihad Road, Ansar Mall'
+'Sharjah, Ithihad Road - Al Safeer Mall'
+'Sharjah, Al Wahda Rd, Subway 1'
+'Sharjah, Al Wahda Rd, Al Wahda Center 2'
+'Sharjah, Al Wahda Road , City Center 1'
+'Sharjah, King Faisl Rd, Jumbo (Sony)'
+'Sharjah, King Faisl Rd, Adnoc Petrol Station'
+'Sharjah, King Faisl Rd, Gold Souq (Old)'
+'Sharjah, Al Jubail Bus Station'
+};
 
 %Bus Route E303A
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE303A';
+WeightsList{SNum} = [19 2 2 1 1 3 2 3 2];
+StationList{SNum} = ...
+{
+'Sabkha, Bus Station'
+'Sharjah, Ithihad Road, Ansar Mall'
+'Sharjah, Ithihad Road - Al Safeer Mall'
+'Sharjah, Al Wahda Rd, Subway 1'
+'Sharjah, Al Wahda Rd, Al Wahda Center 2'
+'Sharjah, Al Wahda Road , City Center 1'
+'Sharjah, King Faisl Rd, Jumbo (Sony)'
+'Sharjah, King Faisl Rd, Adnoc Petrol Station'
+'Sharjah, King Faisl Rd, Gold Souq (Old)'
+'Sharjah, Al Jubail Bus Station'
+};
 
 %Bus Route E304
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE304';
+WeightsList{SNum} = [13 1 29 3 2 1 1 4 2 3 2];
+StationList{SNum} = ...
+{
+'Satwa, Bus Station'
+'Al Karama Bus Station'
+'Schools Health Center'
+'Sharjah, Ithihad Road, Ansar Mall'
+'Sharjah, Ithihad Road - Al Safeer Mall'
+'Sharjah, Al Wahda Rd, Subway 1'
+'Sharjah, Al Wahda Rd, Al Wahda Center 2'
+'Sharjah, Al Wahda Road , City Center 1'
+'Sharjah, King Faisl Rd, Jumbo (Sony)'
+'Sharjah, King Faisl Rd, Adnoc Petrol Station'
+'Sharjah, King Faisl Rd, Gold Souq (Old)'
+'Sharjah, Al Jubail Bus Station'
+};
 
 %Bus Route E306
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE306';
+WeightsList{SNum} = [5 12 2 2 0.1 1 3 2 2 2];
+StationList{SNum} = ...
+{
+'Al Ghubaiba Bus Station'
+'Dubai Hospital'
+'Sharjah, Ithihad Road, Ansar Mall'
+'Sharjah, Ithihad Road - Al Safeer Mall'
+'Sharjah, Al Wahda Rd, Subway 1'
+'Sharjah, Al Wahda Rd, Al Wahda Center 2'
+'Sharjah, Al Wahda Road , City Center 1'
+'Sharjah, King Faisl Rd, Jumbo (Sony)'
+'Sharjah, King Faisl Rd, Adnoc Petrol Station'
+'Sharjah, King Faisl Rd, Gold Souq (Old)'
+'Sharjah, Al Jubail Bus Station'
+};
 
 %Bus Route E307
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE307';
+WeightsList{SNum} = [9 2 2 0.1 1 3 1 2 2];
+StationList{SNum} = ...
+{
+'Deira City Center Bus Station'
+'Sharjah, Ithihad Road, Ansar Mall'
+'Sharjah, Ithihad Road - Al Safeer Mall'
+'Sharjah, Al Wahda Rd, Subway 1'
+'Sharjah, Al Wahda Rd, Al Wahda Center 2'
+'Sharjah, Al Wahda Road , City Center 1'
+'Sharjah, King Faisl Rd, Jumbo (Sony)'
+'Sharjah, King Faisl Rd, Adnoc Petrol Station'
+'Sharjah, King Faisl Rd, Gold Souq (Old)'
+'Sharjah, Al Jubail Bus Station'
+};
 
-%Bus Route E307A
+%Bus Route E311
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE311';
+WeightsList{SNum} = [24 2 1 1 1 2 1 0.1 2 1 1 2 2 3 2];
+StationList{SNum} = ...
+{
+'Rashidiya Metro Bus Station'
+'Sharjah Industrial, National Paints'
+'Sharjah, Maliha Road, 4th Industrial Area Intersection'
+'Sharjah, Maliha Road, Sabah Industries'
+'Sharjah, Maliha Road, GECO Minerwa'
+'Sharjah, Maliha Road, Municipality Office'
+'Sharjah, Maliha Road, 2nd Industrial Junction B'
+'Sharjah, Maliha Road, 2nd Industrial Junction A'
+'Sharjah, Maliha Road, J&P Junction'
+'Sharjah, Maliha Road, Maaza Signal Junction A'
+'Sharjah, King Faisal Road, Maza Signal Junction'
+'Sharjah, King Faisal Road, Bridge'
+'Sharjah, King Faisl Rd, Jumbo (Sony)'
+'Sharjah, King Faisl Rd, Adnoc Petrol Station'
+'Sharjah, King Faisl Rd, Gold Souq (Old)'
+'Sharjah, Al Jubail Bus Station'
+};
+
+%Bus Route E315
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE315';
+WeightsList{SNum} = [15];
+StationList{SNum} = ...
+{
+'Etisalat Metro Bus Station'
+'Sharjah, Al Muwailah Bus Terminal'
+};
+
+%Bus Route E316
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE316';
+WeightsList{SNum} = [30 3 1 2 1 2 3];
+StationList{SNum} = ...
+{
+'Rashidiya Metro Bus Station'
+'Sharjah, Maliha Road, Manama Supermarket'
+'Sharjah, Maliha Road, Apollo Medical'
+'Sharjah, Maliha Road, Industrial 17 Exit'
+'Sharjah, Maliha Road, ENOC Petrol Station'
+'Sharjah, Maliha Road, Sharjah English School'
+'Sharjah, Maliha Road, Sharjah Institute of Technology'
+'Sharjah, Noaf Airport Road Interchange'
+};
 
 %Bus Route E400
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE400';
+WeightsList{SNum} = [37 2 0.1 2];
+StationList{SNum} = ...
+{
+'Union Square Bus Station'
+'Ajman, Union National Bank'
+'Ajman, Giant Supermarket'
+'Ajman, Al Manama Mall'
+'Ajman Bus Station'
+};
+
+%Bus Route E411
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE411';
+WeightsList{SNum} = [43 7 2 3 3];
+StationList{SNum} = ...
+{
+'Etisalat Metro Bus Station'
+'Ajman, Thumbay Hospital'
+'Ajman, Crown Palace Hotel'
+'Ajman, Rashidiya'
+'Ajman, LuLu Hypermarket A'
+'Ajman Bus Station'
+};
 
 %Bus Route E700
+SNum = SNum + 1;
+RouteList{SNum} = 'BRE700';
+WeightsList{SNum} = [4 5 18 12 1 12 9 5 4 2 2 1 0.1 1];
+StationList{SNum} = ...
+{
+'Union Square Bus Station'
+'DNATA'
+'Airport Terminal 1, Arrival'
+'Sharjah Cement Factory'
+'Dhaid, Post Office'
+'Dhaid, Central Region Department'
+'Thoban ENOC Petrol Station'
+'Masafi, Friday Market'
+'Masafi, Police Station'
+'Fujairah, Ajman University'
+'Fujairah Bus Station, External'
+'Fujairah, Etisalat'
+'Fujairah, Ministry Of Labour'
+'Fujairah, Choithrams Supermarket'
+'Fujairah'
+};
 
 %--------------Global Village & Miracle Garden Bus Routes -----------------
 
