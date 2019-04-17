@@ -2832,66 +2832,9 @@ StationList{SNum} = ...
 'Dubai Industrial City, Labour Village 3'
 };
 
-% %Bus Route F54
-% ERROR Due to multiplicity of some links... need to redo
-% SNum = SNum + 1;
-% RouteList{SNum} = 'BRF54';
-% WeightsList{SNum} = [1 0.1 1 1 1 1 3 1 1 1 1 0.1 1 1 1 1 0.1 1 1 1 0.1 1 0.1 1 0.1 1 1 0.1 1 1 2 1 0.1 1 1 1 1 1 1 2 3 0.1 1 1 0.1 5];
-% StationList{SNum} = ...
-% {
-% 'Danube Metro Seaside Bus Stop'
-% 'Donya Cinema'
-% 'Jebel Ali Free Zone, Training Center'
-% 'Customs Checking Area'
-% 'Jebel Ali Free Zone, Roundabout 5'
-% 'Jebel Ali Free Zone, Sony'
-% 'Jebel Ali Free Zone, Roundabout 6'
-% 'Jebel Ali Free Zone, Lease Office 5'
-% 'Jebel Ali Free Zone, Nafco'
-% 'Container Glass Factory'
-% 'Zaher Group'
-% 'Cleveland Bridge Engineering 1'
-% 'Cleveland Bridge Engineering 2'
-% 'Jebel Ali Free Zone, Roundabout 8'
-% 'Jebel Ali Free Zone, Kanoo Group'
-% 'Jebel Ali Free Zone, Roundabout 12'
-% 'Naboodah Cargo Centre'
-% 'EDGEN MURRAY Steel'
-% 'Jebel Ali Free Zone, N300 Street'
-% 'DCFC Logistic'
-% 'Nestle Free Zone Company'
-% 'Inter Equipment Company'
-% 'Lucy Switchgear'
-% 'Pharma Care'
-% 'Galaxy International Overseas'
-% 'UAE Exchange Metro Bus Stop'
-% 'Globalink Westar Shipping Company'
-% 'Pharma Care'
-% 'Lucy Switchgear'
-% 'Inter Equipment Company'
-% 'Jebel Ali Free Zone, ENOC Petrol Station'
-% 'John Crane Middle East'
-% 'Transworld Group Of Companies'
-% 'CWT Logistics'
-% 'Freight Work'
-% 'Emmerson'
-% 'Jebel Ali Free Zone South Accommodation'
-% 'Summit Steel'
-% 'Mideast Metals'
-% 'Perfect Steel Free Zone Company'
-% 'Naffco Clock Roundabout'
-% 'JEL Corporation'
-% 'Mayur Tradings'
-% 'Al Ras Steel Trading'
-% 'Nuplas Industry Limited'
-% 'Bridgeway Industries'
-% 'Inter Equipment Company'
-% };
-
-
-% Bus Route F54A
+% Bus Route F54
 SNum = SNum + 1;
-RouteList{SNum} = 'BRF54A';
+RouteList{SNum} = 'BRF54';
 WeightsList{SNum} = [1 0.1 1 0.2 3 0.1 1 0.1 1 0.1 1 1 0.1 1 1 1 0.1 1 1];
 StationList{SNum} = ...
 {
