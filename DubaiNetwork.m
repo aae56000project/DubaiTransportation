@@ -1451,10 +1451,73 @@ StationList{SNum} = ...
 };
 
 %Bus Route 97
+SNum = SNum + 1;
+RouteList{SNum} = 'BR97';
+WeightsList{SNum} = [1,0.1,2,2,1,2,4,39,0.1,2,1];
+StationList{SNum} = ...
+{
+'Al Qusais, Bus Station' 
+'Al Qusais, Al Ghurair Labour Camp'
+'Al Qusais, Bu Haleeba Contracting Camp'
+'Al Qusais, Lamprell Energy Ltd. Labour Accommodation'
+'Abella Camp'
+'Algeria Street 1'
+'Algeria Street 4'
+'Tunis Road 1'
+'Jebel Ali Industrial Area 1'
+'Jebel Ali Industrial Area 2'
+'Jebel Ali Industrial Area 12'
+'Jebel Ali Industrial Area 7'
+};
 
 %Bus Route 98E
+SNum = SNum + 1;
+RouteList{SNum} = 'BR98E';
+WeightsList{SNum} = [2,1,2,3,1,1,0.1,1,8,1,0.1,1,8,1];
+StationList{SNum} = ...
+{
+'Satwa, Bus Station' 
+'Satwa, Masjid 2'
+'Satwa, Post Office'
+'Satwa, Roundabout'
+'Trade Center Metro Bus Stop'
+'White Crown Tower'
+'Durrah Tower'
+'Emirates Tower Seaside Metro Bus Stop'
+'Rostamani Tower'
+'Emirates General Petroleum Corporation'
+'Gulf News'
+'Dubai Modern School'
+'Emarat, Headquarters'
+'Honda, Training Center'
+'Al Quoz, Bus Station'
+};
 
 %Bus Route 99
+SNum = SNum + 1;
+RouteList{SNum} = 'BR99';
+WeightsList{SNum} = [0.1,1,1,1,0.1,1,0.1,1,0.1,3,1,1,1,2,2,2];
+StationList{SNum} = ...
+{
+'UAE Exchange Metro Bus Stop'
+'Globalink Westar Shipping Company'
+'Lease Offices'
+'Barwill Corporation'
+'Galaxy International Overseas'
+'UAE Exchange Metro Bus Stop'
+'Globalink Westar Shipping Company'
+'Pharma Care'
+'Lucy Switchgear'
+'Inter Equipment Company'
+'Zaher Group'
+'Cleveland Bridge Engineering 1'
+'Cleveland Bridge Engineering 2'
+'Jebel Ali Free Zone, Roundabout 8'
+'Dubai Ports Authority, Staff Quarters'
+'Gulf Denims Limited'
+'Jebel Ali, Bus Station'
+
+};
 
 %Bus Route 300
 
@@ -1465,9 +1528,40 @@ StationList{SNum} = ...
 %Bus Route 367
 
 %Bus Route D3
+SNum = SNum + 1;
+RouteList{SNum} = 'D3';
+WeightsList{SNum} = [15];
+StationList{SNum} = ...
+{
+'Dubai Design District'
+'Dubai Mall Landside Metro Bus Stop'
+};
 
 %Bus Route J1
-
+SNum = SNum + 1;
+RouteList{SNum} = 'J1';
+WeightsList{SNum} = [1,4,1,1,0.1,1,1,9,1,1,1,1,8,1,1,0.1,1];
+StationList{SNum} = ...
+{
+'JVC, Hanover Square'
+'JVC, Manhattan Tower'
+'JVC, Atlantis S (platform 02)'
+'JVC, Atlantis S (platform 01)'
+'JVC, Tuscan Residences'
+'JVC, Noor Residences'
+'JVC, Season Community Autumn'
+'JVC, Season Community Summer'
+'Al Barsha South 1, Mohammed Bin Rashid Housing C'
+'Al Barsha South 1, Aswaaq Mall'
+'Al Barsha South 1, DEWA Sub Station'
+'Al Barsha South 1, Mohammed Bin Rashid Housing B'
+'Al Barsha South 1, Mohammed Bin Rashid Housing A'
+'Dubai American Academy'
+'Al Barsha A'
+'Mall of the Emirates 2'
+'Mall of the Emirates, Saleh Bin Lahej Building'
+'Mall of the Emirates Metro Bus Station'
+};
 
 
 %----------------------- CBD Bus Routes -----------------------------------
