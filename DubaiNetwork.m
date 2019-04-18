@@ -18,13 +18,14 @@ target = [];            % target edge array
 weights = [];           % weights array
 
 % Initialize Varaibles
-SNum = 0;                % integer to increment Lists
+SNum = 0;               % integer to increment Lists
+routelabel = 1;         % option to label first node of route with route name
 
 %Initialize Asusmptions
 Xfer_time = 5;
 
 %Select Hyperloop Configuration
-HL_Config = 1;
+HL_Config = 2;
 
 %% ----------- Metro Lines ----------------
 
@@ -290,69 +291,6 @@ StationList{SNum} = ...
 'Awir, Emirates NBD'    
 };
 
-%Bus Route 11b
-SNum = SNum + 1;
-RouteList{SNum} = 'BR11b';
-WeightsList{SNum} = [6 1 1 1 1 2 1 5 5 5 .1 2 .1 .1 1 .1 1 1 .1 1 .1 1 1 1 .1 1 .1 4 1 .1 1 1 .1 2 1 1 .1 2 1 1 1 1 1 2 1 2 1 1 1 1 1 1 1 1];
-StationList{SNum} = ...
-{
-'Rashidiya Metro Bus Station'
-'Mushrif, Eppco'
-'Mushrif, Masjid'
-'Mushrif, Park'
-'Mizhar 2, Turnoff'
-'Mushrif, Veterinary Service'
-'Khawaneej, Road 1'
-'Khawaneej Road 2'
-'Khawaneej Roundabout'
-'Amardi, Boys School'
-'Khawaneej 1'
-'Khawaneej, Palace Masjid'
-'Faisal Stud'
-'Khawaneej, Womens Association'
-'Khawaneej, Al Athbaa Primary School Terminus'
-'Khawaneej, Womens Association'
-'Faisal Stud'
-'Khawaneej, Palace Masjid'
-'Khawaneej 1'
-'Amardi, Boys School'
-'Khawaneej, Health Center'
-'Bin Bisher Farm'
-'Khawaneej, Boys School'
-'Rawabi Diary, Crossing'
-'Orient Irrigation Services'
-'Imam Al Shafi Masjid, Amardi'
-'Amardi, Road 1'
-'Amardi, Road 2'
-'Amardi, Road 3'
-'Amardi, Road 4'
-'Awir, Etisalat'
-'Awir, CMC Rounabout'
-'Awir, CMC Road 1'
-'Awir, Dewa Wells Unit'
-'Awir, Palace'
-'Awir, Waha School'
-'Awir, CMC Road 2'
-'Awir, CMC Road 3'
-'Awir, CMC Road 4'
-'Awir, CMC Masab Bin Umair Masjid'
-'Awir, CMC'
-'Awir, CMC Masab Bin Umair Masjid'
-'Awir, CMC Road 4'
-'Awir, CMC Road 3'
-'Awir, Waha School'
-'Awir, Palace'
-'Awir, Dewa Wells Unit'
-'Awir, CMC Road 1'
-'Awir, Masjid'
-'Awir, Boys School'
-'Awir, Dubai Municipality Center'
-'Awir, Girls School'
-'Awir 1'
-'Awir, Emirates NBD'
-'Awir, Terminus'
-};
-
 %Bus Route 12
 SNum = SNum + 1;
 RouteList{SNum} = 'BR12';
@@ -473,7 +411,7 @@ StationList{SNum} = ...
 'Twar 1, Emarat Al Mawred'
 'DAFZA'
 'Twar 1, Emarat Al Mawred'
-'Al Khulafa?a Al Rashideen Boys School'
+'Al Khulafaa Al Rashideen Boys School'
 'Dubai Grand Hotel'
 'Damascus Road 1'
 'Damascus Road 2'
@@ -1928,7 +1866,7 @@ StationList{SNum} = ...
 'Emirates Driving Institute'
 'Sheikh Rashid Colony 2'
 'Dubai Grand Hotel'
-'Al Khulafa?a Al Rashideen Boys School'
+'Al Khulafaa Al Rashideen Boys School'
 'Dubai Airport Free Zone Metro Bus Stop'
 'Al Nahda Metro Bus Stop'
 'Ministry of Information'
@@ -1981,7 +1919,7 @@ StationList{SNum} = ...
 'Ministry of Information'
 'Al Nahda Metro Bus Stop'
 'Twar, Union Cooperative Society'
-'Al Khulafa?a Al Rashideen Boys School'
+'Al Khulafaa Al Rashideen Boys School'
 'Dubai Grand Hotel'
 'Damascus Road 1'
 'Damascus Road 2'
@@ -2016,7 +1954,7 @@ StationList{SNum} = ...
 'Maria Qibtiya School'
 'DAFZA'
 'Twar 1, Emarat Al Mawred'
-'Al Khulafa?a Al Rashideen Boys School'
+'Al Khulafaa Al Rashideen Boys School'
 'Dubai Grand Hotel'
 'Damascus Road 1'
 'Damascus Road 2'
@@ -2641,7 +2579,7 @@ StationList{SNum} = ...
 %Bus Route F44
 SNum = SNum + 1;
 RouteList{SNum} = 'BRF44';
-WeightsList{SNum} = [ 4 1 1 2 0.1 3 5 1 1 1 1 1 1 2 1 1 1 1 1 1 1 7];
+WeightsList{SNum} = [4 1 1 2 0.1 3 5 1 1 1 1 1 1 2 1 1 1 1 1 1 1 7 2 .1 5 1 2 1 1 6];
 StationList{SNum} = ...
 {
 'Energy Metro Bus Stop Landside'
@@ -2667,6 +2605,14 @@ StationList{SNum} = ...
 'Jebel Ali Gardens 12'
 'Jebel Ali Gardens 13'
 'Ibn Battuta Metro Bus Station'
+'Ibn Battuta, Food Court 3'
+'Jebel Ali Gardens, Turnoff'
+'Jebel Ali Hotel, Accommodation'
+'Muntazah, Lifeline Hospital'
+'Dubai Evangelical Church Center'
+'Gurunanak Darbar Sikh Temple'
+'Jebel Ali Hotel, Accommodation'
+'Energy Metro Bus Stop Landside'
 };
 
 %Bus Route F46
@@ -2835,6 +2781,62 @@ StationList{SNum} = ...
 % Bus Route F54
 SNum = SNum + 1;
 RouteList{SNum} = 'BRF54';
+WeightsList{SNum} = [1 0.1 1 1 1 1 3 1 1 1 1 0.1 1 1 1 1 0.1 1 1 1 0.1 1 0.1 1 0.1 1 1 0.1 1 1 2 1 0.1 1 1 1 1 1 1 2 3 0.1 1 1 0.1 5];
+StationList{SNum} = ...
+{
+'Danube Metro Seaside Bus Stop'
+'Donya Cinema'
+'Jebel Ali Free Zone, Training Center'
+'Customs Checking Area'
+'Jebel Ali Free Zone, Roundabout 5'
+'Jebel Ali Free Zone, Sony'
+'Jebel Ali Free Zone, Roundabout 6'
+'Jebel Ali Free Zone, Lease Office 5'
+'Jebel Ali Free Zone, Nafco'
+'Container Glass Factory'
+'Zaher Group'
+'Cleveland Bridge Engineering 1'
+'Cleveland Bridge Engineering 2'
+'Jebel Ali Free Zone, Roundabout 8'
+'Jebel Ali Free Zone, Kanoo Group'
+'Jebel Ali Free Zone, Roundabout 12'
+'Naboodah Cargo Centre'
+'EDGEN MURRAY Steel'
+'Jebel Ali Free Zone, N300 Street'
+'DCFC Logistic'
+'Nestle Free Zone Company'
+'Inter Equipment Company'
+'Lucy Switchgear'
+'Pharma Care'
+'Galaxy International Overseas'
+'UAE Exchange Metro Bus Stop'
+'Globalink Westar Shipping Company'
+'Pharma Care'
+'Lucy Switchgear'
+'Inter Equipment Company'
+'Jebel Ali Free Zone, ENOC Petrol Station'
+'John Crane Middle East'
+'Transworld Group Of Companies'
+'CWT Logistics'
+'Freight Work'
+'Emmerson'
+'Jebel Ali Free Zone South Accommodation'
+'Summit Steel'
+'Mideast Metals'
+'Perfect Steel Free Zone Company'
+'Naffco Clock Roundabout'
+'JEL Corporation'
+'Mayur Tradings'
+'Al Ras Steel Trading'
+'Nuplas Industry Limited'
+'Bridgeway Industries'
+'Inter Equipment Company'
+};
+
+
+% Bus Route F54A
+SNum = SNum + 1;
+RouteList{SNum} = 'BRF54A';
 WeightsList{SNum} = [1 0.1 1 0.2 3 0.1 1 0.1 1 0.1 1 1 0.1 1 1 1 0.1 1 1];
 StationList{SNum} = ...
 {
@@ -2900,7 +2902,7 @@ StationList{SNum} = ...
 'Airport Terminal 2, Departure'
 'Airport Terminal 2, Arrival'
 'DAFZA'
-'Al Khulafaa Al Rashideen Boys School'
+'Al Khulafaa Al Rashideen Boys School'
 'Dubai Grand Hotel'
 'Damascus Road 1'
 'Damascus Road 3'
@@ -3042,7 +3044,7 @@ StationList{SNum} = ...
 'Al Qusais Industrial Area'
 'Damascus Road 3'
 'Damascus Road 1'
-'Al Khulafaa Al Rashideen Boys School'
+'Al Khulafaa Al Rashideen Boys School'
 'Dubai Airport Free Zone Metro Bus Stop'
 'Al Nahda Metro Bus Stop'
 'Ministry of Information'
@@ -3544,12 +3546,33 @@ StationList{SNum} = ...
 %Due to naming convention differents on routes, some stations must 
 %be 'force connected'
 SNum = SNum + 1;
-RouteList{SNum} = 'FORCE1';
-WeightsList{SNum} = [5];
+RouteList{SNum} = 'FJumeriah';
+WeightsList{SNum} = [0];
 StationList{SNum} = ...
 {
 'Jumeirah Lakes Towers'
 'Jumeirah Beach Residence Station 2'
+};
+
+SNum = SNum + 1;
+RouteList{SNum} = 'FBusinessBay';
+WeightsList{SNum} = [0 0 0];
+StationList{SNum} = ...
+{
+'Business Bay Seaside Metro Bus Stop'
+'Business Bay Metro Bus Stop'
+'Business Bay'
+'Business Bay Metro Bus Stop Landside'
+};
+
+SNum = SNum + 1;
+RouteList{SNum} = 'FBusinessBay';
+WeightsList{SNum} = [0 0];
+StationList{SNum} = ...
+{
+'Emirates Towers'
+'Emirates Tower Seaside Metro Bus Stop'
+'Emirates Tower Landside Metro Bus Stop'
 };
 
 %--------------------------HyperLoop Routes--------------------------------
@@ -3570,7 +3593,7 @@ end
 if(HL_Config ==2)
     SNum = SNum + 1;
     RouteList{SNum} = 'HL C2';
-    WeightsList{SNum} = [];
+    WeightsList{SNum} = [1 1 1 1 1 1 1];
     StationList{SNum} = ...
     {
     'Airport Terminal 1'
@@ -3585,7 +3608,7 @@ if(HL_Config ==2)
 end
 
 %Configuration 3
-if(HL_Config ==2)
+if(HL_Config ==3)
     SNum = SNum + 1;
     RouteList{SNum} = 'HL C3';
     WeightsList{SNum} = [];
@@ -3603,7 +3626,7 @@ if(HL_Config ==2)
 end
 
 %Configuration 4
-if(HL_Config ==2)
+if(HL_Config ==4)
     SNum = SNum + 1;
     RouteList{SNum} = 'HL C4';
     WeightsList{SNum} = [];
@@ -3613,7 +3636,7 @@ if(HL_Config ==2)
 end
 
 %Configuration 5
-if(HL_Config ==2)
+if(HL_Config ==5)
     SNum = SNum + 1;
     RouteList{SNum} = 'HL C5';
     WeightsList{SNum} = [];
@@ -3623,7 +3646,7 @@ if(HL_Config ==2)
 end
 
 %Configuration 6
-if(HL_Config ==2)
+if(HL_Config ==6)
     SNum = SNum + 1;
     RouteList{SNum} = 'HL C6';
     WeightsList{SNum} = [];
@@ -3659,7 +3682,8 @@ for i=1:length(StationList)
     TempList = {};
     for j = 1:length(StationList{i})
         if(ismember(StationList{i}{j},TempList))    %some routes have stations more than one time!
-            temps = sprintf('%s xr%i_2',StationList{i}{j},i);
+            index = find(ismember(TempList,StationList{i}{j}));
+            temps = sprintf('%s xr%i_%i',StationList{i}{j},i,(length(index)+1));
         else
             temps = sprintf('%s xr%i',StationList{i}{j},i);
         end
@@ -3670,7 +3694,7 @@ for i=1:length(StationList)
         %Update string in cell array
         StationListPlus{i}{j} = temps;
         
-        %crete reference to overall index within list
+        %create reference to overall index within list
         StationListIndex{i}(j) = counter;
         
         counter = counter + 1; %counter to track index
@@ -3758,6 +3782,17 @@ EdgeTable = table([source' target'],weights','VariableNames',{'EndNodes' 'Weight
 G = digraph(EdgeTable,NodeTable)
 h = plot(G)
         
+% label first node of each route with route name
+labelindex=[];
+labelname=[];
+for i=1:length(StationList)
+    labelindex = [labelindex StationListIndex{i}(length(StationListIndex{i}))];
+    labelname = [labelname RouteList(i)];
+end
+
+if (routelabel)
+    labelnode(h,labelindex,labelname)
+end
 %%--------------------------- Network Metrics -----------------------------
 
 %Info outputs
