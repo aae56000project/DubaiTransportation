@@ -26,7 +26,7 @@ routelabel = 1;         % option to label first node of route with route name
 Xfer_time = 0;
 
 %Select Hyperloop Configuration
-HL_Config = 1;
+HL_Config = 0;
 
 %% ----------- Metro Lines ----------------
 
@@ -3592,10 +3592,8 @@ StationList{SNum} = ...
 %Configuration 1
 if(HL_Config ==1)
     SNum = SNum + 1;
-    HL1Num = SNum;
-    RouteList{SNum} = 'HL1';
-    RouteTypeManual(SNum) = 1;    
-    WeightsList{SNum} = [];    
+    RouteList{SNum} = 'HL C1';
+    WeightsList{SNum} = [10];
     StationList{SNum} = ...
     {
     'Airport Terminal 1'
@@ -3606,10 +3604,9 @@ end
 %Configuration 2
 if(HL_Config ==2)
     SNum = SNum + 1;
-    HL2Num = SNum;
-    RouteList{SNum} = 'HL2';
-    RouteTypeManual(SNum) = 1;   
-    WeightsList{SNum} = [];    
+    RouteList{SNum} = 'HL C2';
+    WeightsList{SNum} = [1 1 1 1 1 1 1];
+    RouteTypeManual[SNum] = 1;    
     StationList{SNum} = ...
     {
     'Airport Terminal 1'
@@ -3626,8 +3623,7 @@ end
 %Configuration 3
 if(HL_Config ==3)
     SNum = SNum + 1;
-    RouteList{SNum} = 'HL3';
-    RouteTypeManual(SNum) = 1; 
+    RouteList{SNum} = 'HL C3';
     WeightsList{SNum} = [];
     StationList{SNum} = ...
     {                           % THESE NEED TO BE HUB/SPOKE
@@ -3645,25 +3641,18 @@ end
 %Configuration 4
 if(HL_Config ==4)
     SNum = SNum + 1;
-    RouteList{SNum} = 'HL4';
-    RouteTypeManual(SNum) = 1;     
+    RouteList{SNum} = 'HL C4';
     WeightsList{SNum} = [];
     StationList{SNum} = ...
     {
-    'Airport Terminal 1'
-    'BurJuman'
-    'Burj Khalifa'   
-    'Palm Jumeirah'    
-    'Al Maktoum International Airport, Arrivals'    
     };
 end
 
 %Configuration 5
 if(HL_Config ==5)
     SNum = SNum + 1;
-    RouteList{SNum} = 'HL5';
-    WeightsList{SNum} = [];
-    RouteTypeManual(SNum) = 1;     
+    RouteList{SNum} = 'HL C5';
+    WeightsList{SNum} = [3 3 3 3 3];
     StationList{SNum} = ...
     {
     'Airport Terminal 1'
@@ -3678,15 +3667,14 @@ end
 %Configuration 6
 if(HL_Config ==6)
     SNum = SNum + 1;
-    RouteList{SNum} = 'HL6';
-    RouteTypeManual(SNum) = 1;     
+    RouteList{SNum} = 'HL C6';
     WeightsList{SNum} = [];
     StationList{SNum} = ...
     {
     };
 end
 
-RouteTypeManual(SNum + 1) = 0; %ensure full array
+RouteTypeManual[SNum + 1] = 0; %ensure full array
 
 %% -----------------------Error checking-----------------------------------
 %check same number of node and weight arrays:
@@ -3696,11 +3684,9 @@ if(length(StationList) ~= length(WeightsList))
 end
 %Check Node and weight lengths match:
 for i=1:length(StationList)
-    if(RouteTypeManual ~= 1)
-        if(length(StationList{i}) ~= (length(WeightsList{i})+1))
-            msg = sprintf('!!! Error: Node and Weights array length mismatch for index: %i Route: %s.',i,RouteList{i})
-            error(msg)
-        end
+    if(length(StationList{i}) ~= (length(WeightsList{i})+1))
+        msg = sprintf('!!! Error: Node and Weights array length mismatch for index: %i Route: %s.',i,RouteList{i})
+        error(msg)
     end
 end
 
@@ -3748,7 +3734,7 @@ NodesSorted = sort(vertcat(StationListPlus{:}));
 
 % cycle through all routes to create connection list
 for i=1:length(StationListPlus)
-    if (RouteTypeManual(i) ~= 1)
+    if (RouteTypeManual[i] ~= 1)
 
         %forwards route source
         for j = 1:length(StationListPlus{i})-1
@@ -3778,7 +3764,7 @@ end
 
 % Create Weights matric
 for i=1:length(WeightsList)
-    if (RouteTypeManual(i) ~= 1)    
+    if (RouteTypeManual[i] ~= 1)    
         %forward weights
         for j = 1:length(WeightsList{i})
             weights = [weights WeightsList{i}(j)];
@@ -3789,6 +3775,9 @@ for i=1:length(WeightsList)
         end
     end
 end
+
+%%
+
 
 %%-----------------------Create Route Connections Edges--------------------
 sourceconn = [];
@@ -3810,35 +3799,13 @@ for i=1:length(StationList)                 %cycle through all routes
      end
 end
 
-%%-----------------------Create Hyperloop Manual edges---------------------
-sourceHL = []
-targetHL = []
-weightHL = []
+%%-----------------------Create Hyperloop edges----------------------------
 
-%HL1
-n1 = find(ismember(Nodes,StationListPlus{HL1Num}{1}))   %Airport Terminal 1
-n2 = find(ismember(Nodes,StationListPlus{HL1Num}{2}))   %Burj Khalifa
-sourceHL = [sourceHL n1 n2] 
-targetHL = [targetHL n2 n1]
-weightHL = [weightHL 5 5]
-
-%HL2
-% n1 = find(ismember(Nodes,StationListPlus{HL2Num}{1}))   %Airport Terminal 1
-% n2 = find(ismember(Nodes,StationListPlus{HL2Num}{2}))   %Burj Khalifa
-% n3 = find(ismember(Nodes,StationListPlus{HL2Num}{3}))   %Al Maktoum International Airport, Arrivals
-% n4 = find(ismember(Nodes,StationListPlus{HL2Num}{4}))   %Palm Jumeirah
-% n5 = find(ismember(Nodes,StationListPlus{HL2Num}{5}))   %Dubai Internet City
-% n6 = find(ismember(Nodes,StationListPlus{HL2Num}{6}))   %International City
-% n7 = find(ismember(Nodes,StationListPlus{HL2Num}{7}))   %Al Ghubaiba
-% n8 = find(ismember(Nodes,StationListPlus{HL2Num}{8}))   %Palm Jebel
-% sourceHL = [sourceHL n1 n1 n1 n2 n2 n2 n2 n2 n2 n3 n3 n3 n4 n4 n4 n5 n5 n5 n6 n6 n6 n7 n7 n7] 
-% targetHL = [targetHL n2 n6 n7 n3 n4 n5 n6 n7 n8 n2 n6 n8 n2 n8 n7 n1 n2 n7 n2 ]
-% weightHL = [weightHL 5  5  5  5  5  5  5  5  5  5  5  5  5  5]
 
 %Sum connections in
-source = [source sourceconn sourceHL];
-target = [target targetconn targetHL];
-weights = [weights weightsconn weightHL];
+source = [source sourceconn];
+target = [target targetconn];
+weights = [weights weightsconn];
 
 %%--------------------------- Create Network -----------------------------
 NodeTable = table(Nodes,'VariableNames',{'Name'});
