@@ -3900,7 +3900,7 @@ weights = [weights weightsconn weightHL];
 %%--------------------------- Create Network -----------------------------
 NodeTable = table(Nodes,'VariableNames',{'Name'});
 EdgeTable = table([source' target'],weights','VariableNames',{'EndNodes' 'Weight'});
-
+G = digraph(EdgeTable,NodeTable)
 
 %%------------------------------ Plotting --------------------------------
 % label last node of each route with route name
@@ -3911,11 +3911,10 @@ for i=1:length(StationList)
     labelname = [labelname RouteList(i)];
 end
 
-G = digraph(EdgeTable,NodeTable)
 p1 = plot(G)
 title('Dubai Transportation Network')
-%layout(p1,'force')                              % plot layout 'force' creates prettier network plot
-layout(p1,'force3')                            % plot layout 'force' creates prettier network plot
+layout(p1,'force')                              % plot layout 'force' creates prettier network plot
+%layout(p1,'force3')                            % plot layout 'force' creates prettier network plot
 labelnode(p1,labelindex,labelname)              % create route labels
 highlight(p1,HL_nodes,'NodeColor','r','MarkerSize',10)              % highlights Hyperloop nodes
 highlight(p1,sourceHL,targetHL,'EdgeColor','r','LineWidth',2)      % highlights Hyperloop nodes
