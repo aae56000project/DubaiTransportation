@@ -16,11 +16,11 @@ WeightsList = {};       % List of Weights of routes
 source = [];            % source edge array
 target = [];            % target edge array
 weights = [];           % weights array
+UniqueNodeIndex = [];   % Unique Node index for metrics
 RouteTypeManual = [];   % Defines if route edges will be manually entered
 
 % Initialize Varaibles
 SNum = 0;               % integer to increment Lists
-routelabel = 1;         % option to label first node of route with route name
 
 %Initialize Asusmptions
 Xfer_time = 0;
@@ -3592,7 +3592,7 @@ StationList{SNum} = ...
 %Configuration 1
 if(HL_Config ==1)
     SNum = SNum + 1;
-    HL1Num = SNum;
+    HLNum = SNum;
     RouteList{SNum} = 'HL1';
     RouteTypeManual(SNum) = 1;    
     WeightsList{SNum} = [];    
@@ -3606,53 +3606,55 @@ end
 %Configuration 2
 if(HL_Config ==2)
     SNum = SNum + 1;
-    HL2Num = SNum;
+    HLNum = SNum;
     RouteList{SNum} = 'HL2';
     RouteTypeManual(SNum) = 1;   
     WeightsList{SNum} = [];    
     StationList{SNum} = ...
     {
+    'Burj Khalifa'  
     'Airport Terminal 1'
-    'Burj Khalifa'   
-    'Al Maktoum International Airport, Arrivals'
-    'Palm Jumeirah' 
-    'Dubai Internet City'
-    'International City'
     'Al Ghubaiba'
-    'Palm Jebel'    %THIS DOES NOT CONNECT TO ANYTHING
+    'Dubai Internet City'
+    'Palm Jumeirah' 
+    'Jebel Ali, Bus Station'     %labeled Palm Jebel - not a stop!
+    'Al Maktoum International Airport, Arrivals'
+    'International City'   
     };
 end
 
 %Configuration 3
 if(HL_Config ==3)
     SNum = SNum + 1;
+    HLNum = SNum;    
     RouteList{SNum} = 'HL3';
     RouteTypeManual(SNum) = 1; 
     WeightsList{SNum} = [];
     StationList{SNum} = ...
-    {                           % THESE NEED TO BE HUB/SPOKE
+    { 
+    'Burj Khalifa'  
     'Airport Terminal 1'
-    'Burj Khalifa'   
-    'Al Maktoum International Airport, Arrivals'
-    'Palm Jumeirah' 
-    'Dubai Internet City'
-    'International City'
     'Al Ghubaiba'
-    'Palm Jebel'      
+    'Dubai Internet City'
+    'Palm Jumeirah' 
+    'Jebel Ali, Bus Station'     %labeled Palm Jebel - not a stop!
+    'Al Maktoum International Airport, Arrivals'
+    'International City'  
     };
 end
 
 %Configuration 4
 if(HL_Config ==4)
     SNum = SNum + 1;
+    HLNum = SNum;    
     RouteList{SNum} = 'HL4';
     RouteTypeManual(SNum) = 1;     
     WeightsList{SNum} = [];
     StationList{SNum} = ...
     {
+    'Burj Khalifa'   
     'Airport Terminal 1'
     'BurJuman'
-    'Burj Khalifa'   
     'Palm Jumeirah'    
     'Al Maktoum International Airport, Arrivals'    
     };
@@ -3661,6 +3663,7 @@ end
 %Configuration 5
 if(HL_Config ==5)
     SNum = SNum + 1;
+    HLNum = SNum;    
     RouteList{SNum} = 'HL5';
     WeightsList{SNum} = [];
     RouteTypeManual(SNum) = 1;     
@@ -3678,6 +3681,7 @@ end
 %Configuration 6
 if(HL_Config ==6)
     SNum = SNum + 1;
+    HLNum = SNum;    
     RouteList{SNum} = 'HL6';
     RouteTypeManual(SNum) = 1;     
     WeightsList{SNum} = [];
@@ -3737,6 +3741,12 @@ for i=1:length(StationList)
     end
 end
 
+%Build Unique Node index (selects first unique node found)
+for i = 1:length(UniqueNodes)
+    index = find(ismember(TotalNodes,UniqueNodes{i}));
+    UniqueNodeIndex = [UniqueNodeIndex index(1)];
+end
+
 %Create one master node cell array
 Nodes = vertcat(StationListPlus{:});
 
@@ -3756,39 +3766,36 @@ for i=1:length(StationListPlus)
             source = [source index];
         end
 
+        %forwards target source
+        for j = 2:length(StationListPlus{i})
+            index = find(ismember(Nodes,StationListPlus{i}{j}));
+            target = [target index];
+        end        
+        
+        %forward weights
+        for j = 1:length(WeightsList{i})
+            weights = [weights WeightsList{i}(j)];
+        end        
+        
         %backwards route source
         for j = length(StationListPlus{i}):-1:2
             index = find(ismember(Nodes,StationListPlus{i}{j}));
             source = [source index];        
         end    
 
-        %forwards target source
-        for j = 2:length(StationListPlus{i})
-            index = find(ismember(Nodes,StationListPlus{i}{j}));
-            target = [target index];
-        end
-
         %backwards target source
         for j = length(StationListPlus{i})-1:-1:1
             index = find(ismember(Nodes,StationListPlus{i}{j}));
             target = [target index];
         end   
-    end
-end
-
-% Create Weights matric
-for i=1:length(WeightsList)
-    if (RouteTypeManual(i) ~= 1)    
-        %forward weights
-        for j = 1:length(WeightsList{i})
-            weights = [weights WeightsList{i}(j)];
-        end
+        
         %backward weights
         for j = length(WeightsList{i}):-1:1
             weights = [weights WeightsList{i}(j)];
-        end
+        end        
     end
 end
+
 
 %%-----------------------Create Route Connections Edges--------------------
 sourceconn = [];
@@ -3811,29 +3818,79 @@ for i=1:length(StationList)                 %cycle through all routes
 end
 
 %%-----------------------Create Hyperloop Manual edges---------------------
-sourceHL = []
-targetHL = []
-weightHL = []
+sourceHL = [];
+targetHL = [];
+weightHL = [];
+HL_nodes = [];
 
 %HL1
-n1 = find(ismember(Nodes,StationListPlus{HL1Num}{1}))   %Airport Terminal 1
-n2 = find(ismember(Nodes,StationListPlus{HL1Num}{2}))   %Burj Khalifa
-sourceHL = [sourceHL n1 n2] 
-targetHL = [targetHL n2 n1]
-weightHL = [weightHL 5 5]
+if(HL_Config ==1)
+    n1 = find(ismember(Nodes,StationListPlus{HLNum}{1}));   %Airport Terminal 1
+    n2 = find(ismember(Nodes,StationListPlus{HLNum}{2}));   %Burj Khalifa
+    HL_nodes = [n1 n2];
+    sourceHL = [sourceHL n1 n2] ;
+    targetHL = [targetHL n2 n1];
+    weightHL = [weightHL 5 5];    
+end
 
 %HL2
-% n1 = find(ismember(Nodes,StationListPlus{HL2Num}{1}))   %Airport Terminal 1
-% n2 = find(ismember(Nodes,StationListPlus{HL2Num}{2}))   %Burj Khalifa
-% n3 = find(ismember(Nodes,StationListPlus{HL2Num}{3}))   %Al Maktoum International Airport, Arrivals
-% n4 = find(ismember(Nodes,StationListPlus{HL2Num}{4}))   %Palm Jumeirah
-% n5 = find(ismember(Nodes,StationListPlus{HL2Num}{5}))   %Dubai Internet City
-% n6 = find(ismember(Nodes,StationListPlus{HL2Num}{6}))   %International City
-% n7 = find(ismember(Nodes,StationListPlus{HL2Num}{7}))   %Al Ghubaiba
-% n8 = find(ismember(Nodes,StationListPlus{HL2Num}{8}))   %Palm Jebel
-% sourceHL = [sourceHL n1 n1 n1 n2 n2 n2 n2 n2 n2 n3 n3 n3 n4 n4 n4 n5 n5 n5 n6 n6 n6 n7 n7 n7] 
-% targetHL = [targetHL n2 n6 n7 n3 n4 n5 n6 n7 n8 n2 n6 n8 n2 n8 n7 n1 n2 n7 n2 ]
-% weightHL = [weightHL 5  5  5  5  5  5  5  5  5  5  5  5  5  5]
+if(HL_Config==2)
+    n1 = find(ismember(Nodes,StationListPlus{HLNum}{1}));   %Burj Khalifa
+    n2 = find(ismember(Nodes,StationListPlus{HLNum}{2}));   %Airport Terminal 1
+    n3 = find(ismember(Nodes,StationListPlus{HLNum}{3}));   %Al Ghubaiba
+    n4 = find(ismember(Nodes,StationListPlus{HLNum}{4}));   %Dubai Internet City
+    n5 = find(ismember(Nodes,StationListPlus{HLNum}{5}));   %Palm Jumeirah
+    n6 = find(ismember(Nodes,StationListPlus{HLNum}{6}));   %AJebel Ali, Bus Station
+    n7 = find(ismember(Nodes,StationListPlus{HLNum}{7}));   %Al Maktoum International Airport, Arrivals
+    n8 = find(ismember(Nodes,StationListPlus{HLNum}{8}));   %'International City' 
+    HL_nodes = [n1 n2 n3 n4 n5 n6 n7 n8];
+    sourceHL = [sourceHL n1 n1 n1 n1 n1 n1 n1 n2 n2 n2 n3 n3 n3 n4 n4 n4 n5 n5 n5 n6 n6 n6 n7 n7 n7 n8 n8 n8]; 
+    targetHL = [targetHL n2 n3 n4 n5 n6 n7 n8 n1 n3 n8 n1 n4 n2 n1 n3 n5 n1 n4 n6 n1 n5 n7 n1 n6 n8 n1 n7 n2];
+    weightHL = [weightHL 5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5];  
+end
+
+%HL3
+if(HL_Config==3)
+    n1 = find(ismember(Nodes,StationListPlus{HLNum}{1}));   %Burj Khalifa
+    n2 = find(ismember(Nodes,StationListPlus{HLNum}{2}));   %Airport Terminal 1
+    n3 = find(ismember(Nodes,StationListPlus{HLNum}{3}));   %Al Ghubaiba
+    n4 = find(ismember(Nodes,StationListPlus{HLNum}{4}));   %Dubai Internet City
+    n5 = find(ismember(Nodes,StationListPlus{HLNum}{5}));   %Palm Jumeirah
+    n6 = find(ismember(Nodes,StationListPlus{HLNum}{6}));   %AJebel Ali, Bus Station
+    n7 = find(ismember(Nodes,StationListPlus{HLNum}{7}));   %Al Maktoum International Airport, Arrivals
+    n8 = find(ismember(Nodes,StationListPlus{HLNum}{8}));   %'International City' 
+    HL_nodes = [n1 n2 n3 n4 n5 n6 n7 n8];
+    sourceHL = [sourceHL n1 n1 n1 n1 n1 n1 n1 n2 n3 n4 n5 n6 n7 n8]; 
+    targetHL = [targetHL n2 n3 n4 n5 n6 n7 n8 n1 n1 n1 n1 n1 n1 n1];
+    weightHL = [weightHL 5  5  5  5  5  5  5  5  5  5  5  5  5  5];   
+end
+
+%HL4
+if(HL_Config==4)
+    n1 = find(ismember(Nodes,StationListPlus{HLNum}{1}));   %Burj Khalifa
+    n2 = find(ismember(Nodes,StationListPlus{HLNum}{2}));   %Airport Terminal 1
+    n3 = find(ismember(Nodes,StationListPlus{HLNum}{3}));   %BurJuman
+    n4 = find(ismember(Nodes,StationListPlus{HLNum}{4}));   %Palm Jumeirah
+    n5 = find(ismember(Nodes,StationListPlus{HLNum}{5}));   %Al Maktoum International Airport, Arrivals 
+    HL_nodes = [n1 n2 n3 n4 n5];
+    sourceHL = [sourceHL n1 n1 n1 n1 n2 n3 n4 n5]; 
+    targetHL = [targetHL n2 n3 n4 n5 n1 n1 n1 n1];
+    weightHL = [weightHL 5  5  5  5  5  5  5  5];
+end
+
+%HL5
+if(HL_Config==5)
+    n1 = find(ismember(Nodes,StationListPlus{HLNum}{1}));   %Airport Terminal 1
+    n2 = find(ismember(Nodes,StationListPlus{HLNum}{2}));   %BurJuman
+    n3 = find(ismember(Nodes,StationListPlus{HLNum}{3}));   %Burj Khalifa
+    n4 = find(ismember(Nodes,StationListPlus{HLNum}{4}));   %Palm Jumeirah
+    n5 = find(ismember(Nodes,StationListPlus{HLNum}{5}));   %Al Maktoum International Airport, Arrivals 
+    n6 = find(ismember(Nodes,StationListPlus{HLNum}{6}));   %International City
+    HL_nodes = [n1 n2 n3 n4 n5 n6];
+    sourceHL = [sourceHL n1 n2 n2 n3 n3 n4 n4 n5 n6 n1]; 
+    targetHL = [targetHL n2 n1 n3 n2 n4 n3 n5 n4 n1 n6];
+    weightHL = [weightHL 5  5  5  5  5  5  5  5  5  5 ];
+end
 
 %Sum connections in
 source = [source sourceconn sourceHL];
@@ -3844,10 +3901,9 @@ weights = [weights weightsconn weightHL];
 NodeTable = table(Nodes,'VariableNames',{'Name'});
 EdgeTable = table([source' target'],weights','VariableNames',{'EndNodes' 'Weight'});
 
-G = digraph(EdgeTable,NodeTable)
-h = plot(G)
-        
-% label first node of each route with route name
+
+%%------------------------------ Plotting --------------------------------
+% label last node of each route with route name
 labelindex=[];
 labelname=[];
 for i=1:length(StationList)
@@ -3855,9 +3911,16 @@ for i=1:length(StationList)
     labelname = [labelname RouteList(i)];
 end
 
-if (routelabel)
-    labelnode(h,labelindex,labelname)
-end
+G = digraph(EdgeTable,NodeTable)
+p1 = plot(G)
+title('Dubai Transportation Network')
+%layout(p1,'force')                              % plot layout 'force' creates prettier network plot
+layout(p1,'force3')                            % plot layout 'force' creates prettier network plot
+labelnode(p1,labelindex,labelname)              % create route labels
+highlight(p1,HL_nodes,'NodeColor','r','MarkerSize',10)              % highlights Hyperloop nodes
+highlight(p1,sourceHL,targetHL,'EdgeColor','r','LineWidth',2)      % highlights Hyperloop nodes
+
+
 %%--------------------------- Network Metrics -----------------------------
 
 %Info outputs
@@ -3867,6 +3930,16 @@ disp(sprintf('Total number of Unique stations are: %i',length(UniqueNodes)))
 disp(sprintf('Total number of x-route connections: %i',length(sourceconn)))
 
 %%shortest path matrix (in minutes, as our weights are travel time)
-D = distances(G);
+D = distances(G,UniqueNodeIndex);
 avg_shortest_path = mean2(D)
+
+%node centrality (betweenness)
+C = centrality(G,'betweenness');
+HLCentrality = [];
+for i = 1:length(HL_nodes)
+    HLCentrality = [HLCentrality C(HL_nodes(i))];
+end
+avg_HLNode_Centrality = mean(HLCentrality)
+
+
 
