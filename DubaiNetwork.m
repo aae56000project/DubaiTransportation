@@ -3934,6 +3934,42 @@ avg_shortest_path = mean2(D)
 
 %node centrality (betweenness)
 C = centrality(G,'betweenness');
+
+% Milan's HL6 update Starts Here (this section can be moved, but requires C
+% G, and Nodes to be calculated already)
+
+% max betweenness centralities of all nodes
+[maxC, index] = maxk(C, 20); 
+
+% d matrix = matrix of all shortest paths between the maxC nodes
+for i = 1:20
+    for j = 1:20
+        [P, tempd] = shortestpath(G,Nodes(index(i)),Nodes(index(j)));
+        d(i,j) = tempd; 
+    end
+end
+
+% Remove all unique nodes and store in HighCNodes. 
+% Path lengths (matrix) are in UniqueD
+[UniqueD,ia,ic] = unique(d,'stable','rows'); % keep only unique nodes
+for i = 1:1:max(ic)
+    if(UniqueD(i,i) ~= 0)
+        UniqueD(:,i) = [];
+    end
+end
+UniqueD(:,max(ic)) = [];
+HighCNodes = Nodes(index(ia));
+maxC = maxC(ia);
+
+% Picking HL nodes that have high Betweenness Centrality and Shortest path 
+for i = 2:1:max(ic)
+    minimum(i) = min(UniqueD(1:i-1,i)) % min value of each column
+end
+[d,i] = maxk(minimum,4) % The distance of 4 HL nodes farthest from node 1
+HighCNodes = [HighCNodes(1); HighCNodes(i)] % These are the 5 nodes that were chosen
+
+% Milan's Update stops here
+
 HLCentrality = [];
 for i = 1:length(HL_nodes)
     HLCentrality = [HLCentrality C(HL_nodes(i))];
