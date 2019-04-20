@@ -3933,8 +3933,8 @@ if(plot_on)
 
     p1 = plot(G)
     title('Dubai Transportation Network')
-    layout(p1,'force')                              % plot layout 'force' creates prettier network plot
-    %layout(p1,'force3')                            % plot layout 'force' creates prettier network plot
+    %layout(p1,'force')                              % plot layout 'force' creates prettier network plot
+    layout(p1,'force3')                            % plot layout 'force' creates prettier network plot
     labelnode(p1,labelindex,labelname)              % create route labels
     highlight(p1,HL_nodes,'NodeColor','r','MarkerSize',10)              % highlights Hyperloop nodes
     highlight(p1,sourceHL,targetHL,'EdgeColor','r','LineWidth',2)      % highlights Hyperloop nodes
