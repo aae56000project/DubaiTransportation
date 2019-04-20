@@ -3957,16 +3957,18 @@ for i = 1:1:max(ic)
         UniqueD(:,i) = [];
     end
 end
-UniqueD(:,max(ic)) = [];
+if(UniqueD(max(ic),max(ic)) ~= 0)
+        UniqueD(:,max(ic)) = [];
+end
 HighCNodes = Nodes(index(ia));
 maxC = maxC(ia);
 
 % Picking HL nodes that have high Betweenness Centrality and Shortest path 
 for i = 2:1:max(ic)
-    minimum(i) = min(UniqueD(1:i-1,i)) % min value of each column
+    minimum(i) = min(UniqueD(1:i-1,i)); % min value of each column
 end
-[d,i] = maxk(minimum,4) % The distance of 4 HL nodes farthest from node 1
-HighCNodes = [HighCNodes(1); HighCNodes(i)] % These are the 5 nodes that were chosen
+[d,i] = maxk(minimum,4); % The distance of 4 HL nodes farthest from node 1
+HighCNodes = [HighCNodes(1); HighCNodes(i)]; % These are the 5 nodes that were chosen
 
 % Milan's Update stops here
 
