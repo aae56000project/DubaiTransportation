@@ -26,10 +26,11 @@ SNum = 0;               % integer to increment Lists
 Xfer_time = 0;
 
 %Select Hyperloop Configuration
-HL_Config = 0;
+HL_Config = 1;
 
 %plot on/off (plot takes time to generate)
-plot_on = 0;
+plot_on = 1;
+HL6_calculation = 0;
 
 %% ----------- Metro Lines ----------------
 
@@ -3688,6 +3689,11 @@ if(HL_Config ==6)
     WeightsList{SNum} = [];
     StationList{SNum} = ...
     {
+    'Al Jafiliya Seaside Metro Bus Stop'
+    'Honda, Training Center'
+    'Jebel Ali Free Zone, Main Gate'
+    'Global Village'
+    'Rashidiya Metro Bus Station'
     };
 end
 
@@ -3886,9 +3892,23 @@ if(HL_Config==5)
     n5 = find(ismember(Nodes,StationListPlus{HLNum}{5}));   %Al Maktoum International Airport, Arrivals 
     n6 = find(ismember(Nodes,StationListPlus{HLNum}{6}));   %International City
     HL_nodes = [n1 n2 n3 n4 n5 n6];
-    sourceHL = [sourceHL n1  n2  n2  n3  n3  n4  n4  n5  n6  n1]; 
-    targetHL = [targetHL n2  n1  n3  n2  n4  n3  n5  n4  n1  n6];
-    weightHL = [weightHL 0.9 0.9 0.9 0.9 1.3 1.3 1.7 1.7 2.7 2.7];
+    sourceHL = [sourceHL n1  n2  n2  n3  n3  n4  n4  n5  n5  n6  n6  n1]; 
+    targetHL = [targetHL n2  n1  n3  n2  n4  n3  n5  n4  n6  n5  n1  n6];
+    weightHL = [weightHL 0.9 0.9 0.9 0.9 1.3 1.3 1.7 1.7 2.7 2.7 1.1 1.1];
+end
+
+%HL6
+if(HL_Config==6)
+    n1 = find(ismember(Nodes,StationListPlus{HLNum}{1}));   %Al Jafiliya Seaside Metro Bus Stop
+    n2 = find(ismember(Nodes,StationListPlus{HLNum}{2}));   %Honda, Training Center
+    n3 = find(ismember(Nodes,StationListPlus{HLNum}{3}));   %Jebel Ali Free Zone, Main Gate
+    n4 = find(ismember(Nodes,StationListPlus{HLNum}{4}));   %Global Village
+    n5 = find(ismember(Nodes,StationListPlus{HLNum}{5}));   %Rashidiya Metro Bus Station
+
+    HL_nodes = [n1 n2 n3 n4 n5];
+    sourceHL = [sourceHL n1  n2  n2  n3  n3  n4  n4  n5  n5  n1]; 
+    targetHL = [targetHL n2  n1  n3  n2  n4  n3  n5  n4  n1  n5];
+    weightHL = [weightHL 1.5 1.5 1.5 1.5 1.5 1.5 2.5 2.5 1.0 1.0];
 end
 
 %Sum connections in
@@ -3937,39 +3957,40 @@ C = centrality(G,'betweenness');
 
 % Milan's HL6 update Starts Here (this section can be moved, but requires C
 % G, and Nodes to be calculated already)
+if(HL6_calculation)
 
-% max betweenness centralities of all nodes
-[maxC, index] = maxk(C, 20); 
+    % max betweenness centralities of all nodes
+    [maxC, index] = maxk(C, 20); 
 
-% d matrix = matrix of all shortest paths between the maxC nodes
-for i = 1:20
-    for j = 1:20
-        [P, tempd] = shortestpath(G,Nodes(index(i)),Nodes(index(j)));
-        d(i,j) = tempd; 
+    % d matrix = matrix of all shortest paths between the maxC nodes
+    for i = 1:20
+        for j = 1:20
+            [P, tempd] = shortestpath(G,Nodes(index(i)),Nodes(index(j)));
+            d(i,j) = tempd; 
+        end
     end
-end
 
-% Remove all unique nodes and store in HighCNodes. 
-% Path lengths (matrix) are in UniqueD
-[UniqueD,ia,ic] = unique(d,'stable','rows'); % keep only unique nodes
-for i = 1:1:max(ic)
-    if(UniqueD(i,i) ~= 0)
-        UniqueD(:,i) = [];
+    % Remove all unique nodes and store in HighCNodes. 
+    % Path lengths (matrix) are in UniqueD
+    [UniqueD,ia,ic] = unique(d,'stable','rows'); % keep only unique nodes
+    for i = 1:1:max(ic)
+        if(UniqueD(i,i) ~= 0)
+            UniqueD(:,i) = [];
+        end
     end
-end
-if(UniqueD(max(ic),max(ic)) ~= 0)
-        UniqueD(:,max(ic)) = [];
-end
-HighCNodes = Nodes(index(ia));
-maxC = maxC(ia);
+    if(UniqueD(max(ic),max(ic)) ~= 0)
+            UniqueD(:,max(ic)) = [];
+    end
+    HighCNodes = Nodes(index(ia));
+    maxC = maxC(ia);
 
-% Picking HL nodes that have high Betweenness Centrality and Shortest path 
-for i = 2:1:max(ic)
-    minimum(i) = min(UniqueD(1:i-1,i)); % min value of each column
+    % Picking HL nodes that have high Betweenness Centrality and Shortest path 
+    for i = 2:1:max(ic)
+        minimum(i) = min(UniqueD(1:i-1,i)); % min value of each column
+    end
+    [d,i] = maxk(minimum,4); % The distance of 4 HL nodes farthest from node 1
+    HighCNodes = [HighCNodes(1); HighCNodes(i)]; % These are the 5 nodes that were chosen
 end
-[d,i] = maxk(minimum,4); % The distance of 4 HL nodes farthest from node 1
-HighCNodes = [HighCNodes(1); HighCNodes(i)]; % These are the 5 nodes that were chosen
-
 % Milan's Update stops here
 
 HLCentrality = [];
