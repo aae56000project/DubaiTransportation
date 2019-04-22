@@ -4031,44 +4031,16 @@ HL5_BC = 64080; %
 HL6_BC = 590050; % 
 HL_BCs = [HL0_BC, HL1_BC, HL2_BC, HL3_BC, HL4_BC, HL5_BC, HL6_BC];
 
-% p1 = polyfit(HL_Costs, HL_asps, 2);
-% p2 = polyfit(HL_Costs, HL_BCs, 2);
-% % 
-% y1 = polyval(p1, HL_Costs);
-% y2 = polyval(p2, HL_BCs);
-
 figure()
+hold on
 yyaxis left
-plot(HL_Costs, HL_asps,'ro')
+title('Pareto Frontier');
+xlabel('Cost of adding Hyperloop route');
+ylabel('Average Shortest Path');
+plot(HL_Costs, HL_asps,'o')
+hold on
 yyaxis right
-plot(HL_Costs, HL_BCs, 'go')
-
-% k = 1;
-% [min1,minfn1] = fminbnd(@(x)pickindex(x,k),-1,2);
-% k = 2;
-% [min2,minfn2] = fminbnd(@(x)pickindex(x,k),-1,2);
-% goal = [minfn1, minfn2];
-% 
-% 
-% nf = 2; % number of objective functions
-% N = 5000; % number of points for plotting
-% onen = 1/N;
-% x = zeros(N+1,1);
-% f = zeros(N+1,nf);
-% fun = @simple_mult;
-% x0 = 0.5;
-% options = optimoptions('fgoalattain','Display','off');
-% for r = 0:N
-%     t = onen*r; % 0 through 1
-%     weight = [t,1-t];
-%     [x(r+1,:),f(r+1,:)] = fgoalattain(fun,x0,goal,weight,...
-%         [],[],[],[],[],[],[],options);
-% end
-% 
-% figure
-% plot(f(:,1),f(:,2),'k.');
-% xlabel('f_1')
-% ylabel('f_2')
-
+ylabel('Average Hyperloop Nodes Betweenness Centrality');
+plot(HL_Costs, HL_BCs, 'o')
 
 
